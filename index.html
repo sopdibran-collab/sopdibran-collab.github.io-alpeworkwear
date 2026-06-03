@@ -24,18 +24,26 @@
 
   <style>
     :root {
-      --alpine-dark: #0e1a12;
-      --alpine-green: #1a3320;
-      --alpine-mid: #2d5c3a;
-      --alpine-accent: #4a9b5f;
-      --alpine-light: #a8d5b5;
-      --alpine-pale: #e8f4eb;
-      --alpine-snow: #f5f8f5;
-      --alpine-gold: #c8a84b;
-      --alpine-gold-light: #e8d08a;
-      --text-primary: #0e1a12;
-      --text-muted: #4a6654;
-      --white: #ffffff;
+      /* Brand palette — Usage-Couleur.csv */
+      --color-primary: #49657F;
+      --color-bg-light: #FFFFFF;
+      --color-text: #1F2933;
+      --color-product: #11151A;
+      --color-accent-navy: #0F2138;
+      --color-bg-secondary: #EEF3F7;
+
+      --alpine-dark: var(--color-accent-navy);
+      --alpine-green: var(--color-primary);
+      --alpine-mid: #3a5268;
+      --alpine-accent: var(--color-primary);
+      --alpine-light: #9AADC0;
+      --alpine-pale: var(--color-bg-secondary);
+      --alpine-snow: var(--color-bg-secondary);
+      --alpine-gold: var(--color-primary);
+      --alpine-gold-light: #6B8499;
+      --text-primary: var(--color-text);
+      --text-muted: #5C6F82;
+      --white: var(--color-bg-light);
     }
 
     *,
@@ -68,9 +76,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem 4rem;
-      background: rgba(14, 26, 18, 0.92);
+      background: rgba(15, 33, 56, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(74, 155, 95, 0.2);
+      border-bottom: 1px solid rgba(73, 101, 127, 0.25);
     }
 
     .nav-logo {
@@ -109,16 +117,15 @@
 
     .nav-cta {
       background: var(--alpine-gold);
-      color: var(--alpine-dark) !important;
+      color: var(--white) !important;
       padding: 0.55rem 1.4rem;
       border-radius: 2px;
       font-weight: 500 !important;
-      color: var(--alpine-dark) !important;
     }
 
     .nav-cta:hover {
       background: var(--alpine-gold-light) !important;
-      color: var(--alpine-dark) !important;
+      color: var(--white) !important;
     }
 
     /* ── HERO ── */
@@ -135,7 +142,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(26, 51, 32, 0.9) 0%, rgba(14, 26, 18, 0.7) 50%, rgba(10, 18, 12, 0.95) 100%);
+        linear-gradient(135deg, rgba(15, 33, 56, 0.92) 0%, rgba(17, 21, 26, 0.75) 50%, rgba(15, 33, 56, 0.96) 100%);
       z-index: 1;
     }
 
@@ -231,7 +238,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--alpine-gold);
-      color: var(--alpine-dark);
+      color: var(--white);
       padding: 0.9rem 2rem;
       text-decoration: none;
       font-weight: 500;
@@ -354,7 +361,7 @@
       transform: translate(-50%, -50%);
       z-index: 2;
       background: var(--alpine-gold);
-      color: var(--alpine-dark);
+      color: var(--white);
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.5rem;
       width: 56px;
@@ -475,23 +482,23 @@
 
     /* Illustrated product backgrounds using SVG */
     .bg-softshell {
-      background: linear-gradient(135deg, #1a3320 0%, #0e2218 100%);
+      background: linear-gradient(135deg, #49657F 0%, #0F2138 100%);
     }
 
     .bg-polaire {
-      background: linear-gradient(135deg, #162b25 0%, #0e1f1a 100%);
+      background: linear-gradient(135deg, #3a5268 0%, #11151A 100%);
     }
 
     .bg-tshirt {
-      background: linear-gradient(135deg, #1e2e18 0%, #141f10 100%);
+      background: linear-gradient(135deg, #49657F 0%, #11151A 100%);
     }
 
     .bg-pantalon {
-      background: linear-gradient(135deg, #1a2218 0%, #111810 100%);
+      background: linear-gradient(135deg, #3a5268 0%, #0F2138 100%);
     }
 
     .bg-hv {
-      background: linear-gradient(135deg, #2d1f00 0%, #1a1200 100%);
+      background: linear-gradient(135deg, #49657F 0%, #1F2933 100%);
     }
 
     .product-illustration {
@@ -512,7 +519,7 @@
     .product-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(14, 26, 18, 0.95) 0%, rgba(14, 26, 18, 0.2) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(15, 33, 56, 0.95) 0%, rgba(17, 21, 26, 0.25) 60%, transparent 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -636,7 +643,7 @@
     }
 
     .service-item:hover {
-      background: rgba(26, 51, 32, 0.6);
+      background: rgba(73, 101, 127, 0.35);
     }
 
     .service-item:hover::before {
@@ -710,8 +717,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: rgba(26, 51, 32, 0.12);
-      border: 1px solid rgba(26, 51, 32, 0.12);
+      background: rgba(73, 101, 127, 0.12);
+      border: 1px solid rgba(73, 101, 127, 0.15);
     }
 
     .stat-item {
@@ -1025,13 +1032,13 @@
     <svg class="hero-mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0,320 L0,180 L120,120 L200,160 L320,60 L440,140 L560,40 L680,120 L760,80 L880,160 L960,50 L1080,130 L1200,70 L1320,150 L1440,90 L1440,320 Z"
-        fill="rgba(74,155,95,0.15)" />
+        fill="rgba(73,101,127,0.15)" />
       <path
         d="M0,320 L0,220 L160,160 L260,200 L380,130 L500,190 L620,110 L700,160 L800,120 L920,180 L1040,100 L1160,160 L1280,120 L1440,160 L1440,320 Z"
-        fill="rgba(45,92,58,0.2)" />
+        fill="rgba(73,101,127,0.22)" />
       <path
         d="M0,320 L0,260 L200,210 L360,240 L520,190 L680,230 L840,180 L1000,220 L1160,190 L1300,230 L1440,200 L1440,320 Z"
-        fill="rgba(26,51,32,0.4)" />
+        fill="rgba(15,33,56,0.4)" />
     </svg>
 
     <div class="hero-content">
@@ -1063,8 +1070,8 @@
       <div class="story-diptych">
         <div class="story-card">
           <svg class="story-mountain-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 40 L24 8 L44 40Z" stroke="#c8a84b" stroke-width="1.5" fill="none" />
-            <path d="M14 40 L28 18 L42 40Z" stroke="rgba(200,168,75,0.4)" stroke-width="1" fill="none" />
+            <path d="M4 40 L24 8 L44 40Z" stroke="#49657F" stroke-width="1.5" fill="none" />
+            <path d="M14 40 L28 18 L42 40Z" stroke="rgba(73,101,127,0.45)" stroke-width="1" fill="none" />
           </svg>
           <div class="story-card-name">ALPES</div>
           <div class="story-card-where">Suisse</div>
@@ -1076,8 +1083,8 @@
 
         <div class="story-card">
           <svg class="story-mountain-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 40 L20 10 L36 28 L44 40Z" stroke="#c8a84b" stroke-width="1.5" fill="none" />
-            <path d="M8 40 L22 16 L32 30 L40 40Z" stroke="rgba(200,168,75,0.4)" stroke-width="1" fill="none" />
+            <path d="M4 40 L20 10 L36 28 L44 40Z" stroke="#49657F" stroke-width="1.5" fill="none" />
+            <path d="M8 40 L22 16 L32 30 L40 40Z" stroke="rgba(73,101,127,0.45)" stroke-width="1" fill="none" />
           </svg>
           <div class="story-card-name">ALPET</div>
           <div class="story-card-where">Kosovo</div>
@@ -1343,16 +1350,16 @@
           <svg class="contact-card-icon" viewBox="0 0 32 32" fill="none">
             <path
               d="M16 3C8.82 3 3 8.82 3 16c0 2.38.65 4.6 1.78 6.52L3 29l6.66-1.75A13 13 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"
-              stroke="#c8a84b" stroke-width="1.5" fill="none" />
+              stroke="#49657F" stroke-width="1.5" fill="none" />
             <path
               d="M11.5 11c.3.7 1.5 3 1.5 3s-.5.8-.5 1.5c0 .7.5 1.5 1 2s2 2 3 2.5 2 .5 2.5 0l.5-.5c.5-.5 1-.5 1.5 0s1.5 1.5 1.5 2-.5 1.5-1.5 2-3.5.5-5.5-1.5-3.5-4-3.5-5.5.5-2 1-2.5.5-1 .5-3-.5-2-.5-2"
-              stroke="#c8a84b" stroke-width="1.2" />
+              stroke="#49657F" stroke-width="1.2" />
           </svg>
           <div class="contact-card-label">WhatsApp Business</div>
           <div class="contact-card-value">+41 79 779 21 51</div>
         </a>
         <a href="mailto:info@alpeworkwear.com" class="contact-card">
-          <svg class="contact-card-icon" viewBox="0 0 32 32" fill="none" stroke="#c8a84b" stroke-width="1.5">
+          <svg class="contact-card-icon" viewBox="0 0 32 32" fill="none" stroke="#49657F" stroke-width="1.5">
             <rect x="3" y="8" width="26" height="18" rx="2" />
             <path d="M3 10l13 9 13-9" />
           </svg>
@@ -1360,7 +1367,7 @@
           <div class="contact-card-value">info@alpeworkwear.com</div>
         </a>
         <a href="tel:+41797792151" class="contact-card">
-          <svg class="contact-card-icon" viewBox="0 0 32 32" fill="none" stroke="#c8a84b" stroke-width="1.5">
+          <svg class="contact-card-icon" viewBox="0 0 32 32" fill="none" stroke="#49657F" stroke-width="1.5">
             <path d="M6 6h6l2 5-3 2c1.5 3.5 4.5 6.5 8 8l2-3 5 2v6c-9 1-19-9-20-20z" />
           </svg>
           <div class="contact-card-label">Téléphone</div>
