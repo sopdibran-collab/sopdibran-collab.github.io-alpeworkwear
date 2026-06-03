@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpë Workwear — Vêtements de Travail Personnalisés</title>
+  <title>Vêtements de travail personnalisés | Alpë Workwear — Suisse</title>
+  <meta name="description"
+    content="Tenues professionnelles brodées ou imprimées pour entreprises en Suisse. Softshells, textiles et haute visibilité personnalisés. Demandez un devis.">
+  <link rel="canonical" href="https://www.alpeworkwear.com/">
+  <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -63,6 +67,59 @@
       background: var(--alpine-snow);
       color: var(--text-primary);
       overflow-x: hidden;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 5rem 4rem;
+      background: var(--white);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2.5rem;
+    }
+
+    .faq-list {
+      list-style: none;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(73, 101, 127, 0.15);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 1.25rem 0;
+      font-weight: 500;
+      color: var(--text-primary);
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item p {
+      padding: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.75;
     }
 
     /* ── NAV ── */
@@ -1015,12 +1072,13 @@
 
   <!-- ── NAV ── -->
   <nav>
-    <a href="#" class="nav-logo"><img src="assets/logo.png" alt="Alpë Workwear Logo"></a>
+    <a href="#" class="nav-logo"><img src="assets/logo.png" alt="Alpë Workwear — vêtements de travail personnalisés pour entreprises"></a>
     <ul class="nav-links">
       <li><a href="#catalogue">Catalogue</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#about">Notre Histoire</a></li>
-      <li><a href="#contact" class="nav-cta">Devis Gratuit</a></li>
+      <li><a href="#about">Notre histoire</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
     </ul>
   </nav>
 
@@ -1042,16 +1100,19 @@
     </svg>
 
     <div class="hero-content">
-      <div class="hero-eyebrow">Vêtements de Travail Personnalisés</div>
-      <h1 class="hero-title">ALP<span class="highlight">Ë</span><br>WORKWEAR</h1>
-      <p class="hero-subtitle">Sommets de qualité, prix d'atelier</p>
+      <div class="hero-eyebrow">Suisse · B2B · Personnalisation</div>
+      <h1 class="hero-title">
+        <span class="visually-hidden">Vêtements de travail personnalisés pour entreprises en Suisse — </span>ALP<span
+          class="highlight">Ë</span><br>WORKWEAR
+      </h1>
+      <p class="hero-subtitle">Tenues professionnelles, logo et couleurs de votre marque</p>
       <p class="hero-desc">
-        Tenues professionnelles brodées ou imprimées selon votre identité.
-        Production européenne, standards suisses — pour équiper vos équipes avec style et durabilité.
+        Vêtements de travail brodés ou imprimés pour équiper vos équipes sur le terrain et au bureau.
+        Production européenne, exigences suisses — du conseil à la livraison en Suisse.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
-          Demander un devis
+          Demander un devis entreprise
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -1097,15 +1158,14 @@
       <div class="section-eyebrow">Notre Identité</div>
       <h2 class="story-heading">DEUX CHAÎNES,<br>UN <span class="ë">PONT</span></h2>
       <p class="story-body">
-        Le <strong>ë</strong> dans Alpë n'est pas un accident typographique — c'est une déclaration d'identité.
-        En Suisse, les <strong>Alpes</strong>. Au Kosovo, les <strong>Alpet</strong>. Deux chaînes de montagnes,
-        deux cultures, deux visions de l'excellence réunies par ce seul caractère.
+        Le <strong>ë</strong> dans Alpë relie deux réalités : les <strong>Alpes</strong> en Suisse et les
+        <strong>Alpet</strong> au Kosovo. Deux territoires, un même souci du travail bien fait.
       </p>
       <br>
       <p class="story-body">
-        Alpë Workwear naît de cette jonction : la <strong>rigueur suisse</strong> dans les standards de qualité
-        et la <strong>passion artisanale</strong> dans l'exécution. Nous équipons vos équipes avec des vêtements
-        de travail qui racontent quelque chose — votre marque, vos valeurs, votre excellence.
+        Alpë Workwear s’appuie sur cette complémentarité : exigence suisse côté qualité et organisation,
+        savoir-faire artisanal côté production. Nous accompagnons les entreprises qui souhaitent des
+        <strong>vêtements de travail personnalisés</strong> alignés sur leur image de marque.
       </p>
     </div>
   </section>
@@ -1118,8 +1178,9 @@
         Nos Produits
         <span style="display:block;width:30px;height:1px;background:var(--alpine-mid)"></span>
       </div>
-      <h2 class="section-title">CATALOGUE</h2>
-      <p class="section-sub">Chaque pièce est personnalisable avec votre logo, vos couleurs, votre identité de marque.
+      <h2 class="section-title">CATALOGUE WORKWEAR</h2>
+      <p class="section-sub">Softshells, textiles, pantalons professionnels et haute visibilité : chaque pièce se
+        personnalise avec votre logo, vos couleurs et votre identité visuelle.
       </p>
     </div>
 
@@ -1224,8 +1285,9 @@
         Ce que nous faisons
         <span style="display:block;width:30px;height:1px;background:var(--alpine-gold)"></span>
       </div>
-      <h2 class="section-title">NOS SERVICES</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.5)">De la conception à la livraison, nous gérons tout.</p>
+      <h2 class="section-title">SERVICES B2B</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.5)">Conseil, design, production et livraison : un
+        interlocuteur unique pour vos commandes entreprise.</p>
     </div>
 
     <div class="services-grid">
@@ -1236,8 +1298,8 @@
           <path d="M18 8v10l6 4" />
         </svg>
         <div class="service-name">Conseil Personnalisé</div>
-        <div class="service-desc">Analyse de vos besoins, de vos conditions de travail et de votre identité visuelle
-          pour recommander les meilleures options.</div>
+        <div class="service-desc">Analyse de vos besoins, conditions de travail et identité visuelle pour orienter le
+          choix des pièces et des finitions (broderie, impression).</div>
       </div>
       <div class="service-item">
         <div class="service-number">02</div>
@@ -1277,16 +1339,16 @@
     <div class="why-inner">
       <div class="why-text">
         <div class="section-eyebrow">Pourquoi Alpë</div>
-        <h2 class="section-title">STANDARDS<br>SUISSES</h2>
+        <h2 class="section-title">POUR LES<br>ENTREPRISES</h2>
         <p class="why-body">
-          Alpë Workwear n'est pas un simple fournisseur de textile. Nous sommes votre partenaire
-          image. Chaque vêtement livré représente votre marque sur le terrain — c'est pourquoi
-          nous n'acceptons aucun compromis sur la qualité des matières, la précision de la broderie
-          ou la conformité aux normes EN ISO.
+          Alpë Workwear accompagne les entreprises qui équipent leurs équipes sur le terrain et au bureau.
+          Chaque pièce porte votre marque : nous accordons une attention particulière aux matières,
+          à la précision de la broderie ou de l’impression, et aux exigences des normes EN ISO lorsque
+          la haute visibilité est concernée.
         </p>
         <a href="#contact" class="btn-primary"
           style="display:inline-flex; margin-top:0.5rem; background:var(--alpine-mid); color:white;">
-          Parler à un expert
+          Demander un devis
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -1342,8 +1404,8 @@
         Prêt à équiper vos équipes ?
         <span style="display:block;width:30px;height:1px;background:var(--alpine-gold)"></span>
       </div>
-      <h2 class="cta-title">DEMANDEZ<br>VOTRE DEVIS</h2>
-      <p class="cta-sub">Sans engagement — réponse en moins de 24h</p>
+      <h2 class="cta-title">DEVIS<br>ENTREPRISE</h2>
+      <p class="cta-sub">Sans engagement — contactez-nous pour cadrer votre projet</p>
 
       <div class="contact-cards" style="margin-bottom:3rem;">
         <a href="https://wa.me/41797792151" class="contact-card" target="_blank">
@@ -1377,12 +1439,56 @@
 
       <a href="https://wa.me/41797792151" class="btn-primary" style="font-size:1rem; padding:1.1rem 3rem;"
         target="_blank">
-        Écrire sur WhatsApp
+        Demander un devis via WhatsApp
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </a>
     </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <h2 class="section-title" id="faq-title">Questions fréquentes</h2>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <details>
+          <summary>Comment demander un devis pour des vêtements de travail personnalisés ?</summary>
+          <p>Contactez-nous par <a href="mailto:info@alpeworkwear.com">info@alpeworkwear.com</a>, par téléphone au
+            <a href="tel:+41797792151">+41 79 779 21 51</a> ou via <a href="https://wa.me/41797792151"
+              target="_blank" rel="noopener">WhatsApp</a>. Indiquez les pièces souhaitées, les quantités et vos besoins
+            de personnalisation (logo, couleurs).</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary>Quels types de vêtements proposez-vous ?</summary>
+          <p>Notre catalogue couvre les softshells et polaires, les t-shirts et polos, les pantalons professionnels, ainsi
+            que des gammes haute visibilité. Chaque catégorie peut être personnalisée selon votre identité de marque.</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary>Quels sont les délais de production ?</summary>
+          <p>Selon les quantités, comptez en général 2 à 4 semaines. Des options rush peuvent être envisagées selon la
+            commande — à confirmer lors de votre demande.</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary>Livrez-vous en Suisse ?</summary>
+          <p>Oui. Nous assurons la livraison vers Genève, Lausanne, Zurich et l’ensemble de la Suisse, avec suivi de
+            commande.</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary>Proposez-vous des vêtements haute visibilité conformes aux normes ?</summary>
+          <p>Oui. Notre gamme haute visibilité inclut gilets, vestes et combinaisons indiquées comme conformes à la norme
+            EN ISO 20471. Précisez vos exigences lors du devis.</p>
+        </details>
+      </li>
+    </ul>
   </section>
 
   <!-- ── FOOTER ── -->
@@ -1395,6 +1501,69 @@
     </div>
   </footer>
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Alpë Workwear Sàrl",
+      "url": "https://www.alpeworkwear.com",
+      "email": "info@alpeworkwear.com",
+      "telephone": "+41797792151",
+      "description": "Vêtements de travail personnalisés pour entreprises en Suisse. Broderie, impression, production européenne et livraison en Suisse.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Suisse"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment demander un devis pour des vêtements de travail personnalisés ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contactez Alpë Workwear par email à info@alpeworkwear.com, par téléphone au +41 79 779 21 51 ou via WhatsApp. Indiquez les pièces, quantités et besoins de personnalisation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels types de vêtements proposez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Softshells et polaires, t-shirts et polos, pantalons professionnels et gammes haute visibilité, personnalisables selon votre identité de marque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les délais de production ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En général 2 à 4 semaines selon les quantités. Des options rush peuvent être envisagées selon la commande."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Livrez-vous en Suisse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, livraison vers Genève, Lausanne, Zurich et toute la Suisse, avec suivi de commande."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des vêtements haute visibilité conformes aux normes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, gilets, vestes et combinaisons haute visibilité indiqués comme conformes à la norme EN ISO 20471."
+          }
+        }
+      ]
+    }
+  </script>
   <script>
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
