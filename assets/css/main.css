@@ -509,6 +509,13 @@ select:focus-visible {
   color: var(--color-primary);
 }
 
+.product-card__category {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
 .product-card__title {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -537,9 +544,15 @@ select:focus-visible {
   display: inline;
 }
 
-.product-card .btn {
-  margin-top: 0.5rem;
-  align-self: flex-start;
+.text-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--color-primary);
 }
 
 .catalogue-note {
@@ -702,6 +715,25 @@ select:focus-visible {
 .form-status {
   margin-top: 1rem;
   font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.form-status--success {
+  color: #2d5a3f;
+}
+
+.form-status--error {
+  color: #8b2e2e;
+}
+
+.form-group input.form-field--error,
+.form-group textarea.form-field--error {
+  border-color: #8b2e2e;
+}
+
+.form-group input:invalid:not(:placeholder-shown):not(:focus),
+.form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #8b2e2e;
 }
 
 /* ── CTA band ── */
