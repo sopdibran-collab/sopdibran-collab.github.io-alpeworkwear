@@ -15,55 +15,64 @@
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function escapeAttr(str) {
+    return escapeHtml(str);
   }
 
   function renderProduct(product, categories) {
     const cat = categories.find((c) => c.id === product.category);
-    let descText = product.description;
-    if (!descText && cat) descText = cat.description;
-    const descClass = descText ? 'product-card__desc' : 'product-card__desc product-card__desc--empty';
-    const descContent = descText ? escapeHtml(descText) : 'Description à compléter.';
+    const descText = product.description || (cat ? cat.description : '');
     const tag = product.tag ? `<p class="product-card__tag">${escapeHtml(product.tag)}</p>` : '';
     const ref = product.reference
       ? `<dl class="product-card__meta"><dt>Réf. </dt><dd>${escapeHtml(product.reference)}</dd></dl>`
       : '';
+    const descBlock = descText
+      ? `<p class="product-card__desc">${escapeHtml(descText)}</p>`
+      : '';
+    const categoryLabel = cat
+      ? `<p class="product-card__category">${escapeHtml(cat.name)}</p>`
+      : '';
 
     const media = product.image
-      ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.imageAlt || product.name)}" loading="lazy" width="400" height="400">`
+      ? `<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.imageAlt || product.name)}" loading="lazy" width="400" height="400">`
       : `<div class="product-card__placeholder" role="img" aria-label="Photo à venir">Photo à venir</div>`;
 
     return `
-      <article class="product-card" data-category="${escapeHtml(product.category)}" id="produit-${escapeHtml(product.id)}">
+      <article class="product-card" data-category="${escapeAttr(product.category)}" id="produit-${escapeAttr(product.id)}">
         <div class="product-card__media">${media}</div>
         <div class="product-card__body">
           ${tag}
+          ${categoryLabel}
           <h2 class="product-card__title">${escapeHtml(product.name)}</h2>
-          <p class="${descClass}">${descContent}</p>
+          ${descBlock}
           ${ref}
-          <a href="contact.html?produit=${encodeURIComponent(product.id)}" class="btn btn-primary">Demander un devis</a>
         </div>
       </article>`;
   }
 
-  function bindFilters(categories, products) {
+  function bindFilters(categories) {
     if (!filters) return;
     const buttons = filters.querySelectorAll('[data-filter]');
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
         buttons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-        const cards = grid.querySelectorAll('.product-card');
-        cards.forEach((card) => {
+        grid.querySelectorAll('.product-card').forEach((card) => {
           const show = filter === 'all' || card.getAttribute('data-category') === filter;
           card.hidden = !show;
         });
-        if (categoryDescEl && filter !== 'all') {
-          const cat = categories.find((c) => c.id === filter);
-          categoryDescEl.textContent = cat ? cat.description : '';
-          categoryDescEl.hidden = !cat;
-        } else if (categoryDescEl) {
-          categoryDescEl.hidden = true;
+        if (categoryDescEl) {
+          if (filter !== 'all') {
+            const cat = categories.find((c) => c.id === filter);
+            categoryDescEl.textContent = cat ? cat.description : '';
+            categoryDescEl.hidden = !cat;
+          } else {
+            categoryDescEl.hidden = true;
+          }
         }
       });
     });
@@ -93,17 +102,18 @@
       }
 
       grid.innerHTML = products.map((p) => renderProduct(p, categories)).join('');
-      bindFilters(categories, products);
+      bindFilters(categories);
 
-      const params = new URLSearchParams(window.location.search);
-      const catParam = params.get('categorie');
+      const catParam = new URLSearchParams(window.location.search).get('categorie');
       if (catParam && filters) {
-        const btn = filters.querySelector(`[data-filter="${catParam}"]`);
+        const safeId = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(catParam) : catParam;
+        const btn = filters.querySelector(`[data-filter="${safeId}"]`);
         btn?.click();
       }
     })
     .catch((err) => {
-      grid.innerHTML = `<p class="catalogue-note">Le catalogue n’a pas pu être chargé. Vérifiez que <code>data/products.json</code> est accessible.</p>`;
+      grid.innerHTML =
+        '<p class="catalogue-note">Le catalogue n’a pas pu être chargé. Vérifiez que le fichier <code>data/products.json</code> est accessible.</p>';
       console.error(err);
     });
 })();
