@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "id": "softshell-polaire",
+      "name": "Softshells & polaires",
+      "description": "Coupe-vent, imperméabilité, respirabilité. Conçus pour les conditions exigeantes du terrain."
+    },
+    {
+      "id": "textile",
+      "name": "T-shirts & polos",
+      "description": "Coton premium, polyester technique ou mix — du polo de bureau au t-shirt de chantier."
+    },
+    {
+      "id": "pantalon",
+      "name": "Pantalons professionnels",
+      "description": "Renforts aux genoux, poches multiples, coupes adaptées au mouvement. Pour le terrain comme pour l'atelier."
+    },
+    {
+      "id": "haute-visibilite",
+      "name": "Haute visibilité",
+      "description": "Gilets, vestes et combinaisons indiquées comme conformes à la norme EN ISO 20471."
+    }
+  ],
+  "products": [
+    {
+      "id": "softshell-homme",
+      "category": "softshell-polaire",
+      "name": "Softshell homme",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/Softshell homme.JPG",
+      "imageAlt": "Softshell homme — vêtement de travail Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "softshell-hooded-homme",
+      "category": "softshell-polaire",
+      "name": "Softshell capuche homme",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/Softshell hooded homme.JPG",
+      "imageAlt": "Softshell à capuche homme — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "softshell-hooded-femmes",
+      "category": "softshell-polaire",
+      "name": "Softshell capuche femmes",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/Softshell hooded Femmes.JPG",
+      "imageAlt": "Softshell à capuche femmes — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "gilet-softshell",
+      "category": "softshell-polaire",
+      "name": "Gilet softshell",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/giletsoftshell.JPG",
+      "imageAlt": "Gilet softshell — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "jackette-polaire",
+      "category": "softshell-polaire",
+      "name": "Jackette polaire",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/Jackette polaire.JPG",
+      "imageAlt": "Jackette polaire — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "t-shirts",
+      "category": "textile",
+      "name": "T-shirts",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/T-shirts.JPG",
+      "imageAlt": "T-shirts professionnels — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "pantalons-professionnels",
+      "category": "pantalon",
+      "name": "Pantalons professionnels",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/pantalons-professionnels.JPG",
+      "imageAlt": "Pantalons professionnels — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
+      "id": "gamme-haute-visibilite",
+      "category": "haute-visibilite",
+      "name": "Équipements haute visibilité",
+      "tag": "EN ISO 20471",
+      "description": "Gilets, vestes et combinaisons. Visible de jour comme de nuit — précisez vos exigences lors du devis.",
+      "image": "assets/images/equipements-visibilite.jpg",
+      "imageAlt": "Équipements haute visibilité professionnels — Alpë Workwear",
+      "reference": null,
+      "published": true
+    }
+  ]
+}
