@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & devis entreprise | Alpë Workwear — Suisse</title>
+  <meta name="description"
+    content="Demandez un devis pour vos vêtements de travail personnalisés. Formulaire, email, téléphone et WhatsApp. Réponse selon disponibilité — sans engagement.">
+  <link rel="canonical" href="https://www.alpeworkwear.com/contact.html">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W7GRK3MK');</script>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7GRK3MK" height="0" width="0"
+      style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+
+  <header id="site-header"></header>
+
+  <main id="main">
+    <header class="page-hero page-hero--compact">
+      <div class="container">
+        <p class="eyebrow">Contact B2B</p>
+        <h1>Demande de devis</h1>
+        <p class="page-hero__lead">
+          Décrivez votre projet : pièces, quantités, personnalisation. Nous vous recontactons pour cadrer la commande.
+        </p>
+      </div>
+    </header>
+
+    <section class="section section--white">
+      <div class="container contact-layout">
+        <aside class="contact-info" aria-labelledby="coords-title">
+          <h2 id="coords-title">Coordonnées</h2>
+          <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);">
+            Un interlocuteur pour le conseil, la confection et la livraison en Suisse.
+          </p>
+          <ul>
+            <li>
+              <strong>Email</strong><br>
+              <a href="mailto:info@alpeworkwear.com" id="contact-email">info@alpeworkwear.com</a>
+            </li>
+            <li>
+              <strong>Téléphone</strong><br>
+              <a href="tel:+41797792151" id="contact-phone">+41 79 779 21 51</a>
+            </li>
+            <li>
+              <strong>WhatsApp Business</strong><br>
+              <a href="https://wa.me/41797792151" target="_blank" rel="noopener" id="contact-wa">Ouvrir WhatsApp</a>
+            </li>
+          </ul>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);">
+            Adresse postale / siège : <strong>[à compléter]</strong>
+          </p>
+          <p style="margin-top:1rem;">
+            <a href="catalogue.html" class="btn btn-secondary" style="font-size:0.75rem;">Voir le catalogue</a>
+          </p>
+        </aside>
+
+        <div class="contact-form">
+          <h2 class="visually-hidden">Formulaire</h2>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="entreprise">Entreprise *</label>
+              <input type="text" id="entreprise" name="entreprise" required autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom du contact *</label>
+              <input type="text" id="nom" name="nom" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="produit">Produit / gamme</label>
+              <input type="text" id="produit" name="produit" placeholder="Ex. softshell homme, haute visibilité…">
+            </div>
+            <div class="form-group">
+              <label for="quantites">Quantités estimées</label>
+              <input type="text" id="quantites" name="quantites" placeholder="[à préciser]">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required
+                placeholder="Personnalisation (broderie / impression), délais souhaités, autres exigences…"></textarea>
+            </div>
+            <p class="form-hint">
+              Sans endpoint configuré, l’envoi ouvre votre client mail. Pour un envoi direct, définir
+              <code>formEndpoint</code> dans <code>assets/js/site-config.js</code> (Formspree, etc.).
+            </p>
+            <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/contact-form.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Alpë Workwear",
+      "url": "https://www.alpeworkwear.com/contact.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Alpë Workwear Sàrl",
+        "email": "info@alpeworkwear.com",
+        "telephone": "+41797792151",
+        "url": "https://www.alpeworkwear.com"
+      }
+    }
+  </script>
+</body>
+
+</html>
