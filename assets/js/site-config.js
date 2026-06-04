@@ -13,6 +13,7 @@ window.ALPE_CONFIG = {
   /** Endpoint formulaire (Formspree, Netlify, etc.) — laisser vide pour envoi via mailto */
   formEndpoint: '',
   gtmId: 'GTM-W7GRK3MK',
-  /** Formats fichiers logo — [à confirmer avec l’atelier] */
-  fileFormatsNote: '[Formats acceptés : à confirmer — ex. vectoriel AI/EPS, PDF, SVG haute résolution]',
+  /** Formats fichiers logo pour broderie / impression */
+  fileFormatsNote:
+    'Fichier vectoriel ou PDF haute résolution de préférence (AI, EPS, SVG, PDF). Nous vous indiquons si une adaptation est nécessaire.',
 };
