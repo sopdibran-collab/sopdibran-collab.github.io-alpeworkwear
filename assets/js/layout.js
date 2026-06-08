@@ -36,9 +36,31 @@
 
     const toggle = header.querySelector('.nav-toggle');
     const nav = header.querySelector('.site-nav');
-    toggle?.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
+
+    function setNavOpen(open) {
+      nav.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle?.addEventListener('click', () => {
+      setNavOpen(!nav.classList.contains('is-open'));
+    });
+
+    nav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setNavOpen(false));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (header.contains(e.target)) return;
+      setNavOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        setNavOpen(false);
+        toggle?.focus();
+      }
     });
   }
 
