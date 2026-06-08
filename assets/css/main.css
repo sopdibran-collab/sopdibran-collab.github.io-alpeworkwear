@@ -68,6 +68,10 @@ select:focus-visible {
   border: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .container {
   width: min(100% - 2rem, var(--container));
   margin-inline: auto;
@@ -158,11 +162,20 @@ select:focus-visible {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
-  padding: 0.4rem 0.65rem;
+  padding: 0.5rem 0.85rem;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* ── Footer ── */
@@ -773,57 +786,46 @@ select:focus-visible {
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .site-header {
-    position: fixed;
-  }
-
   .nav-toggle {
     display: block;
     margin-left: auto;
   }
 
-  .site-header__inner {
-    position: relative;
-    flex-wrap: wrap;
-  }
-
   .site-nav {
     display: none;
-    position: absolute;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
     flex-direction: column;
-    padding: 0.5rem 0;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--color-accent-navy);
+    padding: 0.5rem 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 24px rgba(17, 21, 26, 0.25);
+    max-height: calc(100dvh - var(--nav-height));
+    overflow-y: auto;
+    z-index: 999;
   }
 
   .site-nav.is-open {
     display: flex;
-    z-index: 40;
-    top: 80px;
-    left: 205px;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 6px;
-    margin: 0;
-    box-sizing: content-box;
-    overflow: visible;
-    text-align: right;
-    vertical-align: bottom;
-    background-color: var(--color-primary);
-    background-image: conic-gradient(from 0deg at 50% 50%, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
-    box-shadow: inset 0 12px 24px rgba(17, 21, 26, 0.25);
   }
 
   .site-nav a {
-    padding: 0.85rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.85rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
   }
 
   .site-nav .nav-cta {
-    margin: 0.5rem 1rem 0.75rem;
+    margin: 0.5rem 1.25rem 0.25rem;
     text-align: center;
+    justify-content: center;
   }
 
   .split-section,
