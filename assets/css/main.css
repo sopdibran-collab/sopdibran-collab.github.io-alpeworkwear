@@ -796,9 +796,9 @@ select:focus-visible {
 
   .site-nav.is-open {
     display: flex;
-    z-index: auto;
-    top: 51px;
-    left: 119px;
+    z-index: 40;
+    top: 80px;
+    left: 205px;
     justify-content: flex-start;
     align-items: flex-end;
     gap: 6px;
