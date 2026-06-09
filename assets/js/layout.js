@@ -28,7 +28,7 @@
     header.innerHTML = `
       <div class="container site-header__inner">
         <a href="index.html" class="site-logo">
-          <img src="assets/logo.png" alt="${cfg.brand} — vêtements de travail personnalisés pour entreprises" width="150" height="32">
+          <img src="assets/images/logo-bleu-acier.png" alt="${cfg.brand} — vêtements de travail personnalisés pour entreprises" width="160" height="46">
         </a>
         <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
       </div>
@@ -73,8 +73,10 @@
     footer.innerHTML = `
       <div class="container site-footer__grid">
         <div>
-          <div class="site-footer__brand">ALP<span>Ë</span> WORKWEAR</div>
-          <p style="font-size:0.85rem;margin-top:0.5rem;color:rgba(255,255,255,0.5);">Sommets de qualité · Prix d'atelier · Prishtina & Suisse</p>
+          <a href="index.html" class="site-footer__logo">
+            <img src="assets/images/logo-blanc-acier.png" alt="${cfg.brand}" width="160" height="46">
+          </a>
+          <p class="site-footer__tagline">Personnalisation · Broderie · Marquage professionnel · Livraison Suisse</p>
           <ul class="site-footer__links">
             <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="confection.html">Confection</a></li>
