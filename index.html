@@ -11,9 +11,7 @@
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <script src="assets/js/site-config.js"></script>
   <script>
@@ -31,20 +29,29 @@
 
   <main id="main">
     <section class="home-hero">
-      <div class="container">
-        <p class="eyebrow">Suisse · B2B · Personnalisation</p>
-        <h1 class="home-hero__title">
-          <span class="visually-hidden">Vêtements de travail personnalisés pour entreprises — </span>
-          ALP<span class="accent">Ë</span> WORKWEAR
-        </h1>
-        <p class="home-hero__subtitle">Tenues professionnelles, logo et couleurs de votre marque</p>
-        <p class="home-hero__lead">
-          Vêtements de travail brodés ou imprimés pour équiper vos équipes. Production européenne, livraison en Suisse.
-        </p>
-        <div class="home-hero__actions">
-          <a href="contact.html" class="btn btn-primary">Demander un devis entreprise</a>
-          <a href="catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
+      <div class="container home-hero__inner">
+        <div>
+          <p class="eyebrow">Suisse · B2B · Personnalisation</p>
+          <div class="home-hero__brand">
+            <img src="assets/images/logo-bleu-acier.png" alt="Alpë Workwear" width="200" height="58">
+          </div>
+          <h1 class="home-hero__title">Vêtements de travail personnalisés pour entreprises</h1>
+          <p class="home-hero__subtitle">Broderie, marquage et équipement professionnel</p>
+          <p class="home-hero__lead">
+            Tenues brodées ou imprimées pour équiper vos équipes. Production européenne, coordination depuis la Suisse.
+          </p>
+          <div class="home-hero__actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+            <a href="catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
+          </div>
         </div>
+        <aside class="home-hero__accent" aria-hidden="true">
+          <div class="home-hero__accent-inner">
+            <p class="home-hero__accent-label">Qualité professionnelle</p>
+            <p class="home-hero__accent-text">Matières techniques, marquage précis, livraison en Suisse. Un interlocuteur
+              unique du conseil à la livraison.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -73,7 +80,7 @@
                 loading="lazy">
             </div>
             <div class="category-card__body">
-              <p class="category-card__tag">Base du workwear</p>
+              <p class="category-card__tag">Textile professionnel</p>
               <h3>T-shirts & polos</h3>
               <p>Du bureau au chantier, textiles personnalisables.</p>
             </div>
@@ -84,7 +91,7 @@
                 height="450" loading="lazy">
             </div>
             <div class="category-card__body">
-              <p class="category-card__tag">Confort & durabilité</p>
+              <p class="category-card__tag">Durabilité</p>
               <h3>Pantalons professionnels</h3>
               <p>Renforts, poches et coupes adaptées au mouvement.</p>
             </div>
@@ -101,18 +108,18 @@
             </div>
           </a>
         </div>
-        <p style="margin-top:1.5rem;text-align:center;">
+        <p style="margin-top:2rem;text-align:center;">
           <a href="catalogue.html" class="btn btn-outline">Catalogue complet</a>
         </p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="confection-teaser">
+    <section class="section section--alt" aria-labelledby="confection-teaser">
       <div class="container split-section">
         <div>
           <p class="eyebrow">Confection</p>
           <h2 id="confection-teaser">Broderie, marquage, image d’équipe</h2>
-          <p style="color:var(--color-muted);margin-bottom:1rem;">
+          <p class="prose-muted" style="margin-bottom:1.25rem;">
             De l’adaptation de votre logo au choix des finitions : un processus structuré pour des tenues cohérentes
             et professionnelles.
           </p>
@@ -137,14 +144,16 @@
       <div class="container" style="max-width:40rem;">
         <p class="eyebrow">Notre identité</p>
         <h2 id="about-title">Deux chaînes, un pont</h2>
-        <p style="color:var(--color-muted);margin-bottom:1rem;">
-          Le <strong>ë</strong> dans Alpë relie les Alpes en Suisse et les Alpet au Kosovo : rigueur suisse et
-          savoir-faire artisanal au service de vos équipes.
-        </p>
-        <p style="color:var(--color-muted);">
-          Nous accompagnons les entreprises qui recherchent des <strong>vêtements de travail personnalisés</strong>
-          alignés sur leur image de marque.
-        </p>
+        <div class="prose-muted">
+          <p>
+            Le <strong>ë</strong> dans Alpë relie les Alpes en Suisse et les Alpet au Kosovo : rigueur suisse et
+            savoir-faire artisanal au service de vos équipes.
+          </p>
+          <p>
+            Nous accompagnons les entreprises qui recherchent des <strong>vêtements de travail personnalisés</strong>
+            alignés sur leur image de marque.
+          </p>
+        </div>
       </div>
     </section>
 

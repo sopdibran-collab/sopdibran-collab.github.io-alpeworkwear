@@ -13,7 +13,7 @@
     meta.description ||
     document.querySelector('meta[name="description"]')?.getAttribute('content') ||
     '';
-  const image = meta.image || siteUrl + '/assets/logo.png';
+  const image = meta.image || siteUrl + '/assets/images/logo-bleu-acier.png';
 
   function setMeta(attr, key, value) {
     if (!value) return;
@@ -38,8 +38,8 @@
     if (extra) Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
   }
 
-  setLink('icon', siteUrl + '/assets/logo.png', { type: 'image/png' });
-  setLink('apple-touch-icon', siteUrl + '/assets/logo.png');
+  setLink('icon', siteUrl + '/assets/images/logo-bleu-acier.png', { type: 'image/png' });
+  setLink('apple-touch-icon', siteUrl + '/assets/images/logo-bleu-acier.png');
 
   setMeta('property', 'og:type', meta.type || 'website');
   setMeta('property', 'og:site_name', cfg.brand || 'Alpë Workwear');
