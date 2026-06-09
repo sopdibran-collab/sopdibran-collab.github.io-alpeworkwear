@@ -14,6 +14,11 @@
     { href: 'contact.html', label: 'Demander un devis', file: 'contact.html', cta: true },
   ];
 
+  function brandMark(light) {
+    const cls = light ? ' brand-mark--light' : '';
+    return `<span class="brand-mark${cls}"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>`;
+  }
+
   const navHtml = navItems
     .map((item) => {
       const current = page === item.file || (page === '' && item.file === 'index.html');
@@ -27,8 +32,8 @@
     header.className = 'site-header';
     header.innerHTML = `
       <div class="container site-header__inner">
-        <a href="index.html" class="site-logo">
-          <img src="assets/images/logo-bleu-acier.png" alt="${cfg.brand} — vêtements de travail personnalisés pour entreprises" width="160" height="46">
+        <a href="index.html" class="site-logo" aria-label="${cfg.brand} — accueil">
+          ${brandMark(false)}
         </a>
         <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
       </div>
@@ -73,8 +78,8 @@
     footer.innerHTML = `
       <div class="container site-footer__grid">
         <div>
-          <a href="index.html" class="site-footer__logo">
-            <img src="assets/images/logo-blanc-acier.png" alt="${cfg.brand}" width="160" height="46">
+          <a href="index.html" class="site-footer__brand" aria-label="${cfg.brand} — accueil">
+            ${brandMark(true)}
           </a>
           <p class="site-footer__tagline">Personnalisation · Broderie · Marquage professionnel · Livraison Suisse</p>
           <ul class="site-footer__links">
