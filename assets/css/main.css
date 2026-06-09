@@ -762,6 +762,73 @@ body.is-nav-open {
   border-color: #8b2e2e;
 }
 
+/* ── Cookie banner ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: var(--color-product);
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -8px 32px rgba(17, 21, 26, 0.2);
+  padding: 1rem 0;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-banner__text {
+  font-size: 0.88rem;
+  max-width: 42rem;
+  margin: 0;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.cookie-banner .text-link {
+  color: #9aadc0;
+  border-bottom-color: #9aadc0;
+}
+
+.cookie-banner__btn.btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Legal prose ── */
+.legal-prose {
+  max-width: 42rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.legal-prose h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 2rem 0 0.75rem;
+}
+
+.legal-prose p,
+.legal-prose ul {
+  margin-bottom: 1rem;
+}
+
+.legal-prose ul {
+  margin-left: 1.25rem;
+}
+
 /* ── CTA band ── */
 .cta-band {
   background: var(--color-accent-navy);

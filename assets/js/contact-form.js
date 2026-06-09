@@ -1,5 +1,5 @@
 /**
- * Formulaire de contact — validation, envoi endpoint ou fallback mailto
+ * Formulaire de contact — FormSubmit.co (AJAX) ou fallback mailto
  */
 (function () {
   const form = document.getElementById('contact-form');
@@ -8,7 +8,9 @@
 
   const cfg = window.ALPE_CONFIG || {};
   const email = (cfg.email || 'info@alpeworkwear.com').trim();
-  const endpoint = typeof cfg.formEndpoint === 'string' ? cfg.formEndpoint.trim() : '';
+  const endpoint =
+    (typeof cfg.formEndpoint === 'string' && cfg.formEndpoint.trim()) ||
+    `https://formsubmit.co/ajax/${encodeURIComponent(email)}`;
 
   const params = new URLSearchParams(window.location.search);
   const produitField = form.querySelector('[name="produit"]');
@@ -31,6 +33,7 @@
   function markInvalidFields() {
     let firstInvalid = null;
     form.querySelectorAll('input, textarea, select').forEach((field) => {
+      if (field.name === '_honey') return;
       if (!field.checkValidity()) {
         field.classList.add('form-field--error');
         if (!firstInvalid) firstInvalid = field;
@@ -64,7 +67,6 @@
     if (payload.produit) lines.push(`Produit / gamme : ${payload.produit}`);
     if (payload.quantites) lines.push(`Quantités estimées : ${payload.quantites}`);
     lines.push('', payload.message);
-
     return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
   }
 
@@ -77,20 +79,38 @@
     document.body.removeChild(link);
   }
 
-  async function sendToEndpoint(formData) {
+  async function sendViaFormSubmit(payload) {
+    const body = {
+      entreprise: payload.entreprise,
+      nom: payload.nom,
+      email: payload.email,
+      telephone: payload.telephone || '—',
+      produit: payload.produit || '—',
+      quantites: payload.quantites || '—',
+      message: payload.message,
+      _subject: `Demande Alpë Workwear — ${payload.entreprise}`,
+      _template: 'table',
+      _captcha: 'false',
+    };
+
     const res = await fetch(endpoint, {
       method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(body),
     });
+
     let data = null;
     try {
       data = await res.json();
     } catch {
-      /* réponse non JSON */
+      /* non-JSON */
     }
+
     if (!res.ok) {
-      const msg = data && data.error ? data.error : `Erreur ${res.status}`;
+      const msg = (data && (data.message || data.error)) || `Erreur ${res.status}`;
       throw new Error(msg);
     }
     return data;
@@ -100,6 +120,9 @@
     e.preventDefault();
     clearFieldErrors();
     setStatus('', '');
+
+    const honey = form.querySelector('[name="_honey"]');
+    if (honey && honey.value) return;
 
     if (!form.checkValidity()) {
       const first = markInvalidFields();
@@ -118,30 +141,23 @@
     }
 
     try {
-      if (endpoint) {
-        await sendToEndpoint(formData);
-        setStatus('Votre message a été envoyé. Nous vous recontacterons.', 'success');
-        form.reset();
-      } else {
-        if (!email) {
-          setStatus(
-            'Envoi par formulaire non configuré et adresse email indisponible. Appelez le +41 79 779 21 51.',
-            'error'
-          );
-          return;
-        }
+      await sendViaFormSubmit(payload);
+      setStatus('Votre message a été envoyé. Nous vous recontacterons.', 'success');
+      form.reset();
+    } catch (err) {
+      console.error('FormSubmit:', err);
+      try {
         openMailto(buildMailtoUrl(payload));
         setStatus(
-          'Votre logiciel de messagerie s’ouvre avec le message prérempli. Envoyez le courriel pour finaliser la demande.',
+          'Envoi direct indisponible. Votre messagerie s’ouvre avec le message prérempli — envoyez le courriel pour finaliser.',
           'success'
         );
+      } catch {
+        setStatus(
+          `L’envoi n’a pas abouti. Écrivez-nous à ${email} ou appelez le ${cfg.phoneDisplay || '+41 79 779 21 51'}.`,
+          'error'
+        );
       }
-    } catch (err) {
-      console.error(err);
-      setStatus(
-        'L’envoi n’a pas abouti. Écrivez-nous à info@alpeworkwear.com ou appelez le +41 79 779 21 51.',
-        'error'
-      );
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

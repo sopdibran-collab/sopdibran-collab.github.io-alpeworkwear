@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /index.legacy.html
+
+Sitemap: https://www.alpeworkwear.com/sitemap.xml

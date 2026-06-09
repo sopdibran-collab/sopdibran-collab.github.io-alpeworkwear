@@ -89,6 +89,17 @@
       "published": true
     },
     {
+      "id": "polo",
+      "category": "textile",
+      "name": "Polo",
+      "tag": null,
+      "description": null,
+      "image": "assets/catalogue/Polo.jpg",
+      "imageAlt": "Polo professionnel — Alpë Workwear",
+      "reference": null,
+      "published": true
+    },
+    {
       "id": "pantalons-professionnels",
       "category": "pantalon",
       "name": "Pantalons professionnels",

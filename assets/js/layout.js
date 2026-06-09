@@ -80,6 +80,8 @@
             <li><a href="confection.html">Confection</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
           </ul>
         </div>
         <div class="site-footer__copy">

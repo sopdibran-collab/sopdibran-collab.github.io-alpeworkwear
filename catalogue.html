@@ -15,17 +15,18 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-W7GRK3MK');</script>
+  <script src="assets/js/site-config.js"></script>
+  <script>
+    window.ALPE_PAGE_META = {
+      title: 'Catalogue vêtements de travail professionnels | Alpë Workwear',
+      description: 'Catalogue B2B : softshells, polaires, t-shirts, polos, pantalons et haute visibilité personnalisables.',
+      url: 'https://www.alpeworkwear.com/catalogue.html'
+    };
+  </script>
+  <script src="assets/js/head-shared.js"></script>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7GRK3MK" height="0" width="0"
-      style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
-
   <header id="site-header" class="site-header" aria-label="Navigation principale"></header>
 
   <main id="main">
@@ -47,6 +48,19 @@
           <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Toutes les gammes</button>
         </div>
         <p id="category-description" class="catalogue-note" hidden></p>
+        <noscript>
+          <ul class="catalogue-note" style="list-style:disc;margin-left:1.25rem;">
+            <li>Softshell homme</li>
+            <li>Softshell capuche homme</li>
+            <li>Softshell capuche femmes</li>
+            <li>Gilet softshell</li>
+            <li>Jackette polaire</li>
+            <li>T-shirts</li>
+            <li>Polo</li>
+            <li>Pantalons professionnels</li>
+            <li>Équipements haute visibilité</li>
+          </ul>
+        </noscript>
         <div class="catalogue-grid" id="catalogue-grid"></div>
         <p class="catalogue-note">
           Catalogue indicatif — personnalisation (logo, couleurs, marquage) selon votre projet.
@@ -59,7 +73,7 @@
   </main>
 
 
-  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/catalogue.js"></script>
   <script type="application/ld+json">

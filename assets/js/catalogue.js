@@ -85,6 +85,32 @@
     }
   }
 
+  function injectItemList(products, categories) {
+    const siteUrl = (window.ALPE_CONFIG && window.ALPE_CONFIG.siteUrl) || 'https://www.alpeworkwear.com';
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Catalogue vêtements de travail Alpë Workwear',
+      itemListElement: products.map((p, i) => {
+        const cat = categories.find((c) => c.id === p.category);
+        return {
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'Product',
+            name: p.name,
+            description: p.description || (cat ? cat.description : undefined),
+            image: p.image ? siteUrl.replace(/\/$/, '') + '/' + p.image.replace(/^\//, '') : undefined,
+            category: cat ? cat.name : undefined,
+          },
+        };
+      }),
+    });
+    document.head.appendChild(script);
+  }
+
   function bindFilters(categories) {
     if (!filters) return;
     const buttons = filters.querySelectorAll('[data-filter]');
@@ -123,6 +149,7 @@
       grid.innerHTML = products.map((p) => renderProduct(p, categories)).join('');
       bindFilters(categories);
       applyFilter('all', categories);
+      injectItemList(products, categories);
 
       const catParam = new URLSearchParams(window.location.search).get('categorie');
       if (catParam && filters) {
