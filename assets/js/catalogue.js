@@ -54,16 +54,29 @@
       </article>`;
   }
 
+  function cssEscape(value) {
+    if (typeof CSS !== 'undefined' && typeof CSS.escape === 'function') {
+      return CSS.escape(value);
+    }
+    return String(value).replace(/["\\]/g, '\\$&');
+  }
+
   function applyFilter(filter, categories) {
-    grid.querySelectorAll('.product-card').forEach((card) => {
-      const categoryId = card.getAttribute('data-category');
-      const show = filter === 'all' || categoryId === filter;
-      card.hidden = !show;
+    const activeFilter = String(filter || 'all').trim();
+    grid.querySelectorAll(':scope > .product-card').forEach((card) => {
+      const categoryId = (card.dataset.category || '').trim();
+      const show = activeFilter === 'all' || categoryId === activeFilter;
+      card.classList.toggle('is-filtered-out', !show);
+      if (show) {
+        card.removeAttribute('hidden');
+      } else {
+        card.setAttribute('hidden', '');
+      }
       card.setAttribute('aria-hidden', show ? 'false' : 'true');
     });
     if (categoryDescEl) {
-      if (filter !== 'all') {
-        const cat = categories.find((c) => c.id === filter);
+      if (activeFilter !== 'all') {
+        const cat = categories.find((c) => c.id === activeFilter);
         categoryDescEl.textContent = cat ? cat.description : '';
         categoryDescEl.hidden = !cat;
       } else {
@@ -72,12 +85,38 @@
     }
   }
 
+  function injectItemList(products, categories) {
+    const siteUrl = (window.ALPE_CONFIG && window.ALPE_CONFIG.siteUrl) || 'https://www.alpeworkwear.com';
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Catalogue vêtements de travail Alpë Workwear',
+      itemListElement: products.map((p, i) => {
+        const cat = categories.find((c) => c.id === p.category);
+        return {
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'Product',
+            name: p.name,
+            description: p.description || (cat ? cat.description : undefined),
+            image: p.image ? siteUrl.replace(/\/$/, '') + '/' + p.image.replace(/^\//, '') : undefined,
+            category: cat ? cat.name : undefined,
+          },
+        };
+      }),
+    });
+    document.head.appendChild(script);
+  }
+
   function bindFilters(categories) {
     if (!filters) return;
     const buttons = filters.querySelectorAll('[data-filter]');
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
+        const filter = (btn.getAttribute('data-filter') || 'all').trim();
         buttons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
         applyFilter(filter, categories);
       });
@@ -109,12 +148,16 @@
 
       grid.innerHTML = products.map((p) => renderProduct(p, categories)).join('');
       bindFilters(categories);
+      applyFilter('all', categories);
+      injectItemList(products, categories);
 
       const catParam = new URLSearchParams(window.location.search).get('categorie');
       if (catParam && filters) {
-        const safeId = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(catParam) : catParam;
+        const safeId = cssEscape(catParam.trim());
         const btn = filters.querySelector(`[data-filter="${safeId}"]`);
-        btn?.click();
+        if (btn) {
+          btn.click();
+        }
       }
     })
     .catch((err) => {

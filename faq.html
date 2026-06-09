@@ -15,17 +15,18 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-W7GRK3MK');</script>
+  <script src="assets/js/site-config.js"></script>
+  <script>
+    window.ALPE_PAGE_META = {
+      title: 'FAQ vêtements de travail personnalisés | Devis, délais, livraison — Alpë Workwear',
+      description: 'Réponses aux questions entreprises : devis, personnalisation, broderie, délais, livraison en Suisse.',
+      url: 'https://www.alpeworkwear.com/faq.html'
+    };
+  </script>
+  <script src="assets/js/head-shared.js"></script>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7GRK3MK" height="0" width="0"
-      style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
-
   <header id="site-header" class="site-header" aria-label="Navigation principale"></header>
 
   <main id="main">
@@ -121,7 +122,7 @@
 
   <footer id="site-footer"></footer>
 
-  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
   <script>
     document.querySelectorAll('[data-config]').forEach((el) => {
@@ -137,26 +138,47 @@
         {
           "@type": "Question",
           "name": "Comment demander un devis ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Formulaire de contact, email info@alpeworkwear.com, téléphone +41 79 779 21 51 ou WhatsApp. Indiquez pièces, quantités et personnalisation."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Formulaire de contact, email info@alpeworkwear.com, téléphone +41 79 779 21 51 ou WhatsApp. Indiquez pièces, quantités et personnalisation." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles quantités minimum commandez-vous ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Précisez le volume souhaité dans votre demande ; nous vous indiquons les options adaptées à votre projet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels types de personnalisation proposez-vous ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Broderie et impression, adaptation de votre logo et alignement sur vos couleurs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment préparer mon logo pour la broderie ou l'impression ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Fichier vectoriel ou PDF haute résolution de préférence. En cas de doute, envoyez le fichier le plus qualitatif dont vous disposez." }
         },
         {
           "@type": "Question",
           "name": "Quels sont les délais de production ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En général 2 à 4 semaines selon les quantités. Options rush sur demande, à confirmer au devis."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "En général 2 à 4 semaines selon les quantités. Options rush sur demande, à confirmer au devis." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels vêtements figurent au catalogue ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Softshells et polaires, t-shirts et polos, pantalons professionnels, gammes haute visibilité." }
         },
         {
           "@type": "Question",
           "name": "Livrez-vous en Suisse ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, livraison vers Genève, Lausanne, Zurich et toute la Suisse, avec suivi de commande."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, livraison vers Genève, Lausanne, Zurich et toute la Suisse, avec suivi de commande." }
+        },
+        {
+          "@type": "Question",
+          "name": "Les vêtements haute visibilité sont-ils conformes aux normes ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Notre gamme haute visibilité est présentée comme conforme à la norme EN ISO 20471." }
+        },
+        {
+          "@type": "Question",
+          "name": "Où est réalisée la production ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Production en atelier européen (Union européenne), avec coordination depuis la Suisse." }
         }
       ]
     }

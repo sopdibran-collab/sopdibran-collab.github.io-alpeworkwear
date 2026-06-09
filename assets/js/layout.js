@@ -30,16 +30,19 @@
         <a href="index.html" class="site-logo">
           <img src="assets/logo.png" alt="${cfg.brand} — vêtements de travail personnalisés pour entreprises" width="150" height="32">
         </a>
-        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
-        <ul class="site-nav" id="site-nav">${navHtml}</ul>
-      </div>`;
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
+      </div>
+      <ul class="site-nav" id="site-nav">${navHtml}</ul>`;
 
     const toggle = header.querySelector('.nav-toggle');
     const nav = header.querySelector('.site-nav');
 
     function setNavOpen(open) {
-      nav.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      const isOpen = Boolean(open);
+      nav.classList.toggle('is-open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+      document.body.classList.toggle('is-nav-open', isOpen);
     }
 
     toggle?.addEventListener('click', () => {
@@ -77,6 +80,8 @@
             <li><a href="confection.html">Confection</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
           </ul>
         </div>
         <div class="site-footer__copy">
