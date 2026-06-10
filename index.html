@@ -122,22 +122,27 @@
           </p>
           <a href="confection.html" class="btn btn-primary">Découvrir la confection</a>
         </div>
-        <figure class="media-card media-card--compact">
-          <div class="media-card__video">
-            <video controls playsinline muted preload="metadata" width="720" height="1280"
-              poster="assets/images/embroidery-preview.webp"
-              title="Broderie en cours sur machine professionnelle"
-              aria-label="Broderie en cours sur machine professionnelle">
-              <source src="assets/videos/broderie-atelier.mp4" type="video/mp4">
-              Votre navigateur ne prend pas en charge la lecture vidéo.
-            </video>
+        <article class="workshop-gallery__item workshop-gallery__item--solo">
+          <button type="button" class="workshop-gallery__trigger"
+            data-video-src="assets/videos/broderie-atelier.mp4"
+            data-video-label="Broderie professionnelle"
+            aria-label="Lire la vidéo : Broderie professionnelle">
+            <span class="workshop-gallery__thumb">
+              <img src="assets/images/embroidery-preview.webp" alt="" width="720" height="720"
+                loading="lazy" decoding="async">
+              <span class="workshop-gallery__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 7.5v13l11-6.5-11-6.5z" fill="currentColor"/>
+                </svg>
+              </span>
+            </span>
+          </button>
+          <div class="workshop-gallery__content">
+            <p class="workshop-gallery__tag">En atelier</p>
+            <h3 class="workshop-gallery__title">Broderie professionnelle</h3>
+            <p class="workshop-gallery__desc">Marquage textile durable — <a href="confection.html" class="text-link">voir la confection</a>.</p>
           </div>
-          <figcaption class="media-card__body">
-            <p class="media-card__tag">En atelier</p>
-            <h3>Broderie professionnelle</h3>
-            <p>Marquage précis sur textiles de travail — <a href="confection.html" class="text-link">voir la confection</a>.</p>
-          </figcaption>
-        </figure>
+        </article>
       </div>
     </section>
 
@@ -177,8 +182,24 @@
 
   <footer id="site-footer"></footer>
 
+  <div id="workshop-modal" class="workshop-modal" hidden role="dialog" aria-modal="true"
+    aria-label="Lecture vidéo atelier">
+    <div class="workshop-modal__backdrop" data-close></div>
+    <div class="workshop-modal__panel">
+      <button type="button" class="workshop-modal__close" aria-label="Fermer la vidéo">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="workshop-modal__video-wrap">
+        <video controls playsinline preload="none"></video>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/workshop-gallery.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
