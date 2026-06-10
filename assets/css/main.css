@@ -737,7 +737,9 @@ body.is-nav-open {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   background: var(--color-bg);
+  overflow: hidden;
 }
 
 .workshop-video__frame {
@@ -753,6 +755,11 @@ body.is-nav-open {
   object-fit: contain;
   display: block;
   background: var(--color-textile);
+  transition: transform 0.2s ease;
+}
+
+.workshop-video:hover .workshop-video__frame video {
+  transform: scale(1.015);
 }
 
 .workshop-video__caption {
@@ -793,8 +800,10 @@ body.is-nav-open {
 /* ── Media card (accueil) ── */
 .media-card {
   border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   background: var(--color-bg);
   margin: 0;
+  overflow: hidden;
 }
 
 .media-card__video {
@@ -810,6 +819,11 @@ body.is-nav-open {
   object-fit: contain;
   display: block;
   background: var(--color-textile);
+  transition: transform 0.2s ease;
+}
+
+.media-card:hover .media-card__video video {
+  transform: scale(1.015);
 }
 
 .media-card__body {
