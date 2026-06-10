@@ -1,0 +1,24 @@
+{
+    "mcp": {
+        "servers": {
+            "filesystem": {
+                "command": "npx",
+                "args": [
+                    "@modelcontextprotocol/server-file-system"
+                ]
+            },
+            "git": {
+                "command": "npx",
+                "args": [
+                    "@modelcontextprotocol/server-git"
+                ]
+            },
+            "serper": {
+                "command": "npx",
+                "args": [
+                    "@modelcontextprotocol/server-serper"
+                ]
+            }
+        }
+    }
+}
