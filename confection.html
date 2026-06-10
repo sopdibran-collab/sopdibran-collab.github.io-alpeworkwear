@@ -75,41 +75,49 @@
           <h2 id="atelier-title">Broderie et sérigraphie en production</h2>
           <p>Précision du marquage, matières professionnelles et finitions adaptées à l’usage terrain.</p>
         </header>
-        <div class="workshop-showcase">
-        <div class="workshop-grid">
-          <figure class="workshop-video">
-            <div class="workshop-video__frame">
-              <video controls playsinline muted preload="metadata" width="720" height="1280"
-                poster="assets/images/embroidery-preview.webp"
-                title="Broderie en cours sur machine professionnelle"
-                aria-label="Broderie en cours sur machine professionnelle">
-                <source src="assets/videos/broderie-atelier.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la lecture vidéo. Contactez-nous pour voir nos réalisations.
-              </video>
+        <div class="workshop-gallery" role="list">
+          <article class="workshop-gallery__item" role="listitem">
+            <button type="button" class="workshop-gallery__trigger"
+              data-video-src="assets/videos/broderie-atelier.mp4"
+              data-video-label="Broderie professionnelle"
+              aria-label="Lire la vidéo : Broderie professionnelle">
+              <span class="workshop-gallery__thumb">
+                <img src="assets/images/embroidery-preview.webp" alt="" width="720" height="1181"
+                  loading="lazy" decoding="async">
+                <span class="workshop-gallery__play" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 7.5v13l11-6.5-11-6.5z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div class="workshop-gallery__content">
+              <p class="workshop-gallery__tag">Broderie</p>
+              <h3 class="workshop-gallery__title">Broderie professionnelle</h3>
+              <p class="workshop-gallery__desc">Marquage textile durable réalisé avec une machine de broderie professionnelle.</p>
             </div>
-            <figcaption class="workshop-video__caption">
-              <p class="workshop-video__tag">Broderie</p>
-              <h3>Marquage durable sur textile</h3>
-              <p>Logo brodé avec précision, adapté aux pièces techniques et professionnelles.</p>
-            </figcaption>
-          </figure>
-          <figure class="workshop-video">
-            <div class="workshop-video__frame">
-              <video controls playsinline muted preload="metadata" width="720" height="1280"
-                poster="assets/images/print-preview.webp"
-                title="T-shirts professionnels marqués en sérigraphie"
-                aria-label="T-shirts professionnels marqués en sérigraphie">
-                <source src="assets/videos/serigraphie-tshirts.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la lecture vidéo. Contactez-nous pour voir nos réalisations.
-              </video>
+          </article>
+          <article class="workshop-gallery__item" role="listitem">
+            <button type="button" class="workshop-gallery__trigger"
+              data-video-src="assets/videos/serigraphie-tshirts.mp4"
+              data-video-label="Sérigraphie textile"
+              aria-label="Lire la vidéo : Sérigraphie textile">
+              <span class="workshop-gallery__thumb">
+                <img src="assets/images/print-preview.webp" alt="" width="720" height="1181"
+                  loading="lazy" decoding="async">
+                <span class="workshop-gallery__play" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 7.5v13l11-6.5-11-6.5z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div class="workshop-gallery__content">
+              <p class="workshop-gallery__tag">Sérigraphie</p>
+              <h3 class="workshop-gallery__title">Sérigraphie textile</h3>
+              <p class="workshop-gallery__desc">Impression de qualité sur vêtements de travail finalisés.</p>
             </div>
-            <figcaption class="workshop-video__caption">
-              <p class="workshop-video__tag">Sérigraphie</p>
-              <h3>Impression sur t-shirts</h3>
-              <p>Marquage en sérigraphie pour des visuels nets et résistants à l’usage.</p>
-            </figcaption>
-          </figure>
-        </div>
+          </article>
         </div>
       </div>
     </section>
@@ -201,8 +209,24 @@
 
   <footer id="site-footer"></footer>
 
+  <div id="workshop-modal" class="workshop-modal" hidden role="dialog" aria-modal="true"
+    aria-label="Lecture vidéo atelier">
+    <div class="workshop-modal__backdrop" data-close></div>
+    <div class="workshop-modal__panel">
+      <button type="button" class="workshop-modal__close" aria-label="Fermer la vidéo">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="workshop-modal__video-wrap">
+        <video controls playsinline preload="none"></video>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/workshop-gallery.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
