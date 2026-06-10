@@ -834,6 +834,8 @@ body.is-nav-open {
 
 /* ── Media card (accueil) ── */
 .media-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-bg);
