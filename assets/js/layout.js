@@ -1,7 +1,7 @@
 (function () {
   const cfg = window.ALPE_CONFIG || {
     brand: 'Alpë Workwear',
-    legalName: 'Alpë Workwear Sàrl',
+    legalName: 'Alpë Workwear',
   };
 
   const page = window.location.pathname.split('/').pop() || 'index.html';

@@ -4,7 +4,7 @@
 window.ALPE_CONFIG = {
   siteUrl: 'https://www.alpeworkwear.com',
   brand: 'Alpë Workwear',
-  legalName: 'Alpë Workwear Sàrl',
+  legalName: 'Alpë Workwear',
   email: 'info@alpeworkwear.com',
   phoneDisplay: '+41 79 779 21 51',
   phoneTel: '+41797792151',
@@ -14,8 +14,5 @@ window.ALPE_CONFIG = {
   gtmId: 'GTM-W7GRK3MK',
   fileFormatsNote:
     'Fichier vectoriel ou PDF haute résolution de préférence (AI, EPS, SVG, PDF). Nous vous indiquons si une adaptation est nécessaire.',
-  /** [À compléter] Adresse siège pour mentions légales */
-  address: '[Adresse du siège — à compléter]',
-  /** [À compléter] Numéro IDE */
-  ide: '[IDE — à compléter]',
+  address: 'Prishtina',
 };
