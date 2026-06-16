@@ -81,7 +81,7 @@
           <a href="index.html" class="site-footer__brand" aria-label="${cfg.brand} — accueil">
             ${brandMark(true)}
           </a>
-          <p class="site-footer__tagline">Personnalisation · Broderie · Marquage professionnel · Livraison Suisse</p>
+          <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
           <ul class="site-footer__links">
             <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="confection.html">Confection</a></li>
@@ -93,7 +93,7 @@
         </div>
         <div class="site-footer__copy">
           © ${new Date().getFullYear()} ${cfg.legalName}<br>
-          <span style="opacity:0.7;">Design Suisse · Production européenne</span>
+          <span style="opacity:0.7;">Design Suisse · Atelier Kosovo · Coordination CH</span>
         </div>
       </div>`;
   }

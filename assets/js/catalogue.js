@@ -104,6 +104,14 @@
             description: p.description || (cat ? cat.description : undefined),
             image: p.image ? siteUrl.replace(/\/$/, '') + '/' + p.image.replace(/^\//, '') : undefined,
             category: cat ? cat.name : undefined,
+            brand: { '@type': 'Brand', name: (window.ALPE_CONFIG && window.ALPE_CONFIG.brand) || 'Alpë Workwear' },
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'CHF',
+              availability: 'https://schema.org/InStock',
+              url: siteUrl + '/contact.html',
+              description: 'Devis sur demande',
+            },
           },
         };
       }),

@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalogue vêtements de travail professionnels | Alpë Workwear</title>
+  <title>Catalogue workwear B2B | Softshell, polo, haute visibilité — Alpë Workwear</title>
   <meta name="description"
-    content="Catalogue B2B : softshells, polaires, t-shirts, polos, pantalons et haute visibilité personnalisables. Photos et devis sur demande.">
+    content="Catalogue vêtements de travail personnalisables : softshells, polaires, polos, pantalons, EN ISO 20471. Photos et devis sur demande — livraison Suisse.">
   <link rel="canonical" href="https://www.alpeworkwear.com/catalogue.html">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,10 +16,14 @@
   <script src="assets/js/site-config.js"></script>
   <script>
     window.ALPE_PAGE_META = {
-      title: 'Catalogue vêtements de travail professionnels | Alpë Workwear',
-      description: 'Catalogue B2B : softshells, polaires, t-shirts, polos, pantalons et haute visibilité personnalisables.',
+      title: 'Catalogue workwear B2B | Softshell, polo, haute visibilité — Alpë Workwear',
+      description: 'Catalogue B2B workwear personnalisable : softshells, polos, pantalons, haute visibilité. Devis et livraison Suisse.',
       url: 'https://www.alpeworkwear.com/catalogue.html'
     };
+    window.ALPE_BREADCRUMBS = [
+      { name: 'Accueil', url: 'https://www.alpeworkwear.com/' },
+      { name: 'Catalogue', url: 'https://www.alpeworkwear.com/catalogue.html' }
+    ];
   </script>
   <script src="assets/js/head-shared.js"></script>
 </head>
@@ -31,15 +35,30 @@
     <header class="page-hero page-hero--compact">
       <div class="container">
         <p class="eyebrow">Catalogue B2B</p>
-        <h1>Vêtements de travail professionnels</h1>
+        <h1>Catalogue vêtements de travail personnalisables</h1>
         <p class="page-hero__lead">
-          Parcourez les articles disponibles. Chaque référence peut être personnalisée (logo, couleurs). Les fiches
-          s’enrichissent au fur et à mesure.
+          Softshells, polos, pantalons et haute visibilité — chaque référence se personnalise avec votre logo.
+          Devis et livraison en Suisse.
         </p>
       </div>
     </header>
 
-    <section class="section section--white" aria-labelledby="catalogue-list">
+    <section class="section section--white" aria-labelledby="catalogue-intro">
+      <div class="container" style="max-width:42rem;">
+        <h2 id="catalogue-intro" class="visually-hidden">Présentation</h2>
+        <div class="answer-block">
+          <p class="answer-block__q">Quels vêtements de travail propose Alpë Workwear&nbsp;?</p>
+          <p class="answer-block__a">
+            Le catalogue couvre quatre gammes B2B : <strong>softshells et polaires</strong>,
+            <strong>t-shirts et polos</strong>, <strong>pantalons professionnels</strong> et
+            <strong>équipements haute visibilité</strong> (EN ISO 20471). Toutes les pièces peuvent être
+            brodées ou marquées selon votre projet — voir la page <a href="confection.html">Confection</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="catalogue-list">
       <div class="container">
         <h2 id="catalogue-list" class="visually-hidden">Liste des articles</h2>
         <div class="catalogue-toolbar" id="catalogue-filters" role="toolbar" aria-label="Filtrer par gamme">
@@ -64,8 +83,16 @@
           Catalogue indicatif — personnalisation (logo, couleurs, marquage) selon votre projet.
           <a href="confection.html" class="text-link">Voir la confection</a>
           ·
-          <a href="contact.html" class="text-link">Nous contacter</a>
+          <a href="contact.html" class="text-link">Demander un devis</a>
         </p>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-catalogue">
+      <div class="container">
+        <h2 id="cta-catalogue">Besoin d’un devis sur une référence&nbsp;?</h2>
+        <p>Indiquez les articles, quantités et votre logo — réponse sous 1 à 2 jours ouvrables.</p>
+        <a href="contact.html" class="btn btn-primary">Demander un devis</a>
       </div>
     </section>
   </main>
@@ -75,6 +102,7 @@
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/catalogue.js"></script>
+  <script src="assets/js/schema-org.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,7 +110,8 @@
       "name": "Catalogue vêtements de travail Alpë Workwear",
       "description": "Catalogue B2B de vêtements de travail personnalisables pour entreprises en Suisse.",
       "url": "https://www.alpeworkwear.com/catalogue.html",
-      "isPartOf": { "@type": "WebSite", "name": "Alpë Workwear", "url": "https://www.alpeworkwear.com" }
+      "isPartOf": { "@id": "https://www.alpeworkwear.com/#website" },
+      "about": { "@type": "Thing", "name": "Vêtements de travail personnalisés" }
     }
   </script>
 </body>

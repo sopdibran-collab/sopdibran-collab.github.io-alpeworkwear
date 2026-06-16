@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & devis entreprise | Alpë Workwear — Suisse</title>
+  <title>Devis workwear B2B | Contact entreprise Suisse — Alpë Workwear</title>
   <meta name="description"
-    content="Demandez un devis pour vos vêtements de travail personnalisés. Formulaire, email, téléphone et WhatsApp. Réponse selon disponibilité — sans engagement.">
+    content="Demandez un devis pour vêtements de travail personnalisés. Formulaire, email, téléphone, WhatsApp. Réponse sous 1–2 jours ouvrables — sans engagement.">
   <link rel="canonical" href="https://www.alpeworkwear.com/contact.html">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,10 +16,14 @@
   <script src="assets/js/site-config.js"></script>
   <script>
     window.ALPE_PAGE_META = {
-      title: 'Contact & devis entreprise | Alpë Workwear — Suisse',
-      description: 'Demandez un devis pour vos vêtements de travail personnalisés. Formulaire, email, téléphone et WhatsApp.',
+      title: 'Devis workwear B2B | Contact entreprise Suisse — Alpë Workwear',
+      description: 'Devis vêtements de travail personnalisés pour entreprises suisses. Formulaire, email, téléphone, WhatsApp.',
       url: 'https://www.alpeworkwear.com/contact.html'
     };
+    window.ALPE_BREADCRUMBS = [
+      { name: 'Accueil', url: 'https://www.alpeworkwear.com/' },
+      { name: 'Contact', url: 'https://www.alpeworkwear.com/contact.html' }
+    ];
   </script>
   <script src="assets/js/head-shared.js"></script>
 </head>
@@ -31,9 +35,10 @@
     <header class="page-hero page-hero--compact">
       <div class="container">
         <p class="eyebrow">Contact B2B</p>
-        <h1>Demande de devis</h1>
+        <h1>Demande de devis workwear</h1>
         <p class="page-hero__lead">
-          Décrivez votre projet : pièces, quantités, personnalisation. Nous vous recontactons pour cadrer la commande.
+          Décrivez votre projet : pièces, quantités, type de marquage (broderie ou sérigraphie).
+          Réponse sous <strong>1 à 2 jours ouvrables</strong>, sans engagement.
         </p>
       </div>
     </header>
@@ -43,8 +48,22 @@
         <aside class="contact-info" aria-labelledby="coords-title">
           <h2 id="coords-title">Coordonnées</h2>
           <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);">
-            Un interlocuteur pour le conseil, la confection et la livraison en Suisse.
+            Un interlocuteur pour le conseil, la confection au Kosovo et la livraison en Suisse.
           </p>
+          <div class="trust-panel">
+            <div class="trust-panel__item">
+              <strong>Délai de réponse</strong>
+              1 à 2 jours ouvrables selon disponibilité.
+            </div>
+            <div class="trust-panel__item">
+              <strong>Production</strong>
+              2 à 4 semaines après validation (options rush sur demande).
+            </div>
+            <div class="trust-panel__item">
+              <strong>Sans engagement</strong>
+              Le devis ne vous engage pas tant que la commande n’est pas confirmée.
+            </div>
+          </div>
           <ul>
             <li>
               <strong>Email</strong><br>
@@ -66,6 +85,16 @@
 
         <div class="contact-form">
           <h2 class="visually-hidden">Formulaire</h2>
+          <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:1.25rem;">
+            Pour un devis précis, indiquez idéalement&nbsp;:
+          </p>
+          <ul class="checklist" style="margin-bottom:1.5rem;">
+            <li>Pièces souhaitées (softshell, polo, pantalon, haute visibilité…)</li>
+            <li>Quantités par taille ou volume global</li>
+            <li>Type de marquage : broderie, sérigraphie ou les deux</li>
+            <li>Logo (format vectoriel si disponible) et emplacements</li>
+            <li>Délai souhaité et ville de livraison en Suisse</li>
+          </ul>
           <form id="contact-form" novalidate>
             <div class="visually-hidden" aria-hidden="true">
               <label for="_honey">Ne pas remplir</label>
@@ -115,19 +144,15 @@
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/contact-form.js"></script>
+  <script src="assets/js/schema-org.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Alpë Workwear",
+      "name": "Demande de devis Alpë Workwear",
       "url": "https://www.alpeworkwear.com/contact.html",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Alpë Workwear",
-        "email": "info@alpeworkwear.com",
-        "telephone": "+41797792151",
-        "url": "https://www.alpeworkwear.com"
-      }
+      "description": "Formulaire de demande de devis pour vêtements de travail personnalisés — entreprises en Suisse.",
+      "mainEntity": { "@id": "https://www.alpeworkwear.com/#organization" }
     }
   </script>
 </body>
