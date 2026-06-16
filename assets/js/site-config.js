@@ -9,6 +9,8 @@ window.ALPE_CONFIG = {
   phoneDisplay: '+41 79 779 21 51',
   phoneTel: '+41797792151',
   whatsapp: 'https://wa.me/41797792151',
+  instagram: 'https://www.instagram.com/alpeworkwear/',
+  instagramHandle: '@alpeworkwear',
   /** FormSubmit.co — envoi AJAX vers info@alpeworkwear.com */
   formEndpoint: 'https://formsubmit.co/ajax/info@alpeworkwear.com',
   gtmId: 'GTM-W7GRK3MK',

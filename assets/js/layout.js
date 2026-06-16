@@ -19,6 +19,34 @@
     return `<span class="brand-mark${cls}"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>`;
   }
 
+  function instagramBandHtml() {
+    const url = cfg.instagram || 'https://www.instagram.com/alpeworkwear/';
+    const handle = cfg.instagramHandle || '@alpeworkwear';
+    return `
+      <section class="instagram-band" aria-labelledby="instagram-follow-title">
+        <div class="container instagram-band__inner">
+          <div class="instagram-band__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="instagram-band__content">
+            <p class="eyebrow">Instagram</p>
+            <h2 id="instagram-follow-title">Suivez notre atelier sur Instagram</h2>
+            <p class="instagram-band__lead">
+              Broderies, sérigraphies et réalisations en coulisses — abonnez-vous pour découvrir nos projets workwear.
+            </p>
+          </div>
+          <a href="${url}" class="btn btn-primary instagram-band__cta"
+            target="_blank" rel="noopener noreferrer">
+            S’abonner · ${handle}
+          </a>
+        </div>
+      </section>`;
+  }
+
   const navHtml = navItems
     .map((item) => {
       const current = page === item.file || (page === '' && item.file === 'index.html');
@@ -73,6 +101,11 @@
   }
 
   const footer = document.getElementById('site-footer');
+  const legalPages = ['confidentialite.html', 'mentions-legales.html'];
+  if (footer && !legalPages.includes(page) && !document.querySelector('.instagram-band')) {
+    footer.insertAdjacentHTML('beforebegin', instagramBandHtml());
+  }
+
   if (footer) {
     footer.className = 'site-footer';
     footer.innerHTML = `
@@ -87,6 +120,7 @@
             <li><a href="confection.html">Confection</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="${cfg.instagram || 'https://www.instagram.com/alpeworkwear/'}" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="confidentialite.html">Confidentialité</a></li>
             <li><a href="mentions-legales.html">Mentions légales</a></li>
           </ul>

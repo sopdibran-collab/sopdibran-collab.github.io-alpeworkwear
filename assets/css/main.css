@@ -1134,6 +1134,73 @@ body.is-nav-open {
   font-size: 1rem;
 }
 
+/* ── Instagram band ── */
+.instagram-band {
+  background: var(--color-bg);
+  border-block: 1px solid var(--color-border);
+  padding: 3rem 0;
+}
+
+.instagram-band__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem 2rem;
+  align-items: center;
+}
+
+.instagram-band__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-steel);
+}
+
+.instagram-band__content {
+  min-width: 0;
+}
+
+.instagram-band__content h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.instagram-band__lead {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  max-width: 32rem;
+}
+
+.instagram-band__cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .instagram-band__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .instagram-band__icon {
+    margin-inline: auto;
+  }
+
+  .instagram-band__lead {
+    margin-inline: auto;
+  }
+
+  .instagram-band__cta {
+    justify-self: center;
+  }
+}
+
 /* ── Proof strip ── */
 .certs-strip {
   display: flex;

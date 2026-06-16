@@ -31,6 +31,7 @@
         addressCountry: c.addressCountry || 'XK',
       },
       knowsAbout: c.knowsAbout,
+      sameAs: c.instagram ? [c.instagram] : undefined,
     },
     {
       '@type': 'WebSite',
