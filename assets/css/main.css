@@ -105,8 +105,7 @@ select:focus-visible {
   isolation: isolate;
 }
 
-body.is-nav-open,
-body.is-modal-open {
+body.is-nav-open {
   overflow: hidden;
 }
 
@@ -729,8 +728,8 @@ body.is-modal-open {
   color: var(--color-text);
 }
 
-/* ── Workshop gallery (confection) ── */
-.workshop-gallery {
+/* ── Inline video cards ── */
+.inline-video-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1.25rem, 3vw, 2rem);
@@ -738,214 +737,6 @@ body.is-modal-open {
   margin-top: 0.5rem;
 }
 
-.workshop-gallery__item {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: var(--color-bg);
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(17, 21, 26, 0.06);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.workshop-gallery__item:hover {
-  border-color: var(--color-border-strong);
-  box-shadow: 0 6px 28px rgba(17, 21, 26, 0.09);
-}
-
-.workshop-gallery__trigger {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  font: inherit;
-  text-align: left;
-}
-
-.workshop-gallery__trigger:focus-visible {
-  outline: 2px solid var(--color-steel);
-  outline-offset: -2px;
-}
-
-.workshop-gallery__thumb {
-  position: relative;
-  display: block;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: var(--color-textile);
-}
-
-.workshop-gallery__thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.workshop-gallery__trigger:hover .workshop-gallery__thumb img,
-.workshop-gallery__trigger:focus-visible .workshop-gallery__thumb img {
-  transform: scale(1.04);
-}
-
-.workshop-gallery__play {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(17, 21, 26, 0.28);
-  color: var(--color-steel);
-  transition: background 0.2s ease;
-}
-
-.workshop-gallery__play svg {
-  width: 1.75rem;
-  height: 1.75rem;
-  padding: 1rem;
-  box-sizing: content-box;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 4px 20px rgba(17, 21, 26, 0.18);
-}
-
-.workshop-gallery__trigger:hover .workshop-gallery__play {
-  background: rgba(17, 21, 26, 0.35);
-}
-
-.workshop-gallery__content {
-  padding: 1.25rem 1.35rem 1.35rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.workshop-gallery__tag {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-steel);
-  margin-bottom: 0.4rem;
-}
-
-.workshop-gallery__title {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-.workshop-gallery__desc {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  margin-top: 0.45rem;
-  line-height: 1.55;
-}
-
-/* Workshop modal */
-.workshop-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-}
-
-.workshop-modal[hidden] {
-  display: none !important;
-}
-
-.workshop-modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(17, 21, 26, 0.88);
-  cursor: pointer;
-}
-
-.workshop-modal__panel {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 28rem);
-}
-
-.workshop-modal__close {
-  position: absolute;
-  top: -2.75rem;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-
-.workshop-modal__close:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.workshop-modal__video-wrap {
-  aspect-ratio: 1 / 1;
-  background: var(--color-textile);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 48px rgba(17, 21, 26, 0.45);
-}
-
-.workshop-modal__video-wrap video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  background: #000;
-}
-
-@media (max-width: 900px) {
-  .workshop-gallery {
-    gap: 1.25rem;
-  }
-
-  .workshop-gallery__content {
-    padding: 1rem 1.15rem 1.15rem;
-  }
-
-  .workshop-gallery__title {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .workshop-gallery {
-    grid-template-columns: 1fr;
-    max-width: 20rem;
-    margin-inline: auto;
-  }
-}
-
-.workshop-gallery__item--solo {
-  width: 100%;
-  max-width: 100%;
-}
-
-.split-section .workshop-gallery__item--solo {
-  margin-inline: auto;
-}
-
-/* ── Inline video card (accueil) ── */
 .inline-video-card {
   display: flex;
   flex-direction: column;
@@ -1049,6 +840,28 @@ body.is-modal-open {
 
 .split-section .inline-video-card {
   margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+  .inline-video-grid {
+    gap: 1.25rem;
+  }
+
+  .inline-video-card__content {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .inline-video-card__title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .inline-video-grid {
+    grid-template-columns: 1fr;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
 }
 
 /* ── FAQ ── */
