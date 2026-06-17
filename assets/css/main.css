@@ -232,6 +232,10 @@ body.is-nav-open {
   border-top: 1px solid var(--color-steel-dark);
 }
 
+main:has(> .cta-band:last-child) + .site-footer {
+  margin-top: 0;
+}
+
 .site-footer__grid {
   display: grid;
   grid-template-columns: 1fr auto;
