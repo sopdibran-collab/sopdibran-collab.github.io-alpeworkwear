@@ -48,6 +48,7 @@
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', description);
   setMeta('property', 'og:image', image);
+  setMeta('property', 'og:image:alt', meta.imageAlt || cfg.brand || 'Alpë Workwear');
 
   setMeta('name', 'twitter:card', 'summary');
   setMeta('name', 'twitter:title', title);
