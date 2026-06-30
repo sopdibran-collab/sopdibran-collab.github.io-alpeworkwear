@@ -4,6 +4,8 @@
 window.ALPE_CONFIG = {
   siteUrl: 'https://www.alpeworkwear.com',
   brand: 'Alpë Workwear',
+  logoHeader: 'assets/images/logo-bleu-acier.png',
+  logoFooter: 'assets/images/logo-blanc-acier.png',
   legalName: 'Alpë Workwear',
   email: 'info@alpeworkwear.com',
   phoneDisplay: '+41 79 779 21 51',
