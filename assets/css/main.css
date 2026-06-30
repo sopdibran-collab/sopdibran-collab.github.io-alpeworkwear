@@ -125,34 +125,15 @@ body.is-nav-open {
   color: inherit;
 }
 
-.brand-mark {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+.brand-logo {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  max-width: none;
 }
 
-.brand-mark__name {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: var(--color-steel);
-}
-
-.brand-mark__sub {
-  font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-top: 0.2rem;
-}
-
-.brand-mark--light .brand-mark__name {
-  color: #fff;
-}
-
-.brand-mark--light .brand-mark__sub {
-  color: rgba(255, 255, 255, 0.65);
+.brand-logo--light {
+  height: 3.25rem;
 }
 
 .site-nav {
