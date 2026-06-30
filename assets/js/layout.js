@@ -14,9 +14,12 @@
     { href: 'contact.html', label: 'Demander un devis', file: 'contact.html', cta: true },
   ];
 
-  function brandMark(light) {
-    const cls = light ? ' brand-mark--light' : '';
-    return `<span class="brand-mark${cls}"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>`;
+  function brandLogo(light) {
+    const src = light
+      ? cfg.logoFooter || 'assets/images/logo-blanc-acier.png'
+      : cfg.logoHeader || 'assets/images/logo-bleu-acier.png';
+    const cls = light ? 'brand-logo brand-logo--light' : 'brand-logo';
+    return `<img src="${src}" alt="${cfg.brand}" class="${cls}" width="120" height="120" decoding="async">`;
   }
 
   function instagramBandHtml() {
@@ -61,7 +64,7 @@
     header.innerHTML = `
       <div class="container site-header__inner">
         <a href="index.html" class="site-logo" aria-label="${cfg.brand} — accueil">
-          ${brandMark(false)}
+          ${brandLogo(false)}
         </a>
         <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
       </div>
@@ -112,7 +115,7 @@
       <div class="container site-footer__grid">
         <div>
           <a href="index.html" class="site-footer__brand" aria-label="${cfg.brand} — accueil">
-            ${brandMark(true)}
+            ${brandLogo(true)}
           </a>
           <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
           <ul class="site-footer__links">
