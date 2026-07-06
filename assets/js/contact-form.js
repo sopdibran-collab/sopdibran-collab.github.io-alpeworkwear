@@ -142,8 +142,8 @@
 
     try {
       await sendViaFormSubmit(payload);
-      setStatus('Votre message a été envoyé. Nous vous recontacterons.', 'success');
-      form.reset();
+      window.location.assign('merci.html');
+      return;
     } catch (err) {
       console.error('FormSubmit:', err);
       try {
