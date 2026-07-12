@@ -2,7 +2,7 @@
 
 ## Domaine & hébergement
 
-- **Domaine** : alpeworkwear.com (CNAME GitHub Pages)
+- **Domaine** : alpeworkwear.ch (CNAME GitHub Pages)
 - **Repo** : sopdibran-collab.github.io-alpeworkwear
 - **Stack** : HTML statique, CSS custom, JS vanilla
 - **Deploy** : GitHub Actions → GitHub Pages

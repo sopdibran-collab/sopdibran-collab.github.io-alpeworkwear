@@ -2,7 +2,7 @@
  * Configuration centrale — mettre à jour ici les coordonnées et endpoints.
  */
 window.ALPE_CONFIG = {
-  siteUrl: 'https://www.alpeworkwear.com',
+  siteUrl: 'https://www.alpeworkwear.ch',
   brand: 'Alpë Workwear',
   legalName: 'Alpë Workwear',
   email: 'info@alpeworkwear.com',

@@ -1,7 +1,7 @@
 # Alpë Workwear
 
 > Dernière mise à jour : 2026-07-06
-> Site : https://www.alpeworkwear.com
+> Site : https://www.alpeworkwear.ch
 > Langue : fr-CH
 > Statut brief : validé (contexte site)
 

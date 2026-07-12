@@ -86,7 +86,7 @@
   }
 
   function injectItemList(products, categories) {
-    const siteUrl = (window.ALPE_CONFIG && window.ALPE_CONFIG.siteUrl) || 'https://www.alpeworkwear.com';
+    const siteUrl = (window.ALPE_CONFIG && window.ALPE_CONFIG.siteUrl) || 'https://www.alpeworkwear.ch';
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify({

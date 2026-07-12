@@ -5,7 +5,7 @@
 (function () {
   const cfg = window.ALPE_CONFIG || {};
   const meta = window.ALPE_PAGE_META || {};
-  const siteUrl = (cfg.siteUrl || 'https://www.alpeworkwear.com').replace(/\/$/, '');
+  const siteUrl = (cfg.siteUrl || 'https://www.alpeworkwear.ch').replace(/\/$/, '');
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   const pageUrl = meta.url || siteUrl + (path === '/' ? '/' : path);
   const title = meta.title || document.title;
