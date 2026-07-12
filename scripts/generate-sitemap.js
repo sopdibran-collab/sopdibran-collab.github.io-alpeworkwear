@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const BASE_URL = 'https://www.alpeworkwear.com';
+const BASE_URL = 'https://www.alpeworkwear.ch';
 
 /** Pages indexables — alignées sur assets/js/layout.js + pages légales du footer. */
 const PAGES = [

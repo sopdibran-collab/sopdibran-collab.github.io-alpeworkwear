@@ -4,7 +4,7 @@
  */
 (function () {
   const c = window.ALPE_CONFIG || {};
-  const siteUrl = (c.siteUrl || 'https://www.alpeworkwear.com').replace(/\/$/, '');
+  const siteUrl = (c.siteUrl || 'https://www.alpeworkwear.ch').replace(/\/$/, '');
   const orgId = siteUrl + '/#organization';
 
   const graph = [

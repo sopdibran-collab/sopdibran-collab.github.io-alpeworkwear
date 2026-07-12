@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /index.legacy.html
 
-Sitemap: https://www.alpeworkwear.com/sitemap.xml
+Sitemap: https://www.alpeworkwear.ch/sitemap.xml
