@@ -12,9 +12,9 @@
   --color-border: rgba(73, 101, 127, 0.22);
   --color-border-strong: rgba(73, 101, 127, 0.38);
 
-  --color-cta: #c41e3a;
-  --color-cta-dark: #a31830;
-  --color-cta-pale: #fde8ec;
+  --color-cta: #c41e6e;
+  --color-cta-dark: #a01858;
+  --color-cta-pale: #fde8f2;
 
   --color-primary: var(--color-cta);
   --color-bg-light: var(--color-bg);
@@ -149,6 +149,24 @@ body.is-nav-open {
   text-transform: uppercase;
   color: var(--color-muted);
   margin-top: 0.2rem;
+}
+
+.brand-mark__e {
+  position: relative;
+  display: inline-block;
+}
+
+.page-home .brand-mark__e::before,
+.brand-mark--light .brand-mark__e::before {
+  content: '';
+  position: absolute;
+  top: -0.12em;
+  left: 0.12em;
+  width: 0.2em;
+  height: 0.2em;
+  background: var(--color-cta);
+  border-radius: 50%;
+  box-shadow: 0.42em 0 0 var(--color-cta);
 }
 
 .brand-mark--light .brand-mark__name {
@@ -383,14 +401,14 @@ body.is-nav-open {
   background: var(--color-cta);
   color: var(--color-bg);
   border-color: var(--color-cta);
-  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.22);
+  box-shadow: 0 2px 8px rgba(196, 30, 110, 0.22);
 }
 
 .btn-primary:hover {
   background: var(--color-cta-dark);
   border-color: var(--color-cta-dark);
   color: var(--color-bg);
-  box-shadow: 0 4px 14px rgba(196, 30, 58, 0.28);
+  box-shadow: 0 4px 14px rgba(196, 30, 110, 0.28);
 }
 
 .btn-secondary {
