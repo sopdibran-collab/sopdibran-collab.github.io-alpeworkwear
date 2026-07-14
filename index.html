@@ -18,13 +18,13 @@
   <meta property="og:title" content="Workwear B2B personnalisé Suisse | Qualité suisse — Alpë Workwear">
   <meta property="og:description"
     content="Vêtements de travail B2B personnalisés pour entreprises en Suisse. Devis partenaire sans engagement.">
-  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/catalogue/Softshell%20homme.JPG">
-  <meta property="og:image:alt" content="Veste softshell professionnelle Alpë Workwear">
+  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp">
+  <meta property="og:image:alt" content="Broderie professionnelle Alpë Workwear">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Workwear B2B personnalisé Suisse — Alpë Workwear">
   <meta name="twitter:description"
     content="Vêtements de travail B2B personnalisés pour entreprises. Devis partenaire.">
-  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/catalogue/Softshell%20homme.JPG">
+  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
       title: 'Workwear B2B personnalisé Suisse | Qualité suisse — Alpë Workwear',
       description: 'Vêtements de travail B2B personnalisés pour entreprises en Suisse. Devis partenaire sans engagement.',
       url: 'https://www.alpeworkwear.ch/',
-      image: 'https://www.alpeworkwear.ch/assets/catalogue/Softshell%20homme.JPG',
-      imageAlt: 'Veste softshell professionnelle Alpë Workwear'
+      image: 'https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp',
+      imageAlt: 'Broderie professionnelle Alpë Workwear'
     };
   </script>
   <script src="assets/js/head-shared.js"></script>
@@ -51,7 +51,7 @@
       "name": "Alpë Workwear",
       "url": "https://www.alpeworkwear.ch",
       "logo": { "@type": "ImageObject", "url": "https://www.alpeworkwear.ch/assets/logo.png" },
-      "image": "https://www.alpeworkwear.ch/assets/catalogue/Softshell%20homme.JPG",
+      "image": "https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp",
       "email": "info@alpeworkwear.com",
       "telephone": "+41797792151",
       "description": "Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse.",
@@ -72,10 +72,10 @@
 </head>
 
 <body class="page-home">
-  <header id="site-header" class="site-header" aria-label="Navigation principale">
+  <header id="site-header" class="site-header site-header--hero" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark">
+        <span class="brand-mark brand-mark--hero">
           <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
           <span class="brand-mark__sub">Workwear</span>
           <span class="site-header__tagline">Suisse B2B Personnalisation</span>
@@ -89,53 +89,75 @@
       <li><a href="/confection.html">Confection</a></li>
       <li><a href="/faq.html">Expertises</a></li>
       <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+      <li class="lang-switch" aria-label="Langue">
+        <span class="lang-switch__item" lang="de">DE</span>
+        <span class="lang-switch__item lang-switch__item--active" aria-current="true" lang="fr">FR</span>
+        <span class="lang-switch__item" lang="it">IT</span>
+        <span class="lang-switch__item" lang="en">EN</span>
+      </li>
     </ul>
   </header>
 
   <main id="main">
 
-    <section class="home-hero-v3" aria-labelledby="hero-title">
-      <div class="home-hero-v3__bg">
-        <img src="assets/catalogue/Softshell%20homme.JPG"
-          alt="Veste softshell professionnelle noire — workwear B2B Alpë" width="1920" height="1080"
-          fetchpriority="high" decoding="async">
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="home-hero__bg" aria-hidden="true">
+        <img src="assets/images/embroidery-preview.webp" alt="" width="1920" height="1080" fetchpriority="high"
+          decoding="async">
       </div>
-      <div class="home-hero-v3__content">
-        <h1 id="hero-title" class="home-hero-v3__title">Qualité suisse. Savoir-faire dédié. Votre identité portée avec
-          fierté.</h1>
-        <div class="home-hero-v3__actions">
-          <a href="/contact.html" class="btn btn-primary">Demander un devis partenaire</a>
-          <a href="/catalogue.html" class="btn-ghost">Explorer la collection</a>
+      <div class="home-hero__content container">
+        <h1 id="hero-title" class="home-hero__title">
+          <span>Qualité suisse.</span>
+          <span>Craft dédié.</span>
+          <span>Votre identité</span>
+          <span>portée avec fierté.</span>
+        </h1>
+        <div class="home-hero__actions">
+          <a href="/contact.html" class="btn btn-primary home-hero__btn">Demander un devis partenaire</a>
+          <a href="/catalogue.html" class="home-hero__btn home-hero__btn--ghost">Explorer la collection</a>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-alliance" aria-labelledby="alliance-title">
-      <div class="container">
-        <header class="home-section__header">
-          <h2 id="alliance-title">Notre alliance stratégique</h2>
-          <p>Coordination suisse et savoir-faire artisanal au Kosovo — un pont entre rigueur et confection.</p>
-        </header>
-        <div class="home-alliance__visual">
-          <div class="home-alliance__map-wrap">
-            <img src="assets/images/map-suisse.svg" alt="" class="home-alliance__map" width="120" height="72">
-            <span class="home-alliance__map-label">Suisse</span>
+    <section class="home-alliance" aria-labelledby="alliance-title">
+      <div class="container home-alliance__inner">
+        <h2 id="alliance-title" class="home-alliance__title">Notre alliance stratégique</h2>
+        <div class="home-alliance__grid">
+          <article class="home-alliance__col home-alliance__col--swiss">
+            <h3 class="home-alliance__heading">La précision suisse</h3>
+            <p class="home-alliance__text">
+              Coordination, conseil et contrôle qualité depuis la Suisse — un interlocuteur unique pour cadrer chaque
+              projet B2B avec rigueur et fiabilité.
+            </p>
+            <div class="home-alliance__media home-alliance__media--round">
+              <img src="assets/images/alliance-precision.svg" alt="" width="160" height="160" loading="lazy">
+            </div>
+          </article>
+          <div class="home-alliance__bridge" aria-hidden="true">
+            <div class="home-alliance__bridge-top">
+              <span class="home-alliance__bridge-label">Alpes suisses</span>
+              <span class="home-alliance__bridge-label">Kosovo</span>
+            </div>
+            <div class="home-alliance__bridge-maps">
+              <img src="assets/images/map-suisse.svg" alt="" class="home-alliance__map" width="88" height="52">
+              <span class="home-alliance__bridge-line"></span>
+              <img src="assets/images/alliance-handshake.svg" alt="" class="home-alliance__handshake" width="48"
+                height="54">
+              <span class="home-alliance__bridge-line"></span>
+              <img src="assets/images/map-kosovo.svg" alt="" class="home-alliance__map" width="72" height="80">
+            </div>
           </div>
-          <span class="home-alliance__bridge-line" aria-hidden="true"></span>
-          <div class="home-alliance__map-wrap">
-            <img src="assets/images/map-kosovo.svg" alt="" class="home-alliance__map" width="88" height="96">
-            <span class="home-alliance__map-label">Kosovo</span>
-          </div>
-        </div>
-        <div class="home-alliance__copy">
-          <p>
-            En Suisse, nous coordonnons chaque projet : conseil, cadrage, contrôle qualité et livraison. Au Kosovo,
-            nos ateliers assurent la confection, la broderie et le marquage avec un savoir-faire textile éprouvé.
-          </p>
-          <p>
-            Le <strong>ë</strong> d’Alpë relie les Alpes et les Alpet — une alliance au service de vos équipes
-            professionnelles.
-          </p>
+          <article class="home-alliance__col home-alliance__col--kosovo">
+            <div class="home-alliance__media home-alliance__media--rect">
+              <img src="assets/images/embroidery-preview.webp" alt="Broderie professionnelle en atelier" width="320"
+                height="240" loading="lazy">
+            </div>
+            <h3 class="home-alliance__heading">Le craft du Kosovo</h3>
+            <p class="home-alliance__text">
+              Savoir-faire textile ancestral et ateliers dédiés — broderie, confection et marquage exécutés avec
+              précision pour vos volumes professionnels.
+            </p>
+          </article>
         </div>
       </div>
     </section>
