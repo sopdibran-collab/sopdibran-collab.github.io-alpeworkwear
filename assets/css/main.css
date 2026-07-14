@@ -1,16 +1,19 @@
-/* Alpë Workwear — design system B2B · bleu acier */
+/* Alpë Workwear — design system B2B */
 :root {
+  --color-charcoal: #2b2b2b;
+  --color-silver: #c0c5ca;
+  --color-silver-bg: #e8eaed;
   --color-steel: #49657f;
   --color-steel-dark: #3a5268;
   --color-steel-muted: #5c6f82;
   --color-steel-pale: #d8e2ea;
   --color-bg: #ffffff;
-  --color-bg-alt: #eef3f7;
+  --color-bg-alt: #f5f6f8;
   --color-text: #1f2933;
   --color-textile: #11151a;
   --color-navy: #0f2138;
-  --color-border: rgba(73, 101, 127, 0.22);
-  --color-border-strong: rgba(73, 101, 127, 0.38);
+  --color-border: rgba(43, 43, 43, 0.1);
+  --color-border-strong: rgba(43, 43, 43, 0.18);
 
   --color-cta: #c41e6e;
   --color-cta-dark: #a01858;
@@ -59,7 +62,11 @@ img {
 }
 
 a {
-  color: var(--color-steel);
+  color: var(--color-charcoal);
+}
+
+a:hover {
+  color: var(--color-cta);
 }
 
 a:focus-visible,
@@ -68,7 +75,7 @@ summary:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-steel);
+  outline: 2px solid var(--color-cta);
   outline-offset: 2px;
 }
 
@@ -139,7 +146,7 @@ body.is-nav-open {
   font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: 0.14em;
-  color: var(--color-steel);
+  color: var(--color-charcoal);
 }
 
 .brand-mark__sub {
@@ -184,21 +191,32 @@ body.is-nav-open {
   list-style: none;
 }
 
+.site-header__tagline {
+  display: none;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-silver);
+  margin-top: 0.15rem;
+}
+
 .site-nav a {
-  color: var(--color-text);
+  color: var(--color-charcoal);
   text-decoration: none;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .site-nav a:hover {
-  color: var(--color-steel);
+  color: var(--color-cta);
 }
 
 .site-nav a[aria-current='page']:not(.nav-cta) {
-  color: var(--color-steel);
-  box-shadow: inset 0 -2px 0 var(--color-steel);
+  color: var(--color-cta);
+  box-shadow: inset 0 -2px 0 var(--color-cta);
 }
 
 .site-nav .nav-cta {
@@ -248,17 +266,35 @@ body.is-nav-open {
 
 /* ── Footer ── */
 .site-footer {
-  background: var(--color-steel);
-  color: rgba(255, 255, 255, 0.82);
-  padding: 3rem 0;
-  border-top: 1px solid var(--color-steel-dark);
+  background: var(--color-charcoal);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 3rem 0 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: start;
+}
+
+.site-footer__aside {
+  font-size: 0.8125rem;
+  line-height: 1.75;
+}
+
+.site-footer__contact-line {
+  margin: 0;
+}
+
+.site-footer__contact-line a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.site-footer__contact-line a:hover {
+  color: #fff;
 }
 
 .site-footer__brand {
@@ -294,10 +330,14 @@ body.is-nav-open {
 }
 
 .site-footer__copy {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
-  text-align: right;
-  line-height: 1.6;
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+
+.site-footer__copy-sub {
+  opacity: 0.85;
 }
 
 /* ── Typography ── */
@@ -306,7 +346,7 @@ body.is-nav-open {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-steel);
+  color: var(--color-cta);
   margin-bottom: 0.875rem;
 }
 
@@ -578,9 +618,9 @@ a.filter-btn {
 
 .filter-btn[aria-pressed='true'],
 .filter-btn[aria-current='true'] {
-  background: var(--color-steel);
+  background: var(--color-cta);
   color: var(--color-bg);
-  border-color: var(--color-steel);
+  border-color: var(--color-cta);
 }
 
 .catalogue-grid {
@@ -1446,6 +1486,17 @@ a.filter-btn {
 }
 
 /* ── Responsive ── */
+@media (min-width: 768px) {
+  .site-header__tagline {
+    display: block;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (min-width: 901px) {
   .site-header > .site-nav {
     position: absolute;
@@ -1548,7 +1599,7 @@ a.filter-btn {
 
   .site-header > .site-nav a:hover,
   .site-header > .site-nav a[aria-current='page']:not(.nav-cta) {
-    color: var(--color-steel);
+    color: var(--color-cta);
     background: var(--color-bg-alt);
     box-shadow: none;
   }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="Gilet haute visibilité EN ISO 20471">
+  <rect width="400" height="480" fill="#f0f1f3"/>
+  <path d="M120 90h160l28 50v290H92V140l28-50z" fill="#f5d300"/>
+  <path d="M120 90h80v120H92V140l28-50zm160 0h80l28 50v120h-108V90z" fill="#1a1a1a"/>
+  <rect x="168" y="200" width="64" height="12" rx="2" fill="#1a1a1a" opacity="0.35"/>
+  <rect x="148" y="260" width="104" height="10" rx="2" fill="#1a1a1a" opacity="0.2"/>
+  <text x="200" y="430" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#5c6f82" letter-spacing="0.08em">EN ISO 20471</text>
+</svg>

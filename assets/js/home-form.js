@@ -1,5 +1,5 @@
 /**
- * Formulaire accueil — question + email
+ * Formulaire accueil — question + e-mail
  */
 (function () {
   const form = document.getElementById('home-equip-form');
@@ -31,8 +31,9 @@
       return;
     }
 
-    const question = (new FormData(form).get('question') || '').trim();
-    const userEmail = (new FormData(form).get('email') || '').trim();
+    const fd = new FormData(form);
+    const question = (fd.get('question') || '').trim();
+    const userEmail = (fd.get('email') || '').trim();
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -44,14 +45,14 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          entreprise: '—',
+          entreprise: 'Demande via accueil',
           nom: '—',
           email: userEmail,
           telephone: '—',
           produit: '—',
           quantites: '—',
           message: question,
-          _subject: 'Demande rapide — Alpë Workwear (accueil)',
+          _subject: `Demande accueil — ${userEmail}`,
           _template: 'table',
           _captcha: 'false',
         }),
@@ -60,10 +61,11 @@
       if (!res.ok) throw new Error(`Erreur ${res.status}`);
       window.location.assign('merci.html');
     } catch {
-      const subject = 'Demande rapide — Alpë Workwear';
-      const body = `Email : ${userEmail}\n\nQuestion :\n${question}`;
-      const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.assign(mailto);
+      const subject = 'Demande accueil — Alpë Workwear';
+      const body = `E-mail : ${userEmail}\n\nMessage :\n${question}`;
+      window.location.assign(
+        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      );
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
