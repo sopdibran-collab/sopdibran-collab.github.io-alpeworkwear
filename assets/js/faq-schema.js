@@ -1,7 +1,9 @@
 /**
- * Génère un FAQPage JSON-LD unique à partir de toutes les .faq-list[data-faq-schema].
+ * FAQPage JSON-LD — fallback si absent du HTML statique.
  */
 (function () {
+  if (document.getElementById('alpe-schema-faq')) return;
+
   const lists = document.querySelectorAll('.faq-list[data-faq-schema]');
   if (!lists.length) return;
 
@@ -26,6 +28,7 @@
 
   const script = document.createElement('script');
   script.type = 'application/ld+json';
+  script.id = 'alpe-schema-faq';
   script.textContent = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
