@@ -41,9 +41,37 @@
     });
   }
 
+  function setActiveNav(nav) {
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const file = path.split('/').pop() || 'index.html';
+    const routeMap = {
+      'index.html': null,
+      '': null,
+      'catalogue.html': '/catalogue.html',
+      'confection.html': '/confection.html',
+      'faq.html': '/faq.html',
+      'contact.html': '/contact.html',
+      'confidentialite.html': '/confidentialite.html',
+      'mentions-legales.html': '/mentions-legales.html',
+      'merci.html': '/contact.html',
+    };
+    const current = routeMap[file] ?? null;
+    nav.querySelectorAll('a').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto')) return;
+      const isCurrent = current && href === current;
+      if (isCurrent) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
   const header = document.getElementById('site-header');
-  if (header && header.querySelector('.site-nav')) {
-    bindMobileNav(header);
+  if (header) {
+    const nav = header.querySelector('.site-nav');
+    if (nav) {
+      setActiveNav(nav);
+      bindMobileNav(header);
+    }
   }
 
   const stickyCta = document.querySelector('.sticky-cta');
@@ -56,7 +84,7 @@
         },
         { rootMargin: '0px 0px -40% 0px', threshold: 0 }
       );
-      const hero = main.querySelector('.home-hero, .page-hero, .cta-band');
+      const hero = main.querySelector('.home-hero, .home-hero-v3, .page-hero, .cta-band');
       if (hero) observer.observe(hero);
       else stickyCta.classList.add('is-visible');
     }
