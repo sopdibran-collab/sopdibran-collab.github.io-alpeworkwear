@@ -26,4 +26,4 @@
    - `tag` : ex. « EN ISO 20471 »
    - `published: false` : masquer sans supprimer
 
-5. Recharger `catalogue.html` — aucune modification HTML requise.
+5. Régénérer le HTML statique : `node scripts/build-seo.js` (automatique au déploiement CI).

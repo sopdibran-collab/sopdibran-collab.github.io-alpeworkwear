@@ -1,8 +1,9 @@
 /**
- * Schéma Organization / WebSite / BreadcrumbList — une fois par page.
- * Définir window.ALPE_BREADCRUMBS (optionnel) avant ce script.
+ * Schéma Organization / WebSite / BreadcrumbList — fallback si absent du HTML statique.
  */
 (function () {
+  if (document.getElementById('alpe-schema-org')) return;
+
   const c = window.ALPE_CONFIG || {};
   const siteUrl = (c.siteUrl || 'https://www.alpeworkwear.ch').replace(/\/$/, '');
   const orgId = siteUrl + '/#organization';
@@ -60,6 +61,7 @@
 
   const script = document.createElement('script');
   script.type = 'application/ld+json';
+  script.id = 'alpe-schema-org';
   script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
   document.head.appendChild(script);
 })();

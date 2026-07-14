@@ -1,8 +1,9 @@
 /**
- * Balises communes : favicon, Open Graph, Twitter Card
- * Définir window.ALPE_PAGE_META avant ce script sur chaque page.
+ * Balises communes : favicon, Open Graph, Twitter Card (fallback si absent du HTML statique).
  */
 (function () {
+  if (document.querySelector('meta[property="og:title"]')) return;
+
   const cfg = window.ALPE_CONFIG || {};
   const meta = window.ALPE_PAGE_META || {};
   const siteUrl = (cfg.siteUrl || 'https://www.alpeworkwear.ch').replace(/\/$/, '');

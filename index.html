@@ -9,7 +9,20 @@
     content="Workwear B2B brodé ou imprimé pour entreprises suisses. Catalogue softshell, polo, haute visibilité. Atelier Kosovo, livraison Suisse. Devis sans engagement.">
   <link rel="canonical" href="https://www.alpeworkwear.ch/">
   <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="https://www.alpeworkwear.ch/assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://www.alpeworkwear.ch/assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Alpë Workwear">
+  <meta property="og:locale" content="fr_CH">
+  <meta property="og:url" content="https://www.alpeworkwear.ch/">
+  <meta property="og:title" content="Vêtements de travail personnalisés pour entreprises | Devis B2B — Alpë Workwear Suisse">
+  <meta property="og:description" content="Workwear B2B brodé ou imprimé pour entreprises suisses. Catalogue softshell, polo, haute visibilité. Atelier Kosovo, livraison Suisse. Devis sans engagement.">
+  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/logo.png">
+  <meta property="og:image:alt" content="Alpë Workwear — vêtements de travail personnalisés pour entreprises en Suisse">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vêtements de travail personnalisés pour entreprises | Devis B2B — Alpë Workwear Suisse">
+  <meta name="twitter:description" content="Workwear B2B brodé ou imprimé pour entreprises suisses. Catalogue softshell, polo, haute visibilité. Atelier Kosovo, livraison Suisse. Devis sans engagement.">
+  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/logo.png"><link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -22,11 +35,98 @@
       imageAlt: 'Alpë Workwear — vêtements de travail personnalisés pour entreprises en Suisse'
     };
   </script>
-  <script src="assets/js/head-shared.js"></script>
+  <script src="assets/js/head-shared.js"></script>  <script type="application/ld+json" id="alpe-schema-org">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
+      "@id": "https://www.alpeworkwear.ch/#organization",
+      "name": "Alpë Workwear",
+      "legalName": "Alpë Workwear",
+      "url": "https://www.alpeworkwear.ch",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.alpeworkwear.ch/assets/logo.png"
+      },
+      "image": "https://www.alpeworkwear.ch/assets/logo.png",
+      "email": "info@alpeworkwear.com",
+      "telephone": "+41797792151",
+      "description": "Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.",
+      "priceRange": "$",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Suisse"
+        },
+        {
+          "@type": "City",
+          "name": "Genève",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lausanne",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Zurich",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prishtina",
+        "addressCountry": "XK"
+      },
+      "sameAs": [
+        "https://www.instagram.com/alpeworkwear/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alpeworkwear.ch/#website",
+      "name": "Alpë Workwear",
+      "url": "https://www.alpeworkwear.ch",
+      "inLanguage": "fr-CH",
+      "publisher": {
+        "@id": "https://www.alpeworkwear.ch/#organization"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
-  <header id="site-header" class="site-header" aria-label="Navigation principale"></header>
+  <header id="site-header" class="site-header" aria-label="Navigation principale">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
+        <span class="brand-mark"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
+    </div>
+    <ul class="site-nav" id="site-nav">
+          <li><a href="/" class="" aria-current="page">Accueil</a></li>
+          <li><a href="/catalogue.html" class="">Catalogue</a></li>
+          <li><a href="/confection.html" class="">Confection</a></li>
+          <li><a href="/faq.html" class="">FAQ</a></li>
+          <li><a href="/contact.html" class="nav-cta">Demander un devis</a></li>
+    </ul>
+  </header>
 
   <main id="main">
     <section class="home-hero">
@@ -40,8 +140,8 @@
             et livraison depuis la Suisse — un interlocuteur unique.
           </p>
           <div class="home-hero__actions">
-            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
-            <a href="catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
+            <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
+            <a href="/catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
           </div>
         </div>
         <aside class="home-hero__accent" aria-hidden="true">
@@ -63,7 +163,7 @@
             <strong>Alpë Workwear</strong> est un fournisseur B2B de vêtements de travail personnalisés pour
             entreprises en Suisse. Nous proposons broderie, sérigraphie et marquage sur softshells, polos,
             pantalons et gammes haute visibilité, avec production en atelier au Kosovo et livraison en Suisse.
-            Chaque projet fait l’objet d’un <a href="contact.html">devis sur mesure</a>.
+            Chaque projet fait l’objet d’un <a href="/contact.html">devis sur mesure</a>.
           </p>
         </div>
       </div>
@@ -77,7 +177,7 @@
           <p>Chaque pièce se personnalise avec votre logo, vos couleurs et votre identité visuelle.</p>
         </header>
         <div class="category-grid">
-          <a class="category-card" href="catalogue.html?categorie=softshell-polaire">
+          <a class="category-card" href="/catalogue.html?categorie=softshell-polaire">
             <div class="category-card__media">
               <img src="assets/images/polaires-softshells.jpg" alt="Softshells et polaires professionnels" width="600"
                 height="450" loading="lazy">
@@ -88,7 +188,7 @@
               <p>Coupe-vent, imperméabilité, respirabilité pour le terrain.</p>
             </div>
           </a>
-          <a class="category-card" href="catalogue.html?categorie=textile">
+          <a class="category-card" href="/catalogue.html?categorie=textile">
             <div class="category-card__media">
               <img src="assets/images/tshirts-polos.jpg" alt="T-shirts et polos professionnels" width="600" height="450"
                 loading="lazy">
@@ -99,7 +199,7 @@
               <p>Du bureau au chantier, textiles personnalisables.</p>
             </div>
           </a>
-          <a class="category-card" href="catalogue.html?categorie=pantalon">
+          <a class="category-card" href="/catalogue.html?categorie=pantalon">
             <div class="category-card__media">
               <img src="assets/images/pantalons-professionnels.JPG" alt="Pantalons professionnels" width="600"
                 height="450" loading="lazy">
@@ -110,7 +210,7 @@
               <p>Renforts, poches et coupes adaptées au mouvement.</p>
             </div>
           </a>
-          <a class="category-card" href="catalogue.html?categorie=haute-visibilite">
+          <a class="category-card" href="/catalogue.html?categorie=haute-visibilite">
             <div class="category-card__media">
               <img src="assets/images/equipements-visibilite.jpg" alt="Équipements haute visibilité" width="600"
                 height="450" loading="lazy">
@@ -123,7 +223,7 @@
           </a>
         </div>
         <p style="margin-top:2rem;text-align:center;">
-          <a href="catalogue.html" class="btn btn-outline">Catalogue complet</a>
+          <a href="/catalogue.html" class="btn btn-outline">Catalogue complet</a>
         </p>
       </div>
     </section>
@@ -165,7 +265,7 @@
             De l’adaptation de votre logo au choix des finitions : un processus structuré pour des tenues cohérentes
             et professionnelles.
           </p>
-          <a href="confection.html" class="btn btn-primary">Découvrir la confection</a>
+          <a href="/confection.html" class="btn btn-primary">Découvrir la confection</a>
         </div>
         <article class="inline-video-card">
           <div class="inline-video-card__media">
@@ -187,7 +287,7 @@
           <div class="inline-video-card__content">
             <p class="inline-video-card__tag">En atelier</p>
             <h3 class="inline-video-card__title">Broderie professionnelle</h3>
-            <p class="inline-video-card__desc">Marquage textile durable — <a href="confection.html" class="text-link">voir la confection</a>.</p>
+            <p class="inline-video-card__desc">Marquage textile durable — <a href="/confection.html" class="text-link">voir la confection</a>.</p>
           </div>
         </article>
       </div>
@@ -221,18 +321,65 @@
     <section class="cta-band" aria-labelledby="cta-home">
       <div class="container">
         <h2 id="cta-home">Équipez vos équipes</h2>
-        <p>Demandez un devis pour cadrer quantités, personnalisation et délais — ou consultez la <a href="faq.html" class="text-link" style="color:inherit;">FAQ</a>.</p>
-        <a href="contact.html" class="btn btn-primary">Contact & devis</a>
+        <p>Demandez un devis pour cadrer quantités, personnalisation et délais — ou consultez la <a href="/faq.html" class="text-link" style="color:inherit;">FAQ</a>.</p>
+        <a href="/contact.html" class="btn btn-primary">Contact & devis</a>
       </div>
     </section>
   </main>
 
-  <footer id="site-footer"></footer>
+  <section class="instagram-band" aria-labelledby="instagram-follow-title">
+  <div class="container instagram-band__inner">
+    <div class="instagram-band__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="instagram-band__content">
+      <p class="eyebrow">Instagram</p>
+      <h2 id="instagram-follow-title">Suivez notre atelier sur Instagram</h2>
+      <p class="instagram-band__lead">
+        Broderies, sérigraphies et réalisations en coulisses — abonnez-vous pour découvrir nos projets workwear.
+      </p>
+    </div>
+    <a href="https://www.instagram.com/alpeworkwear/" class="btn btn-secondary instagram-band__cta"
+      target="_blank" rel="noopener noreferrer">
+      S’abonner · @alpeworkwear
+    </a>
+  </div>
+</section>
+
+  <footer id="site-footer" class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
+        <span class="brand-mark brand-mark--light"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>
+      </a>
+      <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
+      <ul class="site-footer__links">
+        <li><a href="/catalogue.html">Catalogue</a></li>
+        <li><a href="/confection.html">Confection</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="/confidentialite.html">Confidentialité</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__copy">
+      © 2026 Alpë Workwear<br>
+      <span style="opacity:0.7;">Design Suisse · Atelier Kosovo · Coordination CH</span>
+    </div>
+  </div>
+</footer>
 
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/inline-video.js"></script>
-  <script src="assets/js/schema-org.js"></script>
+  <script src="assets/js/schema-org.js"></script>  <aside class="sticky-cta" aria-label="Demande de devis">
+  <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
+</aside>
 </body>
 
 </html>

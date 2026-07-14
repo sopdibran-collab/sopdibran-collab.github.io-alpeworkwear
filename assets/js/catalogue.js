@@ -1,58 +1,13 @@
 /**
- * Rendu modulaire du catalogue depuis data/products.json
- * Pour ajouter un article : éditer data/products.json (voir docs/CATALOGUE.md)
+ * Filtres catalogue — enhancement sur HTML pré-rendu (build-seo.js).
  */
 (function () {
   const grid = document.getElementById('catalogue-grid');
   const filters = document.getElementById('catalogue-filters');
-  if (!grid) return;
+  if (!grid || !filters) return;
 
   const categoryDescEl = document.getElementById('category-description');
-
-  function escapeHtml(str) {
-    if (str == null) return '';
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
-  function escapeAttr(str) {
-    return escapeHtml(str);
-  }
-
-  function renderProduct(product, categories) {
-    const cat = categories.find((c) => c.id === product.category);
-    const descText = product.description || (cat ? cat.description : '');
-    const tag = product.tag ? `<p class="product-card__tag">${escapeHtml(product.tag)}</p>` : '';
-    const ref = product.reference
-      ? `<dl class="product-card__meta"><dt>Réf. </dt><dd>${escapeHtml(product.reference)}</dd></dl>`
-      : '';
-    const descBlock = descText
-      ? `<p class="product-card__desc">${escapeHtml(descText)}</p>`
-      : '';
-    const categoryLabel = cat
-      ? `<p class="product-card__category">${escapeHtml(cat.name)}</p>`
-      : '';
-
-    const media = product.image
-      ? `<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.imageAlt || product.name)}" loading="lazy" width="400" height="400">`
-      : `<div class="product-card__placeholder" role="img" aria-label="Photo à venir">Photo à venir</div>`;
-
-    return `
-      <article class="product-card" data-category="${escapeAttr(product.category)}" id="produit-${escapeAttr(product.id)}">
-        <div class="product-card__media">${media}</div>
-        <div class="product-card__body">
-          ${tag}
-          ${categoryLabel}
-          <h2 class="product-card__title">${escapeHtml(product.name)}</h2>
-          ${descBlock}
-          ${ref}
-        </div>
-      </article>`;
-  }
+  const cards = Array.from(grid.querySelectorAll('.product-card'));
 
   function cssEscape(value) {
     if (typeof CSS !== 'undefined' && typeof CSS.escape === 'function') {
@@ -61,9 +16,18 @@
     return String(value).replace(/["\\]/g, '\\$&');
   }
 
-  function applyFilter(filter, categories) {
+  function getCategoryDescriptions() {
+    const map = {};
+    filters.querySelectorAll('[data-filter]').forEach((el) => {
+      const id = el.getAttribute('data-filter');
+      if (id && id !== 'all') map[id] = el.textContent.trim();
+    });
+    return map;
+  }
+
+  function applyFilter(filter) {
     const activeFilter = String(filter || 'all').trim();
-    grid.querySelectorAll(':scope > .product-card').forEach((card) => {
+    cards.forEach((card) => {
       const categoryId = (card.dataset.category || '').trim();
       const show = activeFilter === 'all' || categoryId === activeFilter;
       card.classList.toggle('is-filtered-out', !show);
@@ -74,103 +38,52 @@
       }
       card.setAttribute('aria-hidden', show ? 'false' : 'true');
     });
+
+    filters.querySelectorAll('[data-filter]').forEach((el) => {
+      const id = (el.getAttribute('data-filter') || 'all').trim();
+      const active = id === activeFilter;
+      el.setAttribute('aria-pressed', active ? 'true' : 'false');
+      if (active) {
+        el.setAttribute('aria-current', 'true');
+      } else {
+        el.removeAttribute('aria-current');
+      }
+    });
+
     if (categoryDescEl) {
       if (activeFilter !== 'all') {
-        const cat = categories.find((c) => c.id === activeFilter);
-        categoryDescEl.textContent = cat ? cat.description : '';
-        categoryDescEl.hidden = !cat;
+        const descriptions = getCategoryDescriptions();
+        categoryDescEl.textContent = descriptions[activeFilter] || '';
+        categoryDescEl.hidden = !descriptions[activeFilter];
       } else {
         categoryDescEl.hidden = true;
       }
     }
   }
 
-  function injectItemList(products, categories) {
-    const siteUrl = (window.ALPE_CONFIG && window.ALPE_CONFIG.siteUrl) || 'https://www.alpeworkwear.ch';
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'Catalogue vêtements de travail Alpë Workwear',
-      itemListElement: products.map((p, i) => {
-        const cat = categories.find((c) => c.id === p.category);
-        return {
-          '@type': 'ListItem',
-          position: i + 1,
-          item: {
-            '@type': 'Product',
-            name: p.name,
-            description: p.description || (cat ? cat.description : undefined),
-            image: p.image ? siteUrl.replace(/\/$/, '') + '/' + p.image.replace(/^\//, '') : undefined,
-            category: cat ? cat.name : undefined,
-            brand: { '@type': 'Brand', name: (window.ALPE_CONFIG && window.ALPE_CONFIG.brand) || 'Alpë Workwear' },
-            offers: {
-              '@type': 'Offer',
-              priceCurrency: 'CHF',
-              availability: 'https://schema.org/InStock',
-              url: siteUrl + '/contact.html',
-              description: 'Devis sur demande',
-            },
-          },
-        };
-      }),
+  filters.querySelectorAll('a[data-filter]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const filter = (link.getAttribute('data-filter') || 'all').trim();
+      applyFilter(filter);
+      const url =
+        filter === 'all'
+          ? '/catalogue.html'
+          : `/catalogue.html?categorie=${encodeURIComponent(filter)}`;
+      history.replaceState(null, '', url);
     });
-    document.head.appendChild(script);
+  });
+
+  const catParam = new URLSearchParams(window.location.search).get('categorie');
+  if (catParam) {
+    const safeId = cssEscape(catParam.trim());
+    const btn = filters.querySelector(`[data-filter="${safeId}"]`);
+    if (btn) {
+      applyFilter(catParam.trim());
+    } else {
+      applyFilter('all');
+    }
+  } else {
+    applyFilter('all');
   }
-
-  function bindFilters(categories) {
-    if (!filters) return;
-    const buttons = filters.querySelectorAll('[data-filter]');
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const filter = (btn.getAttribute('data-filter') || 'all').trim();
-        buttons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-        applyFilter(filter, categories);
-      });
-    });
-  }
-
-  fetch('data/products.json')
-    .then((r) => {
-      if (!r.ok) throw new Error('Impossible de charger le catalogue');
-      return r.json();
-    })
-    .then((data) => {
-      const categories = data.categories || [];
-      const products = (data.products || []).filter((p) => p.published !== false);
-
-      if (filters) {
-        const allBtn = filters.querySelector('[data-filter="all"]');
-        categories.forEach((cat) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'filter-btn';
-          btn.setAttribute('data-filter', cat.id);
-          btn.setAttribute('aria-pressed', 'false');
-          btn.textContent = cat.name;
-          filters.appendChild(btn);
-        });
-        if (allBtn) allBtn.setAttribute('aria-pressed', 'true');
-      }
-
-      grid.innerHTML = products.map((p) => renderProduct(p, categories)).join('');
-      bindFilters(categories);
-      applyFilter('all', categories);
-      injectItemList(products, categories);
-
-      const catParam = new URLSearchParams(window.location.search).get('categorie');
-      if (catParam && filters) {
-        const safeId = cssEscape(catParam.trim());
-        const btn = filters.querySelector(`[data-filter="${safeId}"]`);
-        if (btn) {
-          btn.click();
-        }
-      }
-    })
-    .catch((err) => {
-      grid.innerHTML =
-        '<p class="catalogue-note">Le catalogue n’a pas pu être chargé. Vérifiez que le fichier <code>data/products.json</code> est accessible.</p>';
-      console.error(err);
-    });
 })();

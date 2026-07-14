@@ -27,6 +27,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Build SEO static HTML
+        run: node scripts/build-seo.js
+
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
 
