@@ -72,6 +72,14 @@
       setActiveNav(nav);
       bindMobileNav(header);
     }
+
+    if (header.classList.contains('site-header--hero')) {
+      const onScroll = () => {
+        header.classList.toggle('is-scrolled', window.scrollY > 48);
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
   }
 
   const stickyCta = document.querySelector('.sticky-cta');
