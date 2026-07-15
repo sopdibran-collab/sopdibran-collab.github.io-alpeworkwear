@@ -37,7 +37,7 @@ TIMELINE_SOURCES: list[tuple[Path, str, str] | tuple[Path, str, str, str]] = [
     (
         SRC_COCREATION / "02-conception.png",
         "conception",
-        "Conception de la gamme vestes techniques — étape conception",
+        "Table de conception avec vestes, croquis tablette et échantillons textiles — étape conception",
     ),
     (
         SRC_COCREATION / "03-prototype.png",
