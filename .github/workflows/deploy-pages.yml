@@ -27,8 +27,17 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build SEO static HTML
-        run: node scripts/build-seo.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build motion bundle & SEO
+        run: npm run build
 
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
