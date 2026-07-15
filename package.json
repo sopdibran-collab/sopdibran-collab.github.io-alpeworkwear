@@ -1,0 +1,22 @@
+{
+  "name": "alpeworkwear-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:motion": "vite build",
+    "build": "npm run build:motion && node scripts/build-seo.cjs"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.4"
+  }
+}

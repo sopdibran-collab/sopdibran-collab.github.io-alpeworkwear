@@ -74,6 +74,45 @@
     activate(0);
   }
 
-  document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+  async function initRealisationsCarousel() {
+    const root = document.querySelector('.home-realisations__carousel[data-carousel]');
+    if (!root) return;
+
+    const track = root.querySelector('.home-realisations__track');
+    const dotsWrap = root.querySelector('.home-carousel__dots');
+    if (!track || !dotsWrap) return;
+
+    try {
+      const res = await fetch('data/realisations.json');
+      if (!res.ok) return;
+      const items = await res.json();
+      if (!Array.isArray(items) || !items.length) return;
+
+      track.innerHTML = items
+        .map(
+          (item) => `<figure class="home-carousel__slide home-realisations__slide" role="listitem">
+        <img src="${item.src}" alt="${item.alt}" width="${item.width}" height="${item.height}" loading="lazy">
+      </figure>`,
+        )
+        .join('');
+
+      dotsWrap.innerHTML = items
+        .map(
+          (_, i) =>
+            `<button type="button" class="home-carousel__dot" aria-label="Réalisation ${i + 1}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`,
+        )
+        .join('');
+    } catch {
+      return;
+    }
+
+    initCarousel(root);
+  }
+
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    if (root.classList.contains('home-realisations__carousel')) return;
+    initCarousel(root);
+  });
+  void initRealisationsCarousel();
   document.querySelectorAll('[data-timeline]').forEach(initTimeline);
 })();

@@ -16,16 +16,13 @@
   <meta property="og:locale" content="fr_CH">
   <meta property="og:url" content="https://www.alpeworkwear.ch/">
   <meta property="og:title" content="Workwear B2B personnalisé Suisse | Qualité suisse — Alpë Workwear">
-  <meta property="og:description"
-    content="Vêtements de travail B2B personnalisés pour entreprises en Suisse. Devis partenaire sans engagement.">
-  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp">
-  <meta property="og:image:alt" content="Broderie professionnelle Alpë Workwear">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Workwear B2B personnalisé Suisse — Alpë Workwear">
-  <meta name="twitter:description"
-    content="Vêtements de travail B2B personnalisés pour entreprises. Devis partenaire.">
-  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta property="og:description" content="Vêtements de travail B2B brodés ou imprimés pour entreprises suisses. Softshell, polo, haute visibilité. Coordination suisse, atelier Kosovo. Devis sans engagement.">
+  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/logo.png">
+  <meta property="og:image:alt" content="Broderie Alpë Workwear sur textile professionnel">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Workwear B2B personnalisé Suisse | Qualité suisse — Alpë Workwear">
+  <meta name="twitter:description" content="Vêtements de travail B2B brodés ou imprimés pour entreprises suisses. Softshell, polo, haute visibilité. Coordination suisse, atelier Kosovo. Devis sans engagement.">
+  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/logo.png"><link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -36,27 +33,70 @@
       title: 'Workwear B2B personnalisé Suisse | Qualité suisse — Alpë Workwear',
       description: 'Vêtements de travail B2B personnalisés pour entreprises en Suisse. Devis partenaire sans engagement.',
       url: 'https://www.alpeworkwear.ch/',
-      image: 'https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp',
-      imageAlt: 'Broderie professionnelle Alpë Workwear'
+      image: 'https://www.alpeworkwear.ch/assets/images/hero-brode-alpe.webp',
+      imageAlt: 'Broderie Alpë Workwear sur textile professionnel'
     };
   </script>
-  <script src="assets/js/head-shared.js"></script>
-  <script type="application/ld+json" id="alpe-schema-org">
+  <script src="assets/js/head-shared.js"></script>  <script type="application/ld+json" id="alpe-schema-org">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "LocalBusiness"],
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
       "@id": "https://www.alpeworkwear.ch/#organization",
       "name": "Alpë Workwear",
+      "legalName": "Alpë Workwear",
       "url": "https://www.alpeworkwear.ch",
-      "logo": { "@type": "ImageObject", "url": "https://www.alpeworkwear.ch/assets/logo.png" },
-      "image": "https://www.alpeworkwear.ch/assets/images/embroidery-preview.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.alpeworkwear.ch/assets/logo.png"
+      },
+      "image": "https://www.alpeworkwear.ch/assets/logo.png",
       "email": "info@alpeworkwear.com",
       "telephone": "+41797792151",
-      "description": "Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse.",
-      "areaServed": [{ "@type": "Country", "name": "Suisse" }],
-      "sameAs": ["https://www.instagram.com/alpeworkwear/"]
+      "description": "Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.",
+      "priceRange": "$",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Suisse"
+        },
+        {
+          "@type": "City",
+          "name": "Genève",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lausanne",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Zurich",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Suisse"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prishtina",
+        "addressCountry": "XK"
+      },
+      "sameAs": [
+        "https://www.instagram.com/alpeworkwear/"
+      ]
     },
     {
       "@type": "WebSite",
@@ -64,7 +104,9 @@
       "name": "Alpë Workwear",
       "url": "https://www.alpeworkwear.ch",
       "inLanguage": "fr-CH",
-      "publisher": { "@id": "https://www.alpeworkwear.ch/#organization" }
+      "publisher": {
+        "@id": "https://www.alpeworkwear.ch/#organization"
+      }
     }
   ]
 }
@@ -72,251 +114,296 @@
 </head>
 
 <body class="page-home">
-  <header id="site-header" class="site-header site-header--hero" aria-label="Navigation principale">
+  <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark brand-mark--hero">
+        <span class="brand-mark">
           <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
           <span class="brand-mark__sub">Workwear</span>
-          <span class="site-header__tagline">Suisse B2B Personnalisation</span>
+          <span class="site-header__tagline" data-i18n="header.tagline">Suisse B2B Personnalisation</span>
         </span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
-        aria-label="Ouvrir le menu">Menu</button>
+        data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
     </div>
     <ul class="site-nav" id="site-nav">
-      <li><a href="/catalogue.html">Collections</a></li>
-      <li><a href="/confection.html">Confection</a></li>
-      <li><a href="/faq.html">Expertises</a></li>
-      <li><a href="/contact.html" class="nav-cta">Contact</a></li>
-      <li class="lang-switch" aria-label="Langue">
-        <span class="lang-switch__item" lang="de">DE</span>
-        <span class="lang-switch__item lang-switch__item--active" aria-current="true" lang="fr">FR</span>
-        <span class="lang-switch__item" lang="it">IT</span>
-        <span class="lang-switch__item" lang="en">EN</span>
+      <li><a href="/catalogue.html" data-i18n="nav.collections">Collections</a></li>
+      <li><a href="/confection.html" data-i18n="nav.confection">Confection</a></li>
+      <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
+      <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
+      <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
+        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
+        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
       </li>
     </ul>
   </header>
 
   <main id="main">
 
-    <section class="home-hero" aria-labelledby="hero-title">
+    <section class="home-hero" aria-labelledby="hero-title" data-reveal>
       <div class="home-hero__bg" aria-hidden="true">
-        <img src="assets/images/embroidery-preview.webp" alt="" width="1920" height="1080" fetchpriority="high"
-          decoding="async">
+        <div class="home-hero__bg-base"></div>
+        <img class="home-hero__bg-emblem" src="assets/images/hero-brode-alpe.webp" alt="" width="1024" height="1024"
+          fetchpriority="high" decoding="async">
       </div>
       <div class="home-hero__content container">
         <h1 id="hero-title" class="home-hero__title">
-          <span>Qualité suisse.</span>
-          <span>Craft dédié.</span>
-          <span>Votre identité</span>
-          <span>portée avec fierté.</span>
+          <span data-i18n="hero.line1">Qualité suisse.</span>
+          <span data-i18n="hero.line2">Craft dédié.</span>
+          <span data-i18n="hero.line3">Votre identité</span>
+          <span data-i18n="hero.line4">portée avec fierté.</span>
         </h1>
         <div class="home-hero__actions">
-          <a href="/contact.html" class="btn btn-primary home-hero__btn">Demander un devis partenaire</a>
-          <a href="/catalogue.html" class="home-hero__btn home-hero__btn--ghost">Explorer la collection</a>
+          <a href="/contact.html" class="btn btn-primary home-hero__btn" data-i18n="hero.cta.primary">Demander un devis partenaire</a>
+          <a href="/catalogue.html" class="home-hero__btn home-hero__btn--ghost" data-i18n="hero.cta.secondary">Explorer la collection</a>
         </div>
+        <p class="home-hero__scroll" aria-hidden="true">
+          <span data-lucide="chevron-down" data-lucide-size="20" data-lucide-stroke="1.25"></span>
+        </p>
       </div>
     </section>
 
-    <section class="home-alliance" aria-labelledby="alliance-title">
+    <section class="home-alliance" aria-labelledby="alliance-title" data-reveal>
       <div class="container home-alliance__inner">
-        <h2 id="alliance-title" class="home-alliance__title">Notre alliance stratégique</h2>
+        <h2 id="alliance-title" class="home-alliance__title" data-i18n="alliance.title">Notre alliance stratégique</h2>
         <div class="home-alliance__grid">
-          <article class="home-alliance__col home-alliance__col--swiss">
-            <h3 class="home-alliance__heading">La précision suisse</h3>
-            <p class="home-alliance__text">
-              Coordination, conseil et contrôle qualité depuis la Suisse — un interlocuteur unique pour cadrer chaque
-              projet B2B avec rigueur et fiabilité.
-            </p>
-            <div class="home-alliance__media home-alliance__media--round">
-              <img src="assets/images/alliance-precision.svg" alt="" width="160" height="160" loading="lazy">
+          <article class="home-alliance__col home-alliance__col--swiss" data-reveal-child>
+            <div class="home-alliance__row">
+              <div class="home-alliance__copy">
+                <h3 class="home-alliance__heading" data-i18n="alliance.swiss.title">La précision suisse</h3>
+                <p class="home-alliance__text" data-i18n="alliance.swiss.text">
+                  Coordination, exigence, qualité et fiabilité. Basés en Suisse, nous orchestrons chaque projet avec
+                  rigueur et transparence.
+                </p>
+              </div>
+              <div class="home-alliance__media home-alliance__media--round">
+                <img src="assets/images/alliance-precision.webp" alt="" width="120" height="120" loading="lazy">
+              </div>
             </div>
           </article>
-          <div class="home-alliance__bridge" aria-hidden="true">
-            <div class="home-alliance__bridge-top">
-              <span class="home-alliance__bridge-label">Alpes suisses</span>
-              <span class="home-alliance__bridge-label">Kosovo</span>
-            </div>
-            <div class="home-alliance__bridge-maps">
-              <img src="assets/images/map-suisse.svg" alt="" class="home-alliance__map" width="88" height="52">
-              <span class="home-alliance__bridge-line"></span>
-              <img src="assets/images/alliance-handshake.svg" alt="" class="home-alliance__handshake" width="48"
-                height="54">
-              <span class="home-alliance__bridge-line"></span>
-              <img src="assets/images/map-kosovo.svg" alt="" class="home-alliance__map" width="72" height="80">
+          <div class="home-alliance__bridge" aria-hidden="true" data-reveal-child>
+            <div class="home-alliance__bridge-panel">
+              <div class="home-alliance__bridge-top">
+                <span class="home-alliance__bridge-label" data-i18n="alliance.bridge.swiss">Alpes suisses</span>
+                <span class="home-alliance__bridge-label" data-i18n="alliance.bridge.kosovo">Kosovo</span>
+              </div>
+              <div class="home-alliance__bridge-graphic">
+                <svg class="home-alliance__bridge-wireframe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72"
+                  fill="none" aria-hidden="true">
+                  <path d="M56 38 H70" stroke="#b4b9bf" stroke-width="1" stroke-dasharray="2.5 3"
+                    stroke-linecap="round" />
+                  <path d="M150 38 H164" stroke="#b4b9bf" stroke-width="1" stroke-dasharray="2.5 3"
+                    stroke-linecap="round" />
+                  <path d="M10 56 L22 20 L36 30 L48 16 L62 26 L66 56 Z" stroke="#2b2b2b" stroke-width="1.5"
+                    stroke-linejoin="round" stroke-linecap="round" />
+                  <path d="M34 38v10 M29 43h10" stroke="#7a8086" stroke-width="1.2" stroke-linecap="round" />
+                  <path d="M70 56 V30" stroke="#2b2b2b" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M150 56 V30" stroke="#2b2b2b" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M70 30 C88 10 132 10 150 30" stroke="#2b2b2b" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M78 56 H142" stroke="#a8adb4" stroke-width="1" stroke-linecap="round" />
+                  <path d="M110 30 V24" stroke="#c5c9ce" stroke-width="0.9" stroke-linecap="round" />
+                  <path d="M110 50 L120 44 V34 L110 28 L100 34 V44 Z" stroke="#9aa0a6" stroke-width="1.2"
+                    stroke-linejoin="round" />
+                  <path d="M104 36 L110 30 L116 36" stroke="#7a8086" stroke-width="1" stroke-linejoin="round" />
+                  <path d="M103 42c2.5-3.5 7-4.5 7-4.5s4.5 1 7 4.5" stroke="#2b2b2b" stroke-width="1.2"
+                    stroke-linecap="round" />
+                  <path d="M166 56 L172 26 L186 20 L204 30 L214 48 L200 56 Z" stroke="#2b2b2b" stroke-width="1.5"
+                    stroke-linejoin="round" stroke-linecap="round" />
+                  <path d="M192 36h7v9h-7z" stroke="#7a8086" stroke-width="1" stroke-linejoin="round" />
+                  <path d="M192 36l3.5-5 3.5 5" stroke="#7a8086" stroke-width="1" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
           </div>
-          <article class="home-alliance__col home-alliance__col--kosovo">
-            <div class="home-alliance__media home-alliance__media--rect">
-              <img src="assets/images/embroidery-preview.webp" alt="Broderie professionnelle en atelier" width="320"
-                height="240" loading="lazy">
+          <article class="home-alliance__col home-alliance__col--kosovo" data-reveal-child>
+            <div class="home-alliance__row home-alliance__row--reverse">
+              <div class="home-alliance__media home-alliance__media--rect">
+                <img src="assets/images/alliance-atelier.webp" alt="Confection textile en atelier" width="120" height="120"
+                  loading="lazy">
+              </div>
+              <div class="home-alliance__copy">
+                <h3 class="home-alliance__heading" data-i18n="alliance.kosovo.title">Le craft du Kosovo</h3>
+                <p class="home-alliance__text" data-i18n="alliance.kosovo.text">
+                  Un savoir-faire textile ancestral, des ateliers engagés et des artisans passionnés au service d'une
+                  qualité durable et responsable.
+                </p>
+              </div>
             </div>
-            <h3 class="home-alliance__heading">Le craft du Kosovo</h3>
-            <p class="home-alliance__text">
-              Savoir-faire textile ancestral et ateliers dédiés — broderie, confection et marquage exécutés avec
-              précision pour vos volumes professionnels.
-            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-section--alt" aria-labelledby="collections-title">
-      <div class="container">
-        <header class="home-section__header">
-          <h2 id="collections-title">Nos collections</h2>
-          <p>Quatre gammes professionnelles, entièrement personnalisables à votre image.</p>
-        </header>
-        <div class="home-carousel" data-carousel>
-          <div class="home-carousel__track">
-            <a class="home-carousel__slide" href="/catalogue.html?categorie=softshell-polaire">
-              <div class="home-carousel__media">
-                <img src="assets/catalogue/Softshell%20homme.JPG" alt="Veste softshell technique" width="400"
-                  height="533" loading="lazy">
-              </div>
-              <div class="home-carousel__body">
-                <p class="home-carousel__label">Tech</p>
-                <h3>Softshells &amp; vestes techniques</h3>
-              </div>
-            </a>
-            <a class="home-carousel__slide" href="/catalogue.html?categorie=textile">
-              <div class="home-carousel__media">
-                <img src="assets/catalogue/Polo.jpg" alt="Polo professionnel" width="400" height="533" loading="lazy">
-              </div>
-              <div class="home-carousel__body">
-                <p class="home-carousel__label">Textile pro</p>
-                <h3>Polos &amp; textiles pro</h3>
-              </div>
-            </a>
-            <a class="home-carousel__slide" href="/catalogue.html?categorie=pantalon">
-              <div class="home-carousel__media">
-                <img src="assets/catalogue/pantalons-professionnels.JPG" alt="Pantalon professionnel" width="400"
-                  height="533" loading="lazy">
-              </div>
-              <div class="home-carousel__body">
-                <p class="home-carousel__label">Durabilité</p>
-                <h3>Pantalons professionnels</h3>
-              </div>
-            </a>
-            <a class="home-carousel__slide" href="/catalogue.html?categorie=haute-visibilite">
-              <div class="home-carousel__media">
-                <img src="assets/images/haute-visibilite.svg" alt="Gilet haute visibilité EN ISO 20471" width="400"
-                  height="480" loading="lazy">
-              </div>
-              <div class="home-carousel__body">
-                <p class="home-carousel__label">Haute visibilité</p>
-                <h3>EN ISO 20471</h3>
-              </div>
-            </a>
+    <section class="home-collections" aria-labelledby="collections-title" data-reveal>
+      <h2 id="collections-title" class="visually-hidden">Nos collections</h2>
+      <div class="home-collections__grid">
+        <a class="home-collections__card" href="/catalogue.html?categorie=softshell-polaire" data-reveal-child>
+          <div class="home-collections__card-head">
+            <h3 data-i18n="collections.tech.title">Tech</h3>
+            <p data-i18n="collections.tech.desc">Vêtements techniques haute performance.</p>
           </div>
-          <div class="home-carousel__nav">
-            <div class="home-carousel__dots" aria-label="Position dans le carousel">
-              <button type="button" class="home-carousel__dot" aria-label="Tech"></button>
-              <button type="button" class="home-carousel__dot" aria-label="Textile pro"></button>
-              <button type="button" class="home-carousel__dot" aria-label="Durabilité"></button>
-              <button type="button" class="home-carousel__dot" aria-label="Haute visibilité"></button>
-            </div>
-            <div class="home-carousel__arrows">
-              <button type="button" class="home-carousel__arrow home-carousel__arrow--prev" aria-label="Précédent">
-                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" />
-                </svg>
-              </button>
-              <button type="button" class="home-carousel__arrow home-carousel__arrow--next" aria-label="Suivant">
-                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" />
-                </svg>
-              </button>
-            </div>
+          <div class="home-collections__card-media">
+            <img src="assets/images/collection-tech.webp?v=2" alt="" width="900" height="900" loading="lazy">
           </div>
-        </div>
+          <span class="home-collections__card-cta"><span data-i18n="collections.cta">Découvrir</span> <span data-lucide="arrow-right" data-lucide-size="12"></span></span>
+        </a>
+        <a class="home-collections__card" href="/catalogue.html?categorie=textile" data-reveal-child>
+          <div class="home-collections__card-head">
+            <h3 data-i18n="collections.textile.title">Textile pro</h3>
+            <p data-i18n="collections.textile.desc">Polos, t-shirts et basiques professionnels.</p>
+          </div>
+          <div class="home-collections__card-media">
+            <img src="assets/images/collection-textile.webp?v=2" alt="" width="900" height="900" loading="lazy">
+          </div>
+          <span class="home-collections__card-cta"><span data-i18n="collections.cta">Découvrir</span> <span data-lucide="arrow-right" data-lucide-size="12"></span></span>
+        </a>
+        <a class="home-collections__card" href="/catalogue.html?categorie=pantalon" data-reveal-child>
+          <div class="home-collections__card-head">
+            <h3 data-i18n="collections.durability.title">Durabilité</h3>
+            <p data-i18n="collections.durability.desc">Matières responsables, conçues pour durer.</p>
+          </div>
+          <div class="home-collections__card-media">
+            <img src="assets/images/collection-durabilite.webp?v=2" alt="" width="900" height="900" loading="lazy">
+          </div>
+          <span class="home-collections__card-cta"><span data-i18n="collections.cta">Découvrir</span> <span data-lucide="arrow-right" data-lucide-size="12"></span></span>
+        </a>
+        <a class="home-collections__card" href="/catalogue.html?categorie=haute-visibilite" data-reveal-child>
+          <div class="home-collections__card-head">
+            <h3 data-i18n="collections.hiviz.title">Haute visibilité</h3>
+            <p data-i18n="collections.hiviz.desc">Sécurité et conformité ISO 20471.</p>
+          </div>
+          <div class="home-collections__card-media">
+            <img src="assets/images/collection-hiviz.webp?v=2" alt="" width="900" height="900" loading="lazy">
+          </div>
+          <span class="home-collections__card-cta"><span data-i18n="collections.cta">Découvrir</span> <span data-lucide="arrow-right" data-lucide-size="12"></span></span>
+        </a>
       </div>
     </section>
 
-    <section class="home-section" aria-labelledby="cocreation-title" data-timeline>
+    <section class="home-section" aria-labelledby="cocreation-title" data-timeline data-reveal>
       <div class="container">
         <header class="home-section__header">
-          <h2 id="cocreation-title">Co-création de votre image</h2>
-          <p>De l’écoute à la livraison — un processus structuré pour des tenues alignées sur votre marque.</p>
+          <h2 id="cocreation-title" data-i18n="cocreation.title">Co-création de votre image</h2>
+          <p data-i18n="cocreation.desc">De l’écoute à la livraison — un processus structuré pour des tenues alignées sur votre marque.</p>
         </header>
-        <div class="home-timeline" role="tablist" aria-label="Étapes de co-création">
+        <div class="home-timeline" role="tablist" data-i18n-aria-label="cocreation.steps" aria-label="Étapes de co-création">
           <button type="button" class="home-timeline__step" role="tab" aria-selected="true">
             <span class="home-timeline__num">01</span>
-            <span class="home-timeline__label">Écoute</span>
+            <span class="home-timeline__label" data-i18n="cocreation.step1">Écoute</span>
           </button>
           <button type="button" class="home-timeline__step" role="tab" aria-selected="false">
             <span class="home-timeline__num">02</span>
-            <span class="home-timeline__label">Conception</span>
+            <span class="home-timeline__label" data-i18n="cocreation.step2">Conception</span>
           </button>
           <button type="button" class="home-timeline__step" role="tab" aria-selected="false">
             <span class="home-timeline__num">03</span>
-            <span class="home-timeline__label">Prototype</span>
+            <span class="home-timeline__label" data-i18n="cocreation.step3">Prototype</span>
           </button>
           <button type="button" class="home-timeline__step" role="tab" aria-selected="false">
             <span class="home-timeline__num">04</span>
-            <span class="home-timeline__label">Production</span>
+            <span class="home-timeline__label" data-i18n="cocreation.step4">Production</span>
           </button>
           <button type="button" class="home-timeline__step" role="tab" aria-selected="false">
             <span class="home-timeline__num">05</span>
-            <span class="home-timeline__label">Livraison</span>
+            <span class="home-timeline__label" data-i18n="cocreation.step5">Livraison</span>
           </button>
         </div>
         <div class="home-timeline__visual">
-          <img src="assets/images/embroidery-preview.webp" alt="Écoute et analyse de votre projet workwear" width="1200"
+          <img src="assets/images/timeline/timeline-ecoute.webp" alt="Consultation client avec échantillons textile — étape écoute" width="1200"
             height="525" class="is-active" loading="lazy">
-          <img src="assets/images/print-preview.webp" alt="Conception et choix des finitions" width="1200" height="525"
+          <img src="assets/images/timeline/timeline-conception.webp" alt="Conception de la gamme vestes techniques — étape conception" width="1200"
+            height="525" loading="lazy">
+          <img src="assets/images/timeline/timeline-prototype.webp" alt="Essayage du prototype sur chantier — étape prototype" width="1200"
+            height="525" loading="lazy">
+          <img src="assets/images/timeline/timeline-production.webp" alt="Broderie industrielle en atelier — étape production" width="1200" height="525"
             loading="lazy">
-          <img src="assets/catalogue/Polo.jpg" alt="Prototype et validation textile" width="1200" height="525"
-            loading="lazy">
-          <img src="assets/catalogue/T-shirts.JPG" alt="Production en atelier" width="1200" height="525"
-            loading="lazy">
-          <img src="assets/catalogue/Softshell%20homme.JPG" alt="Livraison en Suisse" width="1200" height="525"
+          <img src="assets/images/timeline/timeline-livraison.webp" alt="Tenue workwear livrée sur chantier — étape livraison" width="1200" height="525"
             loading="lazy">
         </div>
         <div class="home-timeline__thumbs">
           <button type="button" class="home-timeline__thumb" aria-selected="true" aria-label="Étape 01 — Écoute">
-            <img src="assets/images/embroidery-preview.webp" alt="" width="120" height="120" loading="lazy">
+            <img src="assets/images/timeline/timeline-ecoute-thumb.webp" alt="" width="240" height="96" loading="lazy">
           </button>
           <button type="button" class="home-timeline__thumb" aria-selected="false" aria-label="Étape 02 — Conception">
-            <img src="assets/images/print-preview.webp" alt="" width="120" height="120" loading="lazy">
+            <img src="assets/images/timeline/timeline-conception-thumb.webp" alt="" width="240" height="96" loading="lazy">
           </button>
           <button type="button" class="home-timeline__thumb" aria-selected="false" aria-label="Étape 03 — Prototype">
-            <img src="assets/catalogue/Polo.jpg" alt="" width="120" height="120" loading="lazy">
+            <img src="assets/images/timeline/timeline-prototype-thumb.webp" alt="" width="240" height="96" loading="lazy">
           </button>
           <button type="button" class="home-timeline__thumb" aria-selected="false" aria-label="Étape 04 — Production">
-            <img src="assets/catalogue/T-shirts.JPG" alt="" width="120" height="120" loading="lazy">
+            <img src="assets/images/timeline/timeline-production-thumb.webp" alt="" width="240" height="96" loading="lazy">
           </button>
           <button type="button" class="home-timeline__thumb" aria-selected="false" aria-label="Étape 05 — Livraison">
-            <img src="assets/catalogue/Softshell%20homme.JPG" alt="" width="120" height="120" loading="lazy">
+            <img src="assets/images/timeline/timeline-livraison-thumb.webp" alt="" width="240" height="96" loading="lazy">
           </button>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-section--alt home-certs" aria-labelledby="certs-title">
+    <section class="home-section home-realisations" aria-labelledby="realisations-title" data-reveal>
       <div class="container">
-        <header class="home-section__header" style="text-align:center;">
-          <h2 id="certs-title">Confiance &amp; engagements</h2>
-          <p style="margin-inline:auto;text-align:center;">Ce que nous garantissons concrètement à chaque partenaire B2B.</p>
+        <header class="home-section__header">
+          <h2 id="realisations-title" data-i18n="realisations.title">Réalisations clients</h2>
+          <p data-i18n="realisations.desc">Des commandes livrées pour des entreprises qui nous ont fait confiance — broderie, sérigraphie et workwear sur mesure.</p>
         </header>
-        <div class="home-certs__row" role="list">
-          <span class="home-certs__badge" role="listitem">Atelier Kosovo · Livraison Suisse</span>
-          <span class="home-certs__badge" role="listitem">EN ISO 20471 sur demande</span>
-          <span class="home-certs__badge" role="listitem">Broderie &amp; sérigraphie</span>
-          <span class="home-certs__badge" role="listitem">Devis B2B sans engagement</span>
-          <span class="home-certs__badge" role="listitem">Coordination suisse</span>
+        <div class="home-realisations__carousel" data-carousel data-reveal-child>
+          <div class="home-carousel__track home-realisations__track" role="list" data-i18n-aria-label="realisations.list" aria-label="Réalisations clients"></div>
+          <div class="home-carousel__nav home-realisations__nav">
+            <div class="home-carousel__dots" role="tablist" aria-label="Choisir une réalisation"></div>
+            <div class="home-carousel__arrows">
+              <button type="button" class="home-carousel__arrow home-carousel__arrow--prev" aria-label="Réalisation précédente">‹</button>
+              <button type="button" class="home-carousel__arrow home-carousel__arrow--next" aria-label="Réalisation suivante">›</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-equip" aria-labelledby="equip-title">
+    <section class="home-section home-section--alt home-certs" aria-labelledby="certs-title" data-reveal>
+      <div class="container">
+        <header class="home-section__header" style="text-align:center;">
+          <h2 id="certs-title" data-i18n="certs.title">Confiance &amp; engagements</h2>
+          <p style="margin-inline:auto;text-align:center;" data-i18n="certs.desc">Ce que nous garantissons concrètement à chaque partenaire B2B.</p>
+        </header>
+        <div class="home-certs__logos-marquee" data-i18n-aria-label="certs.clients" aria-label="Clients partenaires">
+          <div class="home-certs__logos-viewport">
+            <div class="home-certs__logos-track">
+            <span class="home-certs__logo"><img src="assets/images/clients/logos/cantin.svg" alt="Cantin Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo"><img src="assets/images/clients/logos/bestek.svg" alt="Bestek Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo home-certs__logo--on-dark"><img src="assets/images/clients/logos/visa-barber.svg" alt="Visa Barbershop" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo"><img src="assets/images/clients/logos/gzimmo.svg" alt="Gzimmo Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo"><img src="assets/images/clients/logos/gashi-sprinkler.svg" alt="Gashi Sprinkler Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo"><img src="assets/images/clients/logos/manon-regamey.svg" alt="Manon Regamey Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo home-certs__logo--on-dark"><img src="assets/images/clients/logos/sopjani-tech.svg" alt="Sopjani Tech Sàrl" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo" aria-hidden="true"><img src="assets/images/clients/logos/cantin.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo" aria-hidden="true"><img src="assets/images/clients/logos/bestek.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo home-certs__logo--on-dark" aria-hidden="true"><img src="assets/images/clients/logos/visa-barber.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo" aria-hidden="true"><img src="assets/images/clients/logos/gzimmo.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo" aria-hidden="true"><img src="assets/images/clients/logos/gashi-sprinkler.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo" aria-hidden="true"><img src="assets/images/clients/logos/manon-regamey.svg" alt="" width="160" height="48" loading="lazy"></span>
+            <span class="home-certs__logo home-certs__logo--on-dark" aria-hidden="true"><img src="assets/images/clients/logos/sopjani-tech.svg" alt="" width="160" height="48" loading="lazy"></span>
+            </div>
+          </div>
+        </div>
+        <div class="home-certs__row" role="list">
+          <span class="home-certs__badge" role="listitem" data-i18n="certs.badge1">Atelier Kosovo · Livraison Suisse</span>
+          <span class="home-certs__badge" role="listitem" data-i18n="certs.badge2">EN ISO 20471 sur demande</span>
+          <span class="home-certs__badge" role="listitem" data-i18n="certs.badge3">Broderie &amp; sérigraphie</span>
+          <span class="home-certs__badge" role="listitem" data-i18n="certs.badge4">Devis B2B sans engagement</span>
+          <span class="home-certs__badge" role="listitem" data-i18n="certs.badge5">Coordination suisse</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-equip" aria-labelledby="equip-title" data-reveal>
       <div class="container home-equip__inner">
         <div>
           <header class="home-section__header">
-            <h2 id="equip-title">Équiper vos équipes</h2>
+            <h2 id="equip-title" data-i18n="equip.title">Équiper vos équipes</h2>
           </header>
-          <p class="home-equip__teaser">
+          <p class="home-equip__teaser" data-i18n="equip.teaser">
             Décrivez votre projet en quelques mots — quantités, gammes, délais. Nous vous répondons sous 1 à 2 jours
             ouvrables avec un devis partenaire sans engagement.
           </p>
@@ -324,49 +411,21 @@
         <form id="home-equip-form" class="home-equip__form" novalidate>
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
           <div>
-            <label for="home-question">Votre question</label>
+            <label for="home-question" data-i18n="equip.question">Votre question</label>
             <textarea id="home-question" name="question" required rows="3"
+              data-i18n-placeholder="equip.question.placeholder"
               placeholder="Ex. : 50 softshells brodés pour équipes terrain, livraison Genève…"></textarea>
           </div>
           <div>
-            <label for="home-email">E-mail professionnel</label>
+            <label for="home-email" data-i18n="equip.email">E-mail professionnel</label>
             <input type="email" id="home-email" name="email" required autocomplete="email"
+              data-i18n-placeholder="equip.email.placeholder"
               placeholder="vous@entreprise.ch">
           </div>
-          <button type="submit" class="btn btn-primary">Demander un devis partenaire</button>
-          <p class="home-equip__full-form">Projet détaillé&nbsp;? <a href="/contact.html">Formulaire complet</a></p>
+          <button type="submit" class="btn btn-primary" data-i18n="equip.submit">Demander un devis partenaire</button>
+          <p class="home-equip__full-form" data-i18n="equip.fullform" data-i18n-html="true">Projet détaillé&nbsp;? <a href="/contact.html">Formulaire complet</a></p>
           <p id="home-form-status" class="home-form-status" role="status" aria-live="polite"></p>
         </form>
-      </div>
-    </section>
-
-    <section class="home-section home-section--alt" aria-labelledby="realisations-title">
-      <div class="container">
-        <header class="home-section__header">
-          <h2 id="realisations-title">Réalisations atelier</h2>
-          <p>Aperçus de nos broderies, sérigraphies et pièces personnalisées — plus de contenu sur Instagram.</p>
-        </header>
-        <div class="home-realisations__grid">
-          <a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/embroidery-preview.webp" alt="Broderie en atelier" width="240" height="240"
-              loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/print-preview.webp" alt="Sérigraphie textile" width="240" height="240"
-              loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/catalogue/Polo.jpg" alt="Polo personnalisé" width="240" height="240" loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/catalogue/Softshell%20homme.JPG" alt="Softshell technique" width="240" height="240"
-              loading="lazy">
-          </a>
-        </div>
-        <p class="home-realisations__cta">
-          <a href="https://www.instagram.com/alpeworkwear/" class="btn btn-outline" target="_blank"
-            rel="noopener noreferrer">Suivre @alpeworkwear</a>
-        </p>
       </div>
     </section>
 
@@ -406,12 +465,13 @@
 
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/home-motion.js"></script>
+  <script src="assets/js/lang-switch.js"></script>
   <script src="assets/js/home-interactive.js"></script>
   <script src="assets/js/home-form.js"></script>
-  <script src="assets/js/schema-org.js"></script>
-  <aside class="sticky-cta" aria-label="Demande de devis">
-    <a href="/contact.html" class="sticky-cta__btn">Demander un devis partenaire</a>
-  </aside>
+  <script src="assets/js/schema-org.js"></script>  <aside class="sticky-cta" aria-label="Demande de devis">
+  <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
+</aside>
 </body>
 
 </html>

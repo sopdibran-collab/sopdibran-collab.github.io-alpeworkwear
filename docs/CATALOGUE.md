@@ -26,4 +26,5 @@
    - `tag` : ex. « EN ISO 20471 »
    - `published: false` : masquer sans supprimer
 
-5. Régénérer le HTML statique : `node scripts/build-seo.js` (automatique au déploiement CI).
+5. Régénérer le HTML statique : `node scripts/build-seo.cjs` (automatique au déploiement CI).
+6. Synchroniser médias depuis le dossier Alpë : `python3 scripts/sync-media.py`

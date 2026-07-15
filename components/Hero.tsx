@@ -7,11 +7,13 @@ export function Hero() {
   return (
     <section className="home-hero" aria-labelledby="hero-title">
       <div className="home-hero__bg" aria-hidden="true">
+        <div className="home-hero__bg-base" />
         <img
-          src="/assets/images/embroidery-preview.webp"
+          className="home-hero__bg-emblem"
+          src="/assets/images/hero-brode-alpe.webp"
           alt=""
-          width={1920}
-          height={1080}
+          width={1024}
+          height={1024}
           fetchPriority="high"
           decoding="async"
         />

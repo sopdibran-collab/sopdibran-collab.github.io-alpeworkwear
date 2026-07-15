@@ -22,9 +22,10 @@ const {
   extractFaqSchema,
   renderItemListSchema,
   loadProducts,
-} = require('./seo-snippets');
+} = require('./seo-snippets.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
+const HOME_PAGES = new Set(['index.html']);
 
 const HTML_PAGES = [
   'index.html',
@@ -63,21 +64,23 @@ function processPage(filename) {
   const meta = parsePageMeta(html);
   const crumbs = parseBreadcrumbs(html);
 
-  html = replaceBlock(
-    html,
-    /<header id="site-header"[\s\S]*?<\/header>/i,
-    renderHeader(filename)
-  ).html;
+  if (!HOME_PAGES.has(filename)) {
+    html = replaceBlock(
+      html,
+      /<header id="site-header"[\s\S]*?<\/header>/i,
+      renderHeader(filename)
+    ).html;
 
-  if (!LEGAL_PAGES.has(filename) && !html.includes('class="instagram-band"')) {
-    html = html.replace(/<footer id="site-footer"/i, `${renderInstagramBand()}\n\n  <footer id="site-footer"`);
+    if (!LEGAL_PAGES.has(filename) && !html.includes('class="instagram-band"')) {
+      html = html.replace(/<footer id="site-footer"/i, `${renderInstagramBand()}\n\n  <footer id="site-footer"`);
+    }
+
+    html = replaceBlock(
+      html,
+      /<footer id="site-footer"[\s\S]*?<\/footer>/i,
+      renderFooter()
+    ).html;
   }
-
-  html = replaceBlock(
-    html,
-    /<footer id="site-footer"[\s\S]*?<\/footer>/i,
-    renderFooter()
-  ).html;
 
   if (!NO_STICKY_CTA.has(filename)) {
     html = removeBlock(html, /\s*<aside class="sticky-cta"[\s\S]*?<\/aside>\s*/i);

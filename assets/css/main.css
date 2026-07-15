@@ -43,6 +43,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -53,6 +54,8 @@ body {
   font-size: 1rem;
   padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 img {
@@ -268,8 +271,13 @@ body.is-nav-open {
 .site-footer {
   background: var(--color-charcoal);
   color: rgba(255, 255, 255, 0.78);
-  padding: 3rem 0 2.25rem;
+  padding: 0 0 2.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Legacy — masque toute grille résiduelle si cache navigateur */
+.site-footer__realisations-grid {
+  display: none !important;
 }
 
 .site-footer__grid {
@@ -277,6 +285,7 @@ body.is-nav-open {
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: start;
+  padding-top: 3rem;
 }
 
 .site-footer__aside {
