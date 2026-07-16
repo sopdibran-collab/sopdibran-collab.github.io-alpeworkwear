@@ -81,12 +81,12 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(6, 6, 6, 0.94) 0%,
-    rgba(6, 6, 6, 0.82) 34%,
-    rgba(6, 6, 6, 0.5) 52%,
-    rgba(6, 6, 6, 0.28) 68%,
-    rgba(6, 6, 6, 0.12) 82%,
-    rgba(6, 6, 6, 0.06) 100%
+    rgba(6, 6, 6, 0.96) 0%,
+    rgba(6, 6, 6, 0.9) 30%,
+    rgba(6, 6, 6, 0.72) 48%,
+    rgba(6, 6, 6, 0.42) 62%,
+    rgba(6, 6, 6, 0.18) 78%,
+    rgba(6, 6, 6, 0.08) 100%
   );
   pointer-events: none;
 }
@@ -111,6 +111,10 @@
   line-height: 1.18;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 0, 0, 0.35);
 }
 
 .home-hero__title span {
