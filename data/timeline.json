@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "ecoute",
+    "src": "/Users/dibransopj/Documents/AlpëWorkwear/Alpë/Visuels/Co-création/01-ecoute.png",
+    "alt": "Consultation client avec échantillons textile — étape écoute"
+  },
+  {
+    "slug": "conception",
+    "src": "/Users/dibransopj/Documents/AlpëWorkwear/Alpë/Visuels/Co-création/02-conception.png",
+    "alt": "Table de conception avec vestes, croquis tablette et échantillons textiles — étape conception"
+  },
+  {
+    "slug": "prototype",
+    "src": "/Users/dibransopj/Documents/AlpëWorkwear/Alpë/Visuels/Co-création/03-prototype.png",
+    "alt": "Essayage du prototype sur chantier — étape prototype"
+  },
+  {
+    "slug": "production",
+    "src": "/Users/dibransopj/Documents/AlpëWorkwear/Alpë/Visuels/Co-création/04-production.png",
+    "alt": "Broderie industrielle en atelier — étape production"
+  },
+  {
+    "slug": "livraison",
+    "src": "/Users/dibransopj/Documents/AlpëWorkwear/Alpë/Visuels/Co-création/05-livraison.png",
+    "alt": "Tenue workwear livrée sur chantier — étape livraison"
+  }
+]
