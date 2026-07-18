@@ -10,35 +10,7 @@
   max-width: 100%;
 }
 
-.page-home .lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  list-style: none;
-  margin-left: 0.5rem;
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--color-border);
-}
-
-.page-home .lang-switch__item {
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--color-silver);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.page-home .lang-switch__item:hover {
-  color: var(--color-charcoal);
-}
-
-.page-home .lang-switch__item--active {
-  color: var(--color-cta);
-}
+/* Lang switch styles live in main.css (sitewide) */
 
 /* ── Hero (maquette) ── */
 .home-hero {

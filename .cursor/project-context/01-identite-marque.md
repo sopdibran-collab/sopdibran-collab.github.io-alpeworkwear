@@ -57,3 +57,6 @@
 ## UI
 
 - Style B2B minimal, rayons 2px, container 72rem, nav fixe 4.5rem
+- CTA magenta `#c41e6e` (boutons principaux) — acier pour liens / accents secondaires
+- Heroes internes : photo plein cadre + fondu sombre (schéma type sopjanitech)
+- Chrome unique synchronisé : `scripts/sync-chrome.cjs`

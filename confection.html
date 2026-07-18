@@ -115,33 +115,51 @@
 </head>
 
 <body>
-    <header id="site-header" class="site-header" aria-label="Navigation principale">
+        <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>
+        <span class="brand-mark">
+          <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
+          <span class="brand-mark__sub">Workwear</span>
+          <span class="site-header__tagline" data-i18n="header.tagline">Suisse B2B Personnalisation</span>
+        </span>
       </a>
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
+        data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
     </div>
     <ul class="site-nav" id="site-nav">
-          <li><a href="/" class="">Accueil</a></li>
-          <li><a href="/catalogue.html" class="">Catalogue</a></li>
-          <li><a href="/confection.html" class="" aria-current="page">Confection</a></li>
-          <li><a href="/faq.html" class="">FAQ</a></li>
-          <li><a href="/contact.html" class="nav-cta">Demander un devis</a></li>
+      <li><a href="/catalogue.html" data-i18n="nav.collections">Collections</a></li>
+      <li><a href="/confection.html" data-i18n="nav.confection">Confection</a></li>
+      <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
+      <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
+      <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
+        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
+        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
+      </li>
     </ul>
   </header>
 
   <main id="main">
-    <header class="page-hero page-hero--compact">
+    <section class="page-hero page-hero--photo" aria-labelledby="page-h1">
+      <div class="page-hero__media" aria-hidden="true">
+        <img src="assets/images/embroidery-preview.webp" alt="" width="1200" height="800" fetchpriority="high" decoding="async">
+      </div>
+      <div class="page-hero__shade" aria-hidden="true"></div>
       <div class="container">
         <p class="eyebrow">Confection</p>
-        <h1>Broderie et marquage de vêtements de travail</h1>
+        <h1 id="page-h1">Broderie et marquage de vêtements de travail</h1>
         <p class="page-hero__lead">
           Broderie, sérigraphie et adaptation de votre identité visuelle sur des textiles professionnels —
           un interlocuteur unique du conseil à la livraison en Suisse.
         </p>
+        <div class="page-hero__actions">
+          <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
+          <a href="/catalogue.html" class="btn btn-secondary">Voir les collections</a>
+        </div>
       </div>
-    </header>
+    </section>
 
     <section class="section section--white" aria-labelledby="aeo-prix">
       <div class="container" style="max-width:42rem;">
@@ -347,11 +365,14 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="cta-confection">
+    <section class="cta-band cta-band--dark" aria-labelledby="cta-confection">
       <div class="container">
         <h2 id="cta-confection">Projet de marquage ou broderie&nbsp;?</h2>
         <p>Indiquez pièces, quantités et logo — réponse sous 1 à 2 jours ouvrables, sans engagement.</p>
-        <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
+        <div class="cta-band__actions">
+          <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
+          <a href="/catalogue.html" class="btn btn-secondary">Voir les collections</a>
+        </div>
       </div>
     </section>
   </main>
@@ -379,29 +400,36 @@
   </div>
 </section>
 
-    <footer id="site-footer" class="site-footer">
-  <div class="container site-footer__grid">
-    <div>
-      <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark brand-mark--light"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>
-      </a>
-      <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
-      <ul class="site-footer__links">
-        <li><a href="/catalogue.html">Catalogue</a></li>
-        <li><a href="/confection.html">Confection</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="/confidentialite.html">Confidentialité</a></li>
-        <li><a href="/mentions-legales.html">Mentions légales</a></li>
-      </ul>
+        <footer id="site-footer" class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
+          <span class="brand-mark brand-mark--light">
+            <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
+            <span class="brand-mark__sub">Workwear</span>
+          </span>
+        </a>
+        <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
+        <ul class="site-footer__links">
+          <li><a href="/catalogue.html">Collections</a></li>
+          <li><a href="/confection.html">Confection</a></li>
+          <li><a href="/faq.html">Expertises</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__aside">
+        <p class="site-footer__contact-line"><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></p>
+        <p class="site-footer__contact-line"><a href="tel:+41797792151">+41 79 779 21 51</a></p>
+        <p class="site-footer__contact-line"><a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">Instagram · @alpeworkwear</a></p>
+      </div>
+      <div class="site-footer__copy">
+        © 2026 Alpë Workwear<br>
+        <span class="site-footer__copy-sub">Coordination suisse · Craft certifié</span>
+      </div>
     </div>
-    <div class="site-footer__copy">
-      © 2026 Alpë Workwear<br>
-      <span style="opacity:0.7;">Design Suisse · Atelier Kosovo · Coordination CH</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
@@ -424,9 +452,10 @@
         "description": "Devis personnalisé sur demande"
       }
     }
-  </script>  <aside class="sticky-cta" aria-label="Demande de devis">
+  </script>      <aside class="sticky-cta" aria-label="Demande de devis">
   <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
 </aside>
+  <script src="assets/js/lang-switch.js"></script>
 </body>
 
 </html>
