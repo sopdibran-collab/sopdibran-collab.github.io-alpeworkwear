@@ -213,7 +213,7 @@ function renderOrgSchema() {
         url: SITE_URL,
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo.png` },
         image: `${SITE_URL}/assets/logo.png`,
-        email: 'info@alpeworkwear.com',
+        email: 'info@alpeworkwear.ch',
         telephone: '+41797792151',
         description:
           'Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.',

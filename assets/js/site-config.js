@@ -5,14 +5,14 @@ window.ALPE_CONFIG = {
   siteUrl: 'https://www.alpeworkwear.ch',
   brand: 'Alpë Workwear',
   legalName: 'Alpë Workwear',
-  email: 'info@alpeworkwear.com',
+  email: 'info@alpeworkwear.ch',
   phoneDisplay: '+41 79 779 21 51',
   phoneTel: '+41797792151',
   whatsapp: 'https://wa.me/41797792151',
   instagram: 'https://www.instagram.com/alpeworkwear/',
   instagramHandle: '@alpeworkwear',
-  /** FormSubmit.co — envoi AJAX vers info@alpeworkwear.com */
-  formEndpoint: 'https://formsubmit.co/ajax/info@alpeworkwear.com',
+  /** FormSubmit.co — envoi AJAX vers info@alpeworkwear.ch */
+  formEndpoint: 'https://formsubmit.co/ajax/info@alpeworkwear.ch',
   gtmId: 'GTM-W7GRK3MK',
   fileFormatsNote:
     'Fichier vectoriel ou PDF haute résolution de préférence (AI, EPS, SVG, PDF). Nous vous indiquons si une adaptation est nécessaire.',

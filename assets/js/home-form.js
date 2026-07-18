@@ -7,7 +7,7 @@
   if (!form || !statusEl) return;
 
   const cfg = window.ALPE_CONFIG || {};
-  const email = (cfg.email || 'info@alpeworkwear.com').trim();
+  const email = (cfg.email || 'info@alpeworkwear.ch').trim();
   const endpoint =
     (typeof cfg.formEndpoint === 'string' && cfg.formEndpoint.trim()) ||
     `https://formsubmit.co/ajax/${encodeURIComponent(email)}`;
