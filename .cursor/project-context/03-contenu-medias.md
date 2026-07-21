@@ -7,8 +7,10 @@
 | Accueil | Proposition B2B, CTA devis |
 | Catalogue | Familles produits (softshell, polo, HV…) |
 | Confection | Broderie, sérigraphie |
-| FAQ | Réponses AEO, délais, formats |
-| Contact | Formulaire devis |
+| Réalisations | Cas clients (preuves) |
+| FAQ | Réponses AEO, délais, formats, villes |
+| Contact | Formulaire devis (marquage, ville, délai) |
+| Zones | `workwear-{ville}.html` — Genève, Lausanne, Zurich, Berne, Bâle |
 | Légales | Mentions, confidentialité |
 
 ## CTA principal
