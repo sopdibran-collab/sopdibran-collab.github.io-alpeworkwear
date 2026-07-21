@@ -61,6 +61,7 @@ Réf. plan de travail : `assets/brand/reference/affinity-logo-variants.png`
 Dérivés web :
 - `logo-apple-touch-180.png`, `logo-submark-512.png`
 - Alias : `assets/favicon.png`, `assets/favicon.svg`, `assets/logo.png` (= principale)
+- **Open Graph** : `assets/brand/og-default.jpg` (1200×630) — partage LinkedIn / WhatsApp / Facebook
 
 ### Intégration site
 
@@ -69,9 +70,8 @@ Dérivés web :
 | Header | RESPONSIVE (SVG) |
 | Footer (fond sombre) | RESPONSIVE SVG + filtre blanc (`site-logo__img--on-dark`) |
 | Favicon / apple-touch | FAVICON32X32 + apple-touch 180 |
-| Schema / OG défaut | `assets/logo.png` (principale) |
-
-Anciens fichiers `assets/images/logo-bleu-acier.png` / `logo-blanc-acier.png` : legacy — ne plus utiliser.
+| Schema Organization | `assets/brand/logo-principale.png` |
+| OG / Twitter | `assets/brand/og-default.jpg` |
 
 ## Voix & ton
 
