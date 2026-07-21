@@ -13,9 +13,11 @@ Site v1 en production — maintenance, SEO continu, optimisations via portail ag
 
 ## Priorités courantes
 
-1. SEO local villes suisses
-2. Contenu AEO FAQ
-3. Médias atelier (vidéos, Instagram)
+1. ~~SEO local villes suisses~~ → pages `workwear-{ville}.html` (Genève, Lausanne, Zurich, Berne, Bâle)
+2. ~~Contenu AEO FAQ~~ → FAQ enrichie (villes + devis précis)
+3. ~~Preuves clients / conversion devis~~ → page `realisations.html` + formulaires renforcés
+4. Médias atelier (vidéos, Instagram)
+5. Multicanal commercial (PDF / LinkedIn / email)
 
 ## Post-lancement
 

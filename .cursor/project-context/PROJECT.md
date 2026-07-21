@@ -25,3 +25,6 @@ Fournisseur B2B de vêtements de travail personnalisés (broderie, sérigraphie)
 - B2B uniquement — CTA « Demander un devis »
 - Vouvoiement obligatoire
 - Config : `assets/js/site-config.js`, CSS : `assets/css/main.css`
+- Chrome unifié (header/footer/lang) via `scripts/sync-chrome.cjs` — source de vérité = accueil
+- Heroes photo (`page-hero--photo`) sur pages métier ; légales en compact
+- Ne jamais appliquer la charte d’un autre client (Obsidian + project-context)

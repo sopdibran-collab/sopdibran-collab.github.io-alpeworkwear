@@ -1,0 +1,75 @@
+[
+  {
+    "id": "bestek",
+    "client": "Bestek Sàrl",
+    "secteur": "Bâtiment & services",
+    "pieces": ["Softshell", "T-shirt"],
+    "marquage": "Broderie poitrine + dos",
+    "resume": "Équipement d’équipe terrain avec softshells et t-shirts brodés pour une image cohérente sur chantier et en déplacement.",
+    "logo": "assets/images/clients/logos/bestek.svg",
+    "images": [
+      {
+        "src": "assets/images/clients/realisations/visusoftshellbestek.webp",
+        "alt": "Bestek Sàrl — softshell brodé, vue face"
+      },
+      {
+        "src": "assets/images/clients/realisations/visusoftshellbestekdos.webp",
+        "alt": "Bestek Sàrl — softshell brodé, vue dos"
+      },
+      {
+        "src": "assets/images/clients/realisations/visutshirtbestek.webp",
+        "alt": "Bestek Sàrl — t-shirt brodé, vue face"
+      },
+      {
+        "src": "assets/images/clients/realisations/visutshirtbestekdos.webp",
+        "alt": "Bestek Sàrl — t-shirt brodé, vue dos"
+      }
+    ]
+  },
+  {
+    "id": "sopjani-tech",
+    "client": "Sopjani Tech Sàrl",
+    "secteur": "Tech & services",
+    "pieces": ["Softshell", "T-shirt"],
+    "marquage": "Broderie identité corporate",
+    "resume": "Tenues professionnelles alignées sur la charte, pour une présence terrain et atelier nette et reconnaissable.",
+    "logo": "assets/images/clients/logos/sopjani-tech.svg",
+    "images": [
+      {
+        "src": "assets/images/clients/realisations/visusoftshellsopjanitech.webp",
+        "alt": "Sopjani Tech — softshell brodé, vue face"
+      },
+      {
+        "src": "assets/images/clients/realisations/visusoftshellsopjanitechdos.webp",
+        "alt": "Sopjani Tech — softshell brodé, vue dos"
+      },
+      {
+        "src": "assets/images/clients/realisations/visutshirtsopjanitech.webp",
+        "alt": "Sopjani Tech — t-shirt brodé, vue face"
+      },
+      {
+        "src": "assets/images/clients/realisations/visutshirtsopjanitechdos.webp",
+        "alt": "Sopjani Tech — t-shirt brodé, vue dos"
+      }
+    ]
+  },
+  {
+    "id": "visa-barber",
+    "client": "Visa Barber",
+    "secteur": "Services & retail",
+    "pieces": ["T-shirt"],
+    "marquage": "Marquage dos + face",
+    "resume": "Uniformisation de l’équipe salon avec t-shirts marqués — rendu propre, lisible et adapté à un usage quotidien.",
+    "logo": "assets/images/clients/logos/visa-barber.svg",
+    "images": [
+      {
+        "src": "assets/images/clients/realisations/visutshirtblancvisabarber.webp",
+        "alt": "Visa Barber — t-shirt blanc marqué"
+      },
+      {
+        "src": "assets/images/clients/realisations/visavisabarberdos.webp",
+        "alt": "Visa Barber — marquage dos"
+      }
+    ]
+  }
+]

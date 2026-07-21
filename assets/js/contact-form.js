@@ -14,9 +14,14 @@
 
   const params = new URLSearchParams(window.location.search);
   const produitField = form.querySelector('[name="produit"]');
+  const villeField = form.querySelector('[name="ville"]');
   const produitParam = params.get('produit');
+  const villeParam = params.get('ville');
   if (produitParam && produitField && !produitField.value) {
     produitField.value = produitParam;
+  }
+  if (villeParam && villeField && !villeField.value) {
+    villeField.value = villeParam;
   }
 
   const submitBtn = form.querySelector('[type="submit"]');
@@ -52,6 +57,9 @@
       telephone: (formData.get('telephone') || '').trim(),
       produit: (formData.get('produit') || '').trim(),
       quantites: (formData.get('quantites') || '').trim(),
+      marquage: (formData.get('marquage') || '').trim(),
+      ville: (formData.get('ville') || '').trim(),
+      delai: (formData.get('delai') || '').trim(),
       message: (formData.get('message') || '').trim(),
     };
   }
@@ -66,6 +74,9 @@
     if (payload.telephone) lines.push(`Téléphone : ${payload.telephone}`);
     if (payload.produit) lines.push(`Produit / gamme : ${payload.produit}`);
     if (payload.quantites) lines.push(`Quantités estimées : ${payload.quantites}`);
+    if (payload.marquage) lines.push(`Marquage : ${payload.marquage}`);
+    if (payload.ville) lines.push(`Ville de livraison : ${payload.ville}`);
+    if (payload.delai) lines.push(`Délai souhaité : ${payload.delai}`);
     lines.push('', payload.message);
     return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
   }
@@ -87,6 +98,9 @@
       telephone: payload.telephone || '—',
       produit: payload.produit || '—',
       quantites: payload.quantites || '—',
+      marquage: payload.marquage || '—',
+      ville: payload.ville || '—',
+      delai: payload.delai || '—',
       message: payload.message,
       _subject: `Demande Alpë Workwear — ${payload.entreprise}`,
       _template: 'table',

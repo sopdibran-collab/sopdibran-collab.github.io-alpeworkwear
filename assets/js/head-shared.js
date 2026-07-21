@@ -14,7 +14,7 @@
     meta.description ||
     document.querySelector('meta[name="description"]')?.getAttribute('content') ||
     '';
-  const image = meta.image || siteUrl + '/assets/logo.png';
+  const image = meta.image || siteUrl + '/assets/brand/og-default.jpg';
 
   function setMeta(attr, key, value) {
     if (!value) return;
@@ -39,8 +39,8 @@
     if (extra) Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
   }
 
-  setLink('icon', siteUrl + '/assets/logo.png', { type: 'image/png' });
-  setLink('apple-touch-icon', siteUrl + '/assets/logo.png');
+  setLink('icon', siteUrl + '/assets/brand/logo-favicon-32.png', { type: 'image/png', sizes: '32x32' });
+  setLink('apple-touch-icon', siteUrl + '/assets/brand/logo-apple-touch-180.png', { sizes: '180x180' });
 
   setMeta('property', 'og:type', meta.type || 'website');
   setMeta('property', 'og:site_name', cfg.brand || 'Alpë Workwear');
@@ -49,9 +49,17 @@
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', description);
   setMeta('property', 'og:image', image);
-  setMeta('property', 'og:image:alt', meta.imageAlt || cfg.brand || 'Alpë Workwear');
+  setMeta('property', 'og:image:width', '1200');
+  setMeta('property', 'og:image:height', '630');
+  setMeta('property', 'og:image:type', 'image/jpeg');
+  setMeta(
+    'property',
+    'og:image:alt',
+    meta.imageAlt ||
+      'Alpë Workwear — vêtements de travail personnalisés B2B, broderie et livraison Suisse'
+  );
 
-  setMeta('name', 'twitter:card', 'summary');
+  setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', title);
   setMeta('name', 'twitter:description', description);
   setMeta('name', 'twitter:image', image);

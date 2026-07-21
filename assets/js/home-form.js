@@ -34,6 +34,8 @@
     const fd = new FormData(form);
     const question = (fd.get('question') || '').trim();
     const userEmail = (fd.get('email') || '').trim();
+    const ville = (fd.get('ville') || '').trim();
+    const message = ville ? `${question}\n\nVille de livraison : ${ville}` : question;
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -51,7 +53,10 @@
           telephone: '—',
           produit: '—',
           quantites: '—',
-          message: question,
+          marquage: '—',
+          ville: ville || '—',
+          delai: '—',
+          message,
           _subject: `Demande accueil — ${userEmail}`,
           _template: 'table',
           _captcha: 'false',
@@ -62,7 +67,7 @@
       window.location.assign('merci.html');
     } catch {
       const subject = 'Demande accueil — Alpë Workwear';
-      const body = `E-mail : ${userEmail}\n\nMessage :\n${question}`;
+      const body = `E-mail : ${userEmail}\n${ville ? `Ville : ${ville}\n` : ''}\nMessage :\n${question}`;
       window.location.assign(
         `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       );

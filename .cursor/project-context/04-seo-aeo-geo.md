@@ -13,8 +13,10 @@
 | Accueil | vêtements de travail personnalisés entreprises |
 | Catalogue | catalogue vêtements travail professionnels |
 | Confection | broderie sérigraphie workwear |
+| Réalisations | réalisations workwear broderie entreprise |
 | Contact | devis vêtements travail entreprise |
 | FAQ | FAQ workwear entreprise |
+| Zones | workwear Genève / Lausanne / Zurich / Berne / Bâle |
 
 ## Meta
 
