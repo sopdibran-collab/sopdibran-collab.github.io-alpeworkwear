@@ -40,12 +40,38 @@
 
 ## Logo
 
-| Variante | Fichier | Usage |
-|----------|---------|-------|
-| Principal | `assets/logo.png` | Général, OG |
-| Bleu acier | `assets/images/logo-bleu-acier.png` | Header |
-| Blanc acier | `assets/images/logo-blanc-acier.png` | Fond sombre |
-| Texte header | ALPË + Workwear | Navigation |
+Couleur marque Affinity : **`#6B879C`** (`rgb(107, 135, 156)`).
+
+Source Affinity : `WEBDEV/Variantes logos/Alpë Workwear/`  
+Livrables site : `assets/brand/` (SVG + PNG + JPG)  
+Réf. plan de travail : `assets/brand/reference/affinity-logo-variants.png`
+
+| Variante Affinity | Fichier site | Usage |
+|-------------------|--------------|-------|
+| PRINCIPALE | `logo-principale.svg/.png/.jpg` | Vertical — docs, réseaux, OG |
+| RESPONSIVE | `logo-responsive.svg/.png/.jpg` | Header desktop / lockup horizontal |
+| TEXT | `logo-text.svg/.png/.jpg` | Wordmark seul |
+| SUBMARK | `logo-submark.svg/.png/.jpg` | Icône seule, app, watermark |
+| FAVICON32X32 | `logo-favicon-32.svg/.png` | Favicon navigateur |
+| MONOCHROMENOIR | `logo-monochrome-noir.*` | Impression N&B |
+| MONOCHROMEBLANC | `logo-monochrome-blanc.*` | Fond acier (artboard avec fond) |
+| GRAYSCALE | `logo-grayscale.*` | Niveaux de gris |
+| COULEURINVERSEE | `logo-couleur-inversee.*` | Acier sur fond noir (artboard) |
+
+Dérivés web :
+- `logo-apple-touch-180.png`, `logo-submark-512.png`
+- Alias : `assets/favicon.png`, `assets/favicon.svg`, `assets/logo.png` (= principale)
+
+### Intégration site
+
+| Emplacement | Variante |
+|-------------|----------|
+| Header | RESPONSIVE (SVG) |
+| Footer (fond sombre) | RESPONSIVE SVG + filtre blanc (`site-logo__img--on-dark`) |
+| Favicon / apple-touch | FAVICON32X32 + apple-touch 180 |
+| Schema / OG défaut | `assets/logo.png` (principale) |
+
+Anciens fichiers `assets/images/logo-bleu-acier.png` / `logo-blanc-acier.png` : legacy — ne plus utiliser.
 
 ## Voix & ton
 

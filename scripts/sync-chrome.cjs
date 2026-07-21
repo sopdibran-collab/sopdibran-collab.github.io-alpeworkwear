@@ -26,11 +26,8 @@ const pages = [
 const header = `  <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark">
-          <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
-          <span class="brand-mark__sub">Workwear</span>
-          <span class="site-header__tagline" data-i18n="header.tagline">Suisse B2B Personnalisation</span>
-        </span>
+        <img class="site-logo__img" src="/assets/brand/logo-responsive.svg" width="168" height="50" alt="" decoding="async">
+        <span class="visually-hidden">Alpë Workwear</span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
         data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
@@ -54,10 +51,8 @@ const footer = `  <footer id="site-footer" class="site-footer">
     <div class="container site-footer__grid">
       <div>
         <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
-          <span class="brand-mark brand-mark--light">
-            <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
-            <span class="brand-mark__sub">Workwear</span>
-          </span>
+          <img class="site-logo__img site-logo__img--on-dark" src="/assets/brand/logo-responsive.svg" width="148" height="44" alt="" decoding="async">
+          <span class="visually-hidden">Alpë Workwear</span>
         </a>
         <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
         <ul class="site-footer__links">

@@ -9,20 +9,21 @@
     content="Combien coûte la broderie workwear ? Délais, quantités, livraison Genève–Zurich, broderie vs sérigraphie. Réponses courtes pour entreprises suisses.">
   <link rel="canonical" href="https://www.alpeworkwear.ch/faq.html">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="https://www.alpeworkwear.ch/assets/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="https://www.alpeworkwear.ch/assets/logo.png">
+  <link rel="icon" href="https://www.alpeworkwear.ch/assets/brand/logo-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="https://www.alpeworkwear.ch/assets/brand/logo-favicon-32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://www.alpeworkwear.ch/assets/brand/logo-apple-touch-180.png" sizes="180x180">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Alpë Workwear">
   <meta property="og:locale" content="fr_CH">
   <meta property="og:url" content="https://www.alpeworkwear.ch/faq.html">
   <meta property="og:title" content="FAQ workwear B2B | Prix broderie, délais, livraison Suisse — Alpë Workwear">
   <meta property="og:description" content="Combien coûte la broderie workwear ? Délais, quantités, livraison Genève–Zurich, broderie vs sérigraphie. Réponses courtes pour entreprises suisses.">
-  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/logo.png">
+  <meta property="og:image" content="https://www.alpeworkwear.ch/assets/brand/logo-principale.png">
   <meta property="og:image:alt" content="Alpë Workwear">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="FAQ workwear B2B | Prix broderie, délais, livraison Suisse — Alpë Workwear">
   <meta name="twitter:description" content="Combien coûte la broderie workwear ? Délais, quantités, livraison Genève–Zurich, broderie vs sérigraphie. Réponses courtes pour entreprises suisses.">
-  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/logo.png"><link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="twitter:image" content="https://www.alpeworkwear.ch/assets/brand/logo-principale.png"><link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -53,9 +54,9 @@
       "url": "https://www.alpeworkwear.ch",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.alpeworkwear.ch/assets/logo.png"
+        "url": "https://www.alpeworkwear.ch/assets/brand/logo-principale.png"
       },
-      "image": "https://www.alpeworkwear.ch/assets/logo.png",
+      "image": "https://www.alpeworkwear.ch/assets/brand/logo-principale.png",
       "email": "info@alpeworkwear.ch",
       "telephone": "+41797792151",
       "description": "Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.",
@@ -227,14 +228,11 @@
 </head>
 
 <body>
-          <header id="site-header" class="site-header" aria-label="Navigation principale">
+            <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
-        <span class="brand-mark">
-          <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
-          <span class="brand-mark__sub">Workwear</span>
-          <span class="site-header__tagline" data-i18n="header.tagline">Suisse B2B Personnalisation</span>
-        </span>
+        <img class="site-logo__img" src="/assets/brand/logo-responsive.svg" width="168" height="50" alt="" decoding="async">
+        <span class="visually-hidden">Alpë Workwear</span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
         data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
@@ -492,14 +490,12 @@
   </div>
 </section>
 
-          <footer id="site-footer" class="site-footer">
+            <footer id="site-footer" class="site-footer">
     <div class="container site-footer__grid">
       <div>
         <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
-          <span class="brand-mark brand-mark--light">
-            <span class="brand-mark__name">ALP<span class="brand-mark__e">Ë</span></span>
-            <span class="brand-mark__sub">Workwear</span>
-          </span>
+          <img class="site-logo__img site-logo__img--on-dark" src="/assets/brand/logo-responsive.svg" width="148" height="44" alt="" decoding="async">
+          <span class="visually-hidden">Alpë Workwear</span>
         </a>
         <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
         <ul class="site-footer__links">
@@ -536,7 +532,7 @@
       const key = el.getAttribute('data-config');
       if (window.ALPE_CONFIG && window.ALPE_CONFIG[key]) el.textContent = window.ALPE_CONFIG[key];
     });
-  </script>        <aside class="sticky-cta" aria-label="Demande de devis">
+  </script>          <aside class="sticky-cta" aria-label="Demande de devis">
   <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
 </aside>
   <script src="assets/js/lang-switch.js"></script>
