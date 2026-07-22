@@ -3,11 +3,12 @@
  * Génère sitemap.xml à partir des pages HTML publiques à la racine du site.
  * Usage : node scripts/generate-sitemap.js
  */
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE_URL = 'https://www.alpeworkwear.ch';
 
 /** Pages indexables — alignées sur assets/js/layout.js + pages légales du footer. */
