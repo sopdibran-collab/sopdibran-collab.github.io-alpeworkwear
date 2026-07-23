@@ -9,13 +9,17 @@ const BRAND = 'Alpë Workwear';
 const INSTAGRAM_URL = 'https://www.instagram.com/alpeworkwear/';
 const INSTAGRAM_HANDLE = '@alpeworkwear';
 
+/** Aligné sur scripts/sync-chrome.cjs (chrome unifié). */
 const NAV_ITEMS = [
-  { href: '/', label: 'Accueil', file: 'index.html' },
-  { href: '/catalogue.html', label: 'Catalogue', file: 'catalogue.html' },
+  { href: '/catalogue.html', label: 'Collections', file: 'catalogue.html' },
   { href: '/confection.html', label: 'Confection', file: 'confection.html' },
-  { href: '/faq.html', label: 'FAQ', file: 'faq.html' },
-  { href: '/contact.html', label: 'Demander un devis', file: 'contact.html', cta: true },
+  { href: '/realisations.html', label: 'Réalisations', file: 'realisations.html' },
+  { href: '/faq.html', label: 'Expertises', file: 'faq.html' },
+  { href: '/contact.html', label: 'Contact', file: 'contact.html', cta: true },
 ];
+
+const LOGO_HEADER = '/assets/brand/logo-responsive.svg';
+const LOGO_FOOTER = '/assets/brand/logo-responsive.svg';
 
 const LEGAL_PAGES = new Set(['confidentialite.html', 'mentions-legales.html']);
 const NO_STICKY_CTA = new Set(['contact.html', 'merci.html', 'confidentialite.html', 'mentions-legales.html']);
@@ -38,29 +42,31 @@ function stripHtml(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function brandMark(light) {
-  const cls = light ? ' brand-mark--light' : '';
-  return `<span class="brand-mark${cls}"><span class="brand-mark__name">ALPË</span><span class="brand-mark__sub">Workwear</span></span>`;
-}
-
 function renderHeader(currentFile) {
   const navHtml = NAV_ITEMS.map((item) => {
-    const current =
-      currentFile === item.file || (currentFile === 'index.html' && item.file === 'index.html');
-    const cls = item.cta ? 'nav-cta' : '';
+    const current = currentFile === item.file;
+    const cls = item.cta ? ' class="nav-cta"' : '';
     const aria = current ? ' aria-current="page"' : '';
-    return `<li><a href="${item.href}" class="${cls}"${aria}>${item.label}</a></li>`;
-  }).join('\n          ');
+    return `<li><a href="${item.href}"${cls}${aria}>${item.label}</a></li>`;
+  }).join('\n      ');
 
   return `<header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="${BRAND} — accueil">
-        ${brandMark(false)}
+        <img class="site-logo__img" src="${LOGO_HEADER}" width="168" height="50" alt="" decoding="async">
+        <span class="visually-hidden">${BRAND}</span>
       </a>
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
+        data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
     </div>
     <ul class="site-nav" id="site-nav">
-          ${navHtml}
+      ${navHtml}
+      <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
+        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
+        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
+      </li>
     </ul>
   </header>`;
 }
@@ -93,28 +99,37 @@ function renderInstagramBand() {
 function renderFooter() {
   const year = new Date().getFullYear();
   return `<footer id="site-footer" class="site-footer">
-  <div class="container site-footer__grid">
-    <div>
-      <a href="/" class="site-footer__brand" aria-label="${BRAND} — accueil">
-        ${brandMark(true)}
-      </a>
-      <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
-      <ul class="site-footer__links">
-        <li><a href="/catalogue.html">Catalogue</a></li>
-        <li><a href="/confection.html">Confection</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="/confidentialite.html">Confidentialité</a></li>
-        <li><a href="/mentions-legales.html">Mentions légales</a></li>
-      </ul>
+    <div class="container site-footer__grid">
+      <div>
+        <a href="/" class="site-footer__brand" aria-label="${BRAND} — accueil">
+          <img class="site-logo__img site-logo__img--on-dark" src="${LOGO_FOOTER}" width="148" height="44" alt="" decoding="async">
+          <span class="visually-hidden">${BRAND}</span>
+        </a>
+        <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
+        <ul class="site-footer__links">
+          <li><a href="/catalogue.html">Collections</a></li>
+          <li><a href="/confection.html">Confection</a></li>
+          <li><a href="/realisations.html">Réalisations</a></li>
+          <li><a href="/faq.html">Expertises</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/workwear-geneve.html">Genève</a></li>
+          <li><a href="/workwear-lausanne.html">Lausanne</a></li>
+          <li><a href="/workwear-zurich.html">Zurich</a></li>
+          <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__aside">
+        <p class="site-footer__contact-line"><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></p>
+        <p class="site-footer__contact-line"><a href="tel:+41797792151">+41 79 779 21 51</a></p>
+        <p class="site-footer__contact-line"><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">Instagram · ${INSTAGRAM_HANDLE}</a></p>
+      </div>
+      <div class="site-footer__copy">
+        © ${year} ${BRAND}<br>
+        <span class="site-footer__copy-sub">Coordination suisse · Craft certifié</span>
+      </div>
     </div>
-    <div class="site-footer__copy">
-      © ${year} ${BRAND}<br>
-      <span style="opacity:0.7;">Design Suisse · Atelier Kosovo · Coordination CH</span>
-    </div>
-  </div>
-</footer>`;
+  </footer>`;
 }
 
 function renderStickyCta() {
@@ -184,9 +199,13 @@ function parseBreadcrumbs(html) {
 }
 
 function renderOgTags(meta) {
-  const image = `${SITE_URL}/assets/logo.png`;
-  return `  <link rel="icon" href="${SITE_URL}/assets/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="${SITE_URL}/assets/logo.png">
+  const image = `${SITE_URL}/assets/brand/og-default.jpg`;
+  const faviconPng = `${SITE_URL}/assets/brand/logo-favicon-32.png`;
+  const faviconSvg = `${SITE_URL}/assets/brand/logo-favicon-32.svg`;
+  const appleTouch = `${SITE_URL}/assets/brand/logo-apple-touch-180.png`;
+  return `  <link rel="icon" href="${faviconPng}" type="image/png" sizes="32x32">
+  <link rel="icon" href="${faviconSvg}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="${appleTouch}" sizes="180x180">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${BRAND}">
   <meta property="og:locale" content="fr_CH">
@@ -194,8 +213,11 @@ function renderOgTags(meta) {
   <meta property="og:title" content="${escapeAttr(meta.title)}">
   <meta property="og:description" content="${escapeAttr(meta.description)}">
   <meta property="og:image" content="${image}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="${escapeAttr(meta.imageAlt)}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeAttr(meta.title)}">
   <meta name="twitter:description" content="${escapeAttr(meta.description)}">
   <meta name="twitter:image" content="${image}">`;
@@ -211,8 +233,8 @@ function renderOrgSchema() {
         name: BRAND,
         legalName: BRAND,
         url: SITE_URL,
-        logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo.png` },
-        image: `${SITE_URL}/assets/logo.png`,
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/brand/logo-principale.png` },
+        image: `${SITE_URL}/assets/brand/logo-principale.png`,
         email: 'info@alpeworkwear.ch',
         telephone: '+41797792151',
         description:
