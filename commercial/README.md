@@ -28,5 +28,7 @@ Sorties :
 
 ### Contenu
 
-Page 1 — header, accroche automotive, hero, lettre personnalisée, CTA « Demander un devis partenaire », bandeau 01 Devis / 02 Broderie / 03 Livraison Suisse.  
+Structure calquée sur le mailing SFS « Une image forte, car chaque détail compte » :
+
+Page 1 — header logo/date + filet, sous-titre, gros titre, hero, lettre « Madame, Monsieur », CTA contour magenta, bandeau titré 01 Devis / 02 Broderie / 03 Livraison Suisse.  
 Page 2 — 3 produits, process 01–05, arguments centres auto, prochaine étape, footer + WhatsApp.

@@ -140,147 +140,130 @@ def draw_button(
     label: str,
     cx: float,
     cy: float,
-    pad_x: float = 16,
-    pad_y: float = 8,
-) -> None:
+    pad_x: float = 18,
+    pad_y: float = 9,
+    *,
+    filled: bool = True,
+) -> float:
+    """Dessine un CTA centré. Retourne la hauteur du bouton."""
     c.setFont("DMSans-SemiBold", 10)
     tw = c.stringWidth(label, "DMSans-SemiBold", 10)
     w = tw + 2 * pad_x
     h = 10 + 2 * pad_y
     x = cx - w / 2
     y = cy - h / 2
-    c.setFillColor(MAGENTA)
-    c.roundRect(x, y, w, h, 2, fill=1, stroke=0)
-    c.setFillColor(white)
+    if filled:
+        c.setFillColor(MAGENTA)
+        c.roundRect(x, y, w, h, 2, fill=1, stroke=0)
+        c.setFillColor(white)
+    else:
+        # Style newsletter SFS : contour accent, fond blanc
+        c.setFillColor(white)
+        c.setStrokeColor(MAGENTA)
+        c.setLineWidth(1.4)
+        c.roundRect(x, y, w, h, 2, fill=1, stroke=1)
+        c.setFillColor(MAGENTA)
     c.drawCentredString(cx, y + pad_y + 1.5, label)
+    return h
 
 
 def draw_page1(c: canvas.Canvas, date_label: str) -> None:
-    # Fond
+    """Page 1 calquée sur le mailing SFS (logo/date → titre → hero → lettre → CTA → bandeau)."""
     c.setFillColor(white)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
 
-    # Bandeau haut acier pâle
-    header_h = 22 * mm
-    c.setFillColor(BG_ALT)
-    c.rect(0, PAGE_H - header_h, PAGE_W, header_h, fill=1, stroke=0)
-
-    # Logo
+    # Header blanc type newsletter : logo + date, filet acier
     logo = rgb_cover_crop(ASSETS["logo"], 720, 216)
-    logo_h = 11 * mm
+    logo_h = 10 * mm
     logo_w = logo_h * (720 / 216)
-    c.drawImage(
-        logo,
-        MARGIN_X,
-        PAGE_H - header_h + (header_h - logo_h) / 2,
-        width=logo_w,
-        height=logo_h,
-        mask="auto",
-    )
-
-    # Date
-    c.setFont("DMSans-Medium", 8.5)
+    header_top = PAGE_H - 10 * mm
+    c.drawImage(logo, MARGIN_X, header_top - logo_h, width=logo_w, height=logo_h, mask="auto")
+    c.setFont("DMSans-Medium", 9)
     c.setFillColor(STEEL_MUTED)
-    c.drawRightString(PAGE_W - MARGIN_X, PAGE_H - header_h / 2 - 2.5, date_label)
+    c.drawRightString(PAGE_W - MARGIN_X, header_top - logo_h / 2 - 3, date_label)
 
-    # Bandeau avantages + footer ancrés en bas (style newsletter)
-    footer_h = 12 * mm
-    band_h = 28 * mm
+    rule_y = header_top - logo_h - 5 * mm
+    c.setStrokeColor(NAVY)
+    c.setLineWidth(1.2)
+    c.line(MARGIN_X, rule_y, PAGE_W - MARGIN_X, rule_y)
+
+    # Bandeau avantages ancré en bas (comme le bloc eShop SFS)
+    footer_h = 10 * mm
+    band_h = 36 * mm
     band_top = footer_h + band_h
 
-    y = PAGE_H - header_h - 8 * mm
+    y = rule_y - 8 * mm
 
-    # Sous-titre / accroche automotive
-    c.setFont("DMSans-Medium", 9)
+    # Sous-titre (phrase, style SFS — pas en capitales marketing)
+    c.setFont("DMSans", 10)
     c.setFillColor(STEEL)
-    c.drawString(MARGIN_X, y, "PROPOSITION PARTENAIRE  ·  CENTRES AUTOMOBILES")
-    y -= 7 * mm
+    c.drawString(MARGIN_X, y, "Workwear personnalisé au logo de votre centre")
+    y -= 8 * mm
 
     # Gros titre
     title_bottom = draw_wrapped(
         c,
-        "Une image de marque aussi précise que vos finitions.",
-        MARGIN_X,
-        y,
-        CONTENT_W * 0.92,
-        "DMSans-Bold",
-        21,
-        25,
-        NAVY,
-    )
-    y = title_bottom - 3.5 * mm
-
-    # Sous-accroche
-    y = draw_wrapped(
-        c,
-        "Workwear B2B personnalisé pour les équipes du Centre Porsche Sierre — accueil, vente et atelier.",
+        "Une image de marque aussi précise que vos finitions",
         MARGIN_X,
         y,
         CONTENT_W * 0.95,
-        "DMSans",
-        10,
-        13.5,
-        STEEL_MUTED,
+        "DMSans-Bold",
+        20,
+        24,
+        NAVY,
     )
-    y -= 5 * mm
+    y = title_bottom - 6 * mm
 
-    # Hero
-    hero_h = 52 * mm
-    hero = rgb_cover_crop(ASSETS["hero"], int(CONTENT_W * 2.5), int(hero_h * 2.5))
+    # Hero plein cadre (dans les marges)
+    hero_h = 58 * mm
+    hero = rgb_cover_crop(ASSETS["hero"], int(CONTENT_W * 2.8), int(hero_h * 2.8))
     c.drawImage(hero, MARGIN_X, y - hero_h, width=CONTENT_W, height=hero_h, mask="auto")
-    c.setFillColor(NAVY)
-    c.rect(MARGIN_X, y - hero_h - 1.2 * mm, CONTENT_W, 1.2 * mm, fill=1, stroke=0)
-    y = y - hero_h - 7 * mm
+    y = y - hero_h - 8 * mm
 
-    # Lettre
-    c.setFont("DMSans-SemiBold", 10.5)
+    # Lettre personnalisée
+    c.setFont("DMSans-SemiBold", 11)
     c.setFillColor(TEXTILE)
     c.drawString(MARGIN_X, y, "Madame, Monsieur,")
-    y -= 5.5 * mm
+    y -= 6 * mm
 
     paragraphs = [
         (
-            "Nous avons le plaisir de vous adresser cette proposition destinée au "
-            "Centre Porsche Sierre — Garage Olympic SA, Route de la Bonne-Eau 2, 3960 Sierre."
+            "Une image professionnelle commence par les détails. Pour le "
+            "Centre Porsche Sierre — Garage Olympic SA (Route de la Bonne-Eau 2, 3960 Sierre), "
+            "nous proposons un workwear B2B personnalisé : broderie et sérigraphie sur "
+            "softshells, polos, gilets et pièces atelier."
         ),
         (
-            "Alpë Workwear équipe les entreprises suisses en workwear personnalisé : "
-            "broderie et sérigraphie sur softshells, polos, gilets et pièces atelier. "
-            "Notre approche est pensée pour les marques exigeantes — cohérence visuelle, "
-            "qualité textile et coordination simple, de la prise de brief à la livraison en Suisse."
+            "Au-delà du textile, le placement, la taille et la couleur du logo font la "
+            "différence — surtout pour une marque automobile premium. Nous accompagnons "
+            "vos équipes accueil, vente et atelier avec des tenues cohérentes, "
+            "confortables au quotidien et fidèles à votre identité."
         ),
         (
-            "Pour vos équipes accueil, vente et atelier, nous proposons des tenues "
-            "distinctes par métier, unifiées par votre identité Porsche / Garage Olympic — "
-            "logo, couleurs et finitions soignées, sans compromis sur le confort au quotidien."
-        ),
-        (
-            "Nous restons à votre disposition pour un devis partenaire sur mesure, "
-            "sans engagement, adapté à vos volumes et à votre calendrier."
+            "Contactez-nous dès aujourd’hui par courriel info@alpeworkwear.ch "
+            "ou par téléphone au +41 79 779 21 51 — devis partenaire sans engagement, "
+            "livraison coordonnée en Suisse."
         ),
     ]
     for para in paragraphs:
-        y = draw_wrapped(
-            c, para, MARGIN_X, y, CONTENT_W, "DMSans", 9.2, 12.5, TEXT
-        )
-        y -= 3.6 * mm
+        y = draw_wrapped(c, para, MARGIN_X, y, CONTENT_W, "DMSans", 9.5, 13, TEXT)
+        y -= 4 * mm
 
-    y -= 1.5 * mm
-    c.setFont("DMSans", 9.2)
-    c.setFillColor(TEXT)
-    c.drawString(MARGIN_X, y, "Cordialement,")
-    y -= 4.2 * mm
-    c.setFont("DMSans-SemiBold", 9.2)
-    c.setFillColor(NAVY)
-    c.drawString(MARGIN_X, y, "L’équipe Alpë Workwear")
+    # CTA (contour magenta, rythme newsletter SFS + accent Alpë)
+    cta_y = max(y - 10 * mm, band_top + 12 * mm)
+    draw_button(c, "Demander un devis partenaire", PAGE_W / 2, cta_y, filled=False)
 
-    # CTA centré entre la lettre et le bandeau bas
-    cta_y = (y + band_top) / 2
-    draw_button(c, "Demander un devis partenaire", PAGE_W / 2, cta_y)
-
-    # Bandeau avantages 3 colonnes (bas de page)
+    # Bandeau avantages — titre + 3 colonnes (équivalent eShop SFS)
     c.setFillColor(NAVY)
     c.rect(0, footer_h, PAGE_W, band_h, fill=1, stroke=0)
+
+    c.setFont("DMSans-SemiBold", 9)
+    c.setFillColor(white)
+    c.drawCentredString(
+        PAGE_W / 2,
+        footer_h + band_h - 7 * mm,
+        "Alpë Workwear vous accompagne sur trois piliers",
+    )
 
     advantages = [
         ("01", "Devis", "Proposition claire,\nsans engagement"),
@@ -290,25 +273,23 @@ def draw_page1(c: canvas.Canvas, date_label: str) -> None:
     col_w = CONTENT_W / 3
     for i, (num, title, desc) in enumerate(advantages):
         cx = MARGIN_X + col_w * i + col_w / 2
-        base = footer_h + band_h / 2
+        base = footer_h + 12 * mm
         c.setFont("DMSans-Bold", 8)
         c.setFillColor(MAGENTA)
-        c.drawCentredString(cx, base + 7.5 * mm, num)
+        c.drawCentredString(cx, base + 8 * mm, num)
         c.setFont("DMSans-SemiBold", 10)
         c.setFillColor(white)
-        c.drawCentredString(cx, base + 2.2 * mm, title)
+        c.drawCentredString(cx, base + 2.5 * mm, title)
         c.setFont("DMSans", 7.5)
         c.setFillColor(STEEL_PALE)
         for j, line in enumerate(desc.split("\n")):
-            c.drawCentredString(cx, base - 2.5 * mm - j * 9, line)
-
+            c.drawCentredString(cx, base - 2.8 * mm - j * 9, line)
         if i < 2:
             c.setStrokeColor(STEEL)
             c.setLineWidth(0.6)
             sep_x = MARGIN_X + col_w * (i + 1)
-            c.line(sep_x, footer_h + 6 * mm, sep_x, footer_h + band_h - 6 * mm)
+            c.line(sep_x, footer_h + 4 * mm, sep_x, footer_h + band_h - 12 * mm)
 
-    # Mini footer page 1
     c.setFillColor(white)
     c.rect(0, 0, PAGE_W, footer_h, fill=1, stroke=0)
     c.setFont("DMSans", 7)
