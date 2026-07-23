@@ -199,9 +199,13 @@ function parseBreadcrumbs(html) {
 }
 
 function renderOgTags(meta) {
-  const image = `${SITE_URL}/assets/logo.png`;
-  return `  <link rel="icon" href="${SITE_URL}/assets/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="${SITE_URL}/assets/logo.png">
+  const image = `${SITE_URL}/assets/brand/og-default.jpg`;
+  const faviconPng = `${SITE_URL}/assets/brand/logo-favicon-32.png`;
+  const faviconSvg = `${SITE_URL}/assets/brand/logo-favicon-32.svg`;
+  const appleTouch = `${SITE_URL}/assets/brand/logo-apple-touch-180.png`;
+  return `  <link rel="icon" href="${faviconPng}" type="image/png" sizes="32x32">
+  <link rel="icon" href="${faviconSvg}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="${appleTouch}" sizes="180x180">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${BRAND}">
   <meta property="og:locale" content="fr_CH">
@@ -209,8 +213,11 @@ function renderOgTags(meta) {
   <meta property="og:title" content="${escapeAttr(meta.title)}">
   <meta property="og:description" content="${escapeAttr(meta.description)}">
   <meta property="og:image" content="${image}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="${escapeAttr(meta.imageAlt)}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeAttr(meta.title)}">
   <meta name="twitter:description" content="${escapeAttr(meta.description)}">
   <meta name="twitter:image" content="${image}">`;
@@ -226,8 +233,8 @@ function renderOrgSchema() {
         name: BRAND,
         legalName: BRAND,
         url: SITE_URL,
-        logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo.png` },
-        image: `${SITE_URL}/assets/logo.png`,
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/brand/logo-principale.png` },
+        image: `${SITE_URL}/assets/brand/logo-principale.png`,
         email: 'info@alpeworkwear.ch',
         telephone: '+41797792151',
         description:
