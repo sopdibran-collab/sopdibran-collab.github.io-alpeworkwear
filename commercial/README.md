@@ -1,33 +1,36 @@
-# Commercial — newsletter / proposition B2B
+# Commercial — propositions PDF
 
-## Fichier
+## Pack centres auto premium
 
-`proposition-alpe-newsletter-b2b.pdf` — A4, 2 pages, style newsletter.
+`proposition-alpe-centre-porsche-sierre.pdf` — A4, 2 pages, style newsletter B2B.
 
-Angle : workwear B2B générique (accueil / vente / atelier). **Pas de destinataire nommé** (ex. pas de concession ciblée dans le texte).
+- **Suivi interne** : nom de fichier lié à l’opportunité Sierre.
+- **Contenu PDF** : aucun concessionnaire nommé. Le ton se calibre sur l’exigence d’une marque automobile d’exception (showroom / vente / atelier).
 
-## Sources
-
-Le vault Obsidian local (`~/Documents/AlpëWorkwear/…`) n’est pas monté dans l’environnement cloud. Contenu calé sur :
-
-- `.cursor/project-context/` (charte, ton, vocabulaire)
-- `data/i18n/home.json`, `data/cas-clients.json`, `data/timeline.json`
-- Assets site : logo, OG broderie, catalogue, réalisations clients, timeline production
-
-## Régénérer
+### Régénérer
 
 ```bash
 pip3 install reportlab pillow pymupdf
-python3 scripts/generate-proposition-newsletter-b2b.py
+python3 scripts/generate-proposition-centre-porsche-sierre.py
 ```
 
 Sorties :
-- `commercial/proposition-alpe-newsletter-b2b.pdf`
-- `commercial/previews/newsletter-b2b-p1.png`
-- `commercial/previews/newsletter-b2b-p2.png`
+- `commercial/proposition-alpe-centre-porsche-sierre.pdf`
+- `commercial/previews/centre-porsche-sierre-p1.png`
+- `commercial/previews/centre-porsche-sierre-p2.png`
 
-## Structure
+### Structure
 
-**Page 1** — logo/date, sous-titre + titre (rythme SFS), hero dual (OG broderie + détail), lettre, CTA contour magenta, bandeau 01 Devis / 02 Broderie / 03 Livraison Suisse.
+**Page 1** — logo/date, accroche automotive, hero broderie, lettre « Madame, Monsieur », CTA devis partenaire, bandeau 01 Devis / 02 Broderie / 03 Livraison Suisse.
 
-**Page 2** — 3 produits catalogue, 3 preuves clients, process 01–05 sur image atelier, arguments équipes, prochaine étape, footer + WhatsApp.
+**Page 2** — softshell atelier / polo vente / gilet, process 01–05, arguments centres auto exigeants, prochaine étape, footer + WhatsApp.
+
+---
+
+## Newsletter B2B générique
+
+`proposition-alpe-newsletter-b2b.pdf` — même format, angle workwear B2B non sectorisé.
+
+```bash
+python3 scripts/generate-proposition-newsletter-b2b.py
+```
