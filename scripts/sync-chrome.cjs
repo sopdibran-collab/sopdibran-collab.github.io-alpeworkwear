@@ -70,7 +70,7 @@ const footer = `  <footer id="site-footer" class="site-footer">
       </div>
       <div class="site-footer__aside">
         <p class="site-footer__contact-line"><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></p>
-        <p class="site-footer__contact-line"><a href="tel:+41797792151">+41 79 779 21 51</a></p>
+        <p class="site-footer__contact-line"><a href="tel:+41797792159">+41 79 779 21 59</a></p>
         <p class="site-footer__contact-line"><a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">Instagram · @alpeworkwear</a></p>
       </div>
       <div class="site-footer__copy">

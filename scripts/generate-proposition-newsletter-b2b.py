@@ -252,7 +252,7 @@ def draw_page1(c: canvas.Canvas, date_label: str) -> None:
         ),
         (
             "Contactez-nous par courriel à info@alpeworkwear.ch ou par téléphone "
-            "au +41 79 779 21 51."
+            "au +41 79 779 21 59."
         ),
     ]
     for para in paragraphs:
@@ -306,7 +306,7 @@ def draw_page1(c: canvas.Canvas, date_label: str) -> None:
     c.drawCentredString(
         PAGE_W / 2,
         foot_h / 2 - 2,
-        "info@alpeworkwear.ch  ·  +41 79 779 21 51  ·  www.alpeworkwear.ch",
+        "info@alpeworkwear.ch  ·  +41 79 779 21 59  ·  www.alpeworkwear.ch",
     )
 
 
@@ -509,11 +509,11 @@ def draw_page2(c: canvas.Canvas) -> None:
     c.setFont("DMSans", 8)
     c.setFillColor(TEXT)
     y -= 4.2 * mm
-    c.drawString(MARGIN_X, y, "info@alpeworkwear.ch  ·  +41 79 779 21 51  ·  www.alpeworkwear.ch")
+    c.drawString(MARGIN_X, y, "info@alpeworkwear.ch  ·  +41 79 779 21 59  ·  www.alpeworkwear.ch")
     y -= 3.8 * mm
     c.setFont("DMSans-Medium", 8)
     c.setFillColor(STEEL)
-    c.drawString(MARGIN_X, y, "WhatsApp Business  ·  wa.me/41797792151")
+    c.drawString(MARGIN_X, y, "WhatsApp Business  ·  wa.me/41797792159")
     y -= 3.8 * mm
     c.setFont("DMSans", 7)
     c.setFillColor(STEEL_MUTED)

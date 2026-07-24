@@ -121,7 +121,7 @@ function renderFooter() {
       </div>
       <div class="site-footer__aside">
         <p class="site-footer__contact-line"><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></p>
-        <p class="site-footer__contact-line"><a href="tel:+41797792151">+41 79 779 21 51</a></p>
+        <p class="site-footer__contact-line"><a href="tel:+41797792159">+41 79 779 21 59</a></p>
         <p class="site-footer__contact-line"><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">Instagram · ${INSTAGRAM_HANDLE}</a></p>
       </div>
       <div class="site-footer__copy">
@@ -236,7 +236,7 @@ function renderOrgSchema() {
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/brand/logo-principale.png` },
         image: `${SITE_URL}/assets/brand/logo-principale.png`,
         email: 'info@alpeworkwear.ch',
-        telephone: '+41797792151',
+        telephone: '+41797792159',
         description:
           'Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.',
         priceRange: '$$',

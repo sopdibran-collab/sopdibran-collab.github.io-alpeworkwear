@@ -168,7 +168,7 @@
         );
       } catch {
         setStatus(
-          `L’envoi n’a pas abouti. Écrivez-nous à ${email} ou appelez le ${cfg.phoneDisplay || '+41 79 779 21 51'}.`,
+          `L’envoi n’a pas abouti. Écrivez-nous à ${email} ou appelez le ${cfg.phoneDisplay || '+41 79 779 21 59'}.`,
           'error'
         );
       }

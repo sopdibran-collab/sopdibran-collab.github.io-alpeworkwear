@@ -1,11 +1,13 @@
 # Commercial — propositions PDF
 
+> Source de vérité process : vault **AI Agency OS** — mission E [[01 - Workflow Cursor]], [[T - Proposition commerciale]], soft-cite, checks pitch. Ce dossier = assets + scripts générés.
+
 ## Pack centres auto premium
 
 `proposition-alpe-centre-porsche-sierre.pdf` — A4, 2 pages, style newsletter B2B.
 
-- **Suivi interne** : nom de fichier lié à l’opportunité Sierre.
-- **Contenu PDF** : aucun concessionnaire nommé. Le ton se calibre sur l’exigence d’une marque automobile d’exception (showroom / vente / atelier).
+- **Suivi interne** : nom de fichier lié à l’opportunité (note vault `03 Projects/Alpë Workwear/01 - Opportunité centres auto premium`).
+- **Contenu PDF** : aucun concessionnaire nommé (soft-cite). Le ton se calibre sur l’exigence d’une marque automobile d’exception (showroom / vente / atelier).
 
 ### Régénérer
 
