@@ -1,0 +1,234 @@
+/* Réalisations — cas clients éditorial (compact) */
+
+.section.cases {
+  padding-top: 2.25rem;
+  padding-bottom: 2.75rem;
+}
+
+.page-realisations .page-hero--photo-soft > .container {
+  padding: 2.25rem 0 2.5rem;
+}
+
+.page-realisations .section--white:not(.cases) {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-realisations .answer-block {
+  margin: 0;
+}
+
+.cases__intro {
+  margin-bottom: 1.35rem;
+  max-width: 34rem;
+}
+
+.cases__eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+}
+
+.cases__intro h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-textile);
+}
+
+.cases__lede {
+  margin: 0.45rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.cases__layout {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.cases__media {
+  margin: 0;
+  background: var(--color-bg-alt);
+  aspect-ratio: 1;
+  max-height: min(22rem, 70vw);
+  width: min(100%, 22rem);
+  overflow: hidden;
+}
+
+.cases__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: opacity 0.3s ease;
+}
+
+.cases__copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cases__index {
+  margin: 0 0 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-steel);
+}
+
+.cases__client {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-textile);
+  letter-spacing: -0.01em;
+}
+
+.cases__secteur {
+  margin: 0.2rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.cases__resume {
+  margin: 0.65rem 0 0;
+  max-width: 26rem;
+  color: var(--color-steel-muted);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.cases__tags {
+  margin: 0.55rem 0 0;
+  font-size: 0.75rem;
+  color: var(--color-steel);
+  letter-spacing: 0.02em;
+}
+
+.cases__link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  align-self: flex-start;
+  color: var(--color-textile);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-cta);
+  padding-bottom: 0.05rem;
+  transition: color 0.2s ease;
+}
+
+.cases__link:hover {
+  color: var(--color-cta);
+}
+
+.cases__thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.25rem, 1fr));
+  gap: 0.4rem;
+  margin-top: 1rem;
+  max-width: 16rem;
+}
+
+.cases__thumb {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--color-bg-alt);
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.cases__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.cases__thumb:hover img,
+.cases__thumb.is-active img {
+  opacity: 1;
+}
+
+.cases__thumb.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-surface-dark);
+}
+
+.cases__nav {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.cases__nav-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  color: var(--color-textile);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cases__nav-btn:hover:not(:disabled) {
+  border-color: var(--color-textile);
+  background: var(--color-bg-alt);
+}
+
+.cases__nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (min-width: 900px) {
+  .section.cases {
+    padding-top: 2.75rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .cases__intro {
+    margin-bottom: 1.5rem;
+  }
+
+  .cases__layout {
+    grid-template-columns: minmax(0, 22rem) minmax(14rem, 1fr);
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .cases__media {
+    width: 100%;
+    max-height: 22rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cases__media img,
+  .cases__thumb img,
+  .cases__link {
+    transition: none;
+  }
+}

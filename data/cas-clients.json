@@ -3,18 +3,21 @@
     "id": "bestek",
     "client": "Bestek Sàrl",
     "secteur": "Bâtiment & services",
-    "pieces": ["Softshell", "T-shirt"],
+    "pieces": [
+      "Softshell",
+      "T-shirt"
+    ],
     "marquage": "Broderie poitrine + dos",
     "resume": "Équipement d’équipe terrain avec softshells et t-shirts brodés pour une image cohérente sur chantier et en déplacement.",
     "logo": "assets/images/clients/logos/bestek.svg",
     "images": [
       {
-        "src": "assets/images/clients/realisations/visusoftshellbestek.webp",
-        "alt": "Bestek Sàrl — softshell brodé, vue face"
-      },
-      {
         "src": "assets/images/clients/realisations/visusoftshellbestekdos.webp",
         "alt": "Bestek Sàrl — softshell brodé, vue dos"
+      },
+      {
+        "src": "assets/images/clients/realisations/visusoftshellbestek.webp",
+        "alt": "Bestek Sàrl — softshell brodé, vue face"
       },
       {
         "src": "assets/images/clients/realisations/visutshirtbestek.webp",
@@ -30,7 +33,10 @@
     "id": "sopjani-tech",
     "client": "Sopjani Tech Sàrl",
     "secteur": "Tech & services",
-    "pieces": ["Softshell", "T-shirt"],
+    "pieces": [
+      "Softshell",
+      "T-shirt"
+    ],
     "marquage": "Broderie identité corporate",
     "resume": "Tenues professionnelles alignées sur la charte, pour une présence terrain et atelier nette et reconnaissable.",
     "logo": "assets/images/clients/logos/sopjani-tech.svg",
@@ -57,7 +63,9 @@
     "id": "visa-barber",
     "client": "Visa Barber",
     "secteur": "Services & retail",
-    "pieces": ["T-shirt"],
+    "pieces": [
+      "T-shirt"
+    ],
     "marquage": "Marquage dos + face",
     "resume": "Uniformisation de l’équipe salon avec t-shirts marqués — rendu propre, lisible et adapté à un usage quotidien.",
     "logo": "assets/images/clients/logos/visa-barber.svg",

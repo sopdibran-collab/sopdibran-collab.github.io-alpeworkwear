@@ -8,10 +8,13 @@
   --color-steel-muted: #5c6f82;
   --color-steel-pale: #d8e2ea;
   --color-bg: #ffffff;
-  --color-bg-alt: #f5f6f8;
+  --color-bg-alt: #eef3f7;
   --color-text: #1f2933;
   --color-textile: #11151a;
   --color-navy: #0f2138;
+  /* Unique surface sombre sitewide (hero, CTA dark, footer, collections) */
+  --color-surface-dark: var(--color-navy);
+  --color-surface-dark-soft: #152a42;
   --color-border: rgba(43, 43, 43, 0.1);
   --color-border-strong: rgba(43, 43, 43, 0.18);
 
@@ -303,10 +306,10 @@ body.is-nav-open {
 
 /* ── Footer ── */
 .site-footer {
-  background: var(--color-charcoal);
+  background: var(--color-surface-dark);
   color: rgba(255, 255, 255, 0.78);
   padding: 0 0 2.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Legacy — masque toute grille résiduelle si cache navigateur */
@@ -433,7 +436,7 @@ body.is-nav-open {
   padding: 0;
   border-bottom: none;
   overflow: hidden;
-  background: #0a0a0a;
+  background: var(--color-surface-dark);
   color: #fff;
 }
 
@@ -456,11 +459,11 @@ body.is-nav-open {
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(6, 6, 6, 0.94) 0%,
-    rgba(6, 6, 6, 0.86) 32%,
-    rgba(6, 6, 6, 0.58) 58%,
-    rgba(6, 6, 6, 0.28) 78%,
-    rgba(6, 6, 6, 0.12) 100%
+    rgba(15, 33, 56, 0.94) 0%,
+    rgba(15, 33, 56, 0.86) 32%,
+    rgba(15, 33, 56, 0.58) 58%,
+    rgba(15, 33, 56, 0.28) 78%,
+    rgba(15, 33, 56, 0.12) 100%
   );
   pointer-events: none;
 }
@@ -1406,7 +1409,7 @@ a.filter-btn {
 }
 
 .cta-band--dark {
-  background: var(--color-navy);
+  background: var(--color-surface-dark);
   color: #fff;
   border-top: none;
 }
@@ -1912,85 +1915,9 @@ a.filter-btn {
   }
 }
 
-/* —— Phase A : réalisations / cas clients —— */
+/* —— Legacy case-card (unused) kept minimal for cache safety —— */
 .case-grid {
-  display: grid;
-  gap: 2.5rem;
-}
-
-.case-card {
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  padding: 1.5rem;
-}
-
-.case-card__head {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 0.85rem;
-}
-
-.case-card__logo {
-  width: 7rem;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.case-card__title {
-  margin: 0 0 0.25rem;
-  font-size: 1.25rem;
-  color: var(--color-textile);
-}
-
-.case-card__meta,
-.case-card__mark {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--color-muted);
-}
-
-.case-card__mark {
-  margin-top: 0.2rem;
-  color: var(--color-steel);
-  font-weight: 500;
-}
-
-.case-card__resume {
-  margin: 0 0 1rem;
-  max-width: 42rem;
-}
-
-.case-card__gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .case-card__gallery {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.case-card__shot {
-  margin: 0;
-  aspect-ratio: 1;
-  overflow: hidden;
-  background: var(--color-bg-alt);
-}
-
-.case-card__shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.case-card__cta {
-  margin: 0;
+  display: none;
 }
 
 .zones-list {

@@ -31,6 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/realisations.css">
   <script src="assets/js/site-config.js"></script>
   <script>
     window.ALPE_PAGE_META = {
@@ -48,7 +49,7 @@
   <script src="assets/js/head-shared.js"></script>
 </head>
 
-<body>
+<body class="page-realisations">
       <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
@@ -74,9 +75,9 @@
   </header>
 
   <main id="main">
-    <section class="page-hero page-hero--photo" aria-labelledby="page-h1">
+    <section class="page-hero page-hero--photo page-hero--photo-soft" aria-labelledby="page-h1">
       <div class="page-hero__media" aria-hidden="true">
-        <img src="assets/images/clients/realisations/visusoftshellbestek.webp" alt="" width="1080" height="1080" fetchpriority="high" decoding="async">
+        <img src="assets/images/hero-brode-alpe.webp" alt="" width="1024" height="1024" fetchpriority="high" decoding="async">
       </div>
       <div class="page-hero__shade" aria-hidden="true"></div>
       <div class="container">
@@ -106,13 +107,14 @@
       </div>
     </section>
 
-    <section class="section section--alt" aria-labelledby="cases-title">
+    <section class="section section--white cases" aria-labelledby="cases-title">
       <div class="container">
-        <header class="section__header">
-          <h2 id="cases-title">Cas clients</h2>
-          <p>Pièces, marquage et rendu réel — sans storytelling décoratif.</p>
+        <header class="cases__intro">
+          <p class="cases__eyebrow">Cas clients</p>
+          <h2 id="cases-title">Preuves terrain.</h2>
+          <p class="cases__lede">Marquage réel livré pour des entreprises en Suisse.</p>
         </header>
-        <div id="cas-clients" class="case-grid" aria-live="polite"></div>
+        <div id="cas-clients" class="cases__root" aria-live="polite"></div>
       </div>
     </section>
 
