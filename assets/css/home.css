@@ -833,8 +833,15 @@
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.4rem;
-  padding: 0.45rem 0.65rem;
+  padding: 0.35rem 0.55rem;
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.home-certs__logo:focus-visible {
+  outline: 2px solid var(--color-steel, #49657f);
+  outline-offset: 2px;
 }
 
 .home-certs__logo--on-dark {
@@ -851,8 +858,8 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: 7.5rem;
-  max-height: 2.25rem;
+  max-width: 8.4rem;
+  max-height: 2.55rem;
   object-fit: contain;
   object-position: center;
   opacity: 0.88;
