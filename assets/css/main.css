@@ -259,6 +259,19 @@ body.is-nav-open {
   box-shadow: inset 0 -2px 0 var(--color-cta);
 }
 
+.site-nav .nav-phone {
+  color: var(--color-charcoal);
+  text-decoration: none;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.site-nav .nav-phone:hover {
+  color: var(--color-cta);
+}
+
 .site-nav .nav-cta {
   background: var(--color-cta);
   color: var(--color-bg) !important;
@@ -1845,6 +1858,18 @@ a.filter-btn {
     border-top: none;
   }
 
+  .site-header > .site-nav .nav-phone-item {
+    margin: 0.5rem 1.25rem 0;
+  }
+
+  .site-header > .site-nav .nav-phone {
+    display: flex;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
   .split-section,
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1887,6 +1912,12 @@ a.filter-btn {
     pointer-events: auto;
   }
 
+  .sticky-cta__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
   .sticky-cta__btn {
     display: flex;
     align-items: center;
@@ -1907,6 +1938,16 @@ a.filter-btn {
 
   .sticky-cta__btn:hover {
     background: var(--color-cta-dark);
+    color: #fff;
+  }
+
+  .sticky-cta__btn--call {
+    background: var(--color-surface-dark, #0f2138);
+    box-shadow: none;
+  }
+
+  .sticky-cta__btn--call:hover {
+    background: #1a3354;
     color: #fff;
   }
 

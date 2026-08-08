@@ -32,6 +32,15 @@
         addressCountry: c.addressCountry || 'XK',
       },
       knowsAbout: c.knowsAbout,
+      contactPoint: c.phoneTel
+        ? {
+            '@type': 'ContactPoint',
+            telephone: c.phoneTel,
+            contactType: 'sales',
+            areaServed: 'CH',
+            availableLanguage: ['fr', 'de', 'it', 'en'],
+          }
+        : undefined,
       sameAs: c.instagram ? [c.instagram] : undefined,
     },
     {
