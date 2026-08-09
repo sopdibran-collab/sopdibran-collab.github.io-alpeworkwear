@@ -25,7 +25,7 @@
 
     root.innerHTML = `<div class="cases__layout">
       <figure class="cases__media">
-        <img src="" alt="" width="1080" height="1080" decoding="async">
+        <img src="" alt="Réalisation workwear personnalisé Alpë Workwear" width="1080" height="1080" decoding="async">
       </figure>
       <div class="cases__copy">
         <p class="cases__index"></p>
@@ -63,7 +63,7 @@
       thumbsEl.innerHTML = images
         .map(
           (img, i) => `<button type="button" class="cases__thumb${i === shotIndex ? ' is-active' : ''}" data-shot="${i}" aria-label="${escapeHtml(img.alt || `Vue ${i + 1}`)}" aria-current="${i === shotIndex ? 'true' : 'false'}">
-            <img src="${escapeHtml(img.src)}" alt="" width="180" height="180" loading="lazy" decoding="async">
+            <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || item.client || 'Réalisation Alpë Workwear')}" width="180" height="180" loading="lazy" decoding="async">
           </button>`,
         )
         .join('');
@@ -87,7 +87,7 @@
       if (!reduceMotion) mediaImg.style.opacity = '0.35';
       const apply = () => {
         mediaImg.src = shot.src;
-        mediaImg.alt = shot.alt || '';
+        mediaImg.alt = shot.alt || item.client || 'Réalisation workwear personnalisé Alpë Workwear';
         if (!reduceMotion) mediaImg.style.opacity = '1';
       };
       if (reduceMotion) apply();
