@@ -24,6 +24,7 @@ const PAGES = [
   { file: 'workwear-zurich.html', loc: '/workwear-zurich.html', priority: '0.7', changefreq: 'monthly' },
   { file: 'workwear-berne.html', loc: '/workwear-berne.html', priority: '0.7', changefreq: 'monthly' },
   { file: 'workwear-bale.html', loc: '/workwear-bale.html', priority: '0.7', changefreq: 'monthly' },
+  { file: 'workwear-valais.html', loc: '/workwear-valais.html', priority: '0.7', changefreq: 'monthly' },
   {
     file: 'confidentialite.html',
     loc: '/confidentialite.html',
