@@ -7,7 +7,7 @@ Site v1 en production — maintenance, SEO continu, optimisations via portail ag
 ## Phases réalisées
 
 - [x] Structure pages principales
-- [x] Charte bleu acier + DM Sans
+- [x] Charte bleu acier + Sora / IBM Plex Sans
 - [x] Catalogue, FAQ, contact, schema.org
 - [x] Déploiement GitHub Pages
 

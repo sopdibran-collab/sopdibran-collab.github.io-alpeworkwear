@@ -27,7 +27,9 @@
   --color-text: #1f2933;
   --color-textile: #11151a;
   --color-navy: #0f2138;
-  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-sans: var(--font-body);
   --radius: 2px;
 }
 ```
@@ -36,7 +38,12 @@
 
 | Élément | Police | Fallback | Poids |
 |---------|--------|----------|-------|
-| Titres & corps | DM Sans | system-ui | 400, 500, 600 |
+| Titres / nav / boutons | Sora (`--font-display`) | system-ui | 500–800 |
+| Corps / formulaires | IBM Plex Sans (`--font-body`) | system-ui | 400–700 |
+
+Choix Google Fonts pour Alpë (workwear B2B / acier) : Sora apporte une géométrie nette type « alpine / technique » ; IBM Plex Sans apporte la lisibilité et le caractère ingénierie / précision. Éviter Inter, Outfit (Sopjani), Plus Jakarta, Roboto.
+
+Échelle : titres avec tracking négatif (`-0.025em` à `-0.03em`), corps ~17px / line-height 1.65. Uppercase réservé aux eyebrows / labels — pas sur H1/H2 ni CTAs.
 
 ## Logo
 

@@ -13,7 +13,7 @@ Fournisseur B2B de vêtements de travail personnalisés (broderie, sérigraphie)
 
 | Fichier | Contenu |
 |---------|---------|
-| [01-identite-marque.md](01-identite-marque.md) | Charte bleu acier, DM Sans, ton B2B |
+| [01-identite-marque.md](01-identite-marque.md) | Charte bleu acier / magenta, Sora + IBM Plex Sans, ton B2B |
 | [02-client-metier.md](02-client-metier.md) | Workwear, personas, vocabulaire |
 | [03-contenu-medias.md](03-contenu-medias.md) | Pages, catalogue, médias |
 | [04-seo-aeo-geo.md](04-seo-aeo-geo.md) | SEO local CH, FAQ, schema |
