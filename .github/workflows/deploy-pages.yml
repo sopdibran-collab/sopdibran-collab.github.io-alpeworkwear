@@ -42,10 +42,36 @@ jobs:
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
 
+      # Publish only customer-facing static files. Keep agent context, docs,
+      # tooling, secrets, and repo meta out of the public Pages artifact.
+      - name: Assemble public site
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          # Allow-list only public paths (no repo meta, agent notes, or build tooling).
+          cp -a .nojekyll CNAME robots.txt sitemap.xml _site/
+          cp -a *.html _site/
+          cp -a assets data _site/
+          # Guardrails: these must never ship even if renamed/reintroduced.
+          rm -rf \
+            _site/.cursor _site/cursor _site/docs _site/src _site/components \
+            _site/scripts _site/design-system _site/styleguide _site/brand-book \
+            _site/brandbook _site/node_modules _site/dist _site/.github
+          rm -f \
+            _site/.gitignore _site/.gitattributes _site/.DS_Store \
+            _site/cursor.json _site/package.json _site/package-lock.json \
+            _site/vite.config.ts _site/tsconfig.json \
+            _site/AGENTS.md _site/README.md _site/readme.md \
+            _site/design-system.html _site/styleguide.html _site/brand-book.html \
+            _site/*.md
+          echo "Public artifact contents:"
+          find _site -maxdepth 2 -print | sort
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

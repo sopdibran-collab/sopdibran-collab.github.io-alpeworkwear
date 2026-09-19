@@ -2,5 +2,22 @@ User-agent: *
 Allow: /
 
 Disallow: /index.legacy.html
+Disallow: /.cursor/
+Disallow: /cursor/
+Disallow: /cursor.json
+Disallow: /docs/
+Disallow: /.gitignore
+Disallow: /src/
+Disallow: /components/
+Disallow: /scripts/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+Disallow: /AGENTS.md
+Disallow: /README.md
+Disallow: /design-system
+Disallow: /styleguide
+Disallow: /brand-book
 
 Sitemap: https://www.alpeworkwear.ch/sitemap.xml
