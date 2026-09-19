@@ -1,2 +1,9 @@
 node_modules/
 dist/
+_site/
+.DS_Store
+.env
+.env.*
+cursor/.cursor-apis.json
+*.pem
+*.key
