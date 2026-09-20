@@ -133,8 +133,8 @@ function renderFooter() {
 }
 
 function renderStickyCta() {
-  return `<aside class="sticky-cta" aria-label="Demande de devis">
-  <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
+  return `<aside class="sticky-cta" aria-label="Demander un devis">
+  <a href="/contact.html" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
 </aside>`;
 }
 
@@ -248,8 +248,7 @@ function renderOrgSchema() {
         ],
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Prishtina',
-          addressCountry: 'XK',
+          addressCountry: 'CH',
         },
         sameAs: [INSTAGRAM_URL],
       },

@@ -20,11 +20,13 @@ export function Hero() {
       </div>
       <div className="home-hero__content container">
         <h1 id="hero-title" className="home-hero__title">
-          <span>Qualité suisse.</span>
-          <span>Craft dédié.</span>
-          <span>Votre identité</span>
-          <span>portée avec fierté.</span>
+          Workwear &amp; textile personnalisé pour entreprises en Suisse
         </h1>
+        <p className="home-hero__lede">
+          <span>Qualité suisse.</span> <span>Craft dédié.</span>
+          <br />
+          <span>Votre identité</span> <span>portée avec fierté.</span>
+        </p>
         <div className="home-hero__actions">
           <a href="/contact.html" className="btn btn-primary home-hero__btn">
             Demander un devis partenaire

@@ -16,8 +16,8 @@ window.ALPE_CONFIG = {
   gtmId: 'GTM-W7GRK3MK',
   fileFormatsNote:
     'Fichier vectoriel ou PDF haute résolution de préférence (AI, EPS, SVG, PDF). Nous vous indiquons si une adaptation est nécessaire.',
-  addressLocality: 'Prishtina',
-  addressCountry: 'XK',
+  /** Pays de coordination / commercialisation — pas d’adresse rue inventée. */
+  addressCountry: 'CH',
   productionNote: 'Atelier au Kosovo (Alpet), coordination et livraison depuis la Suisse.',
   orgDescription:
     'Fournisseur B2B de vêtements de travail personnalisés pour entreprises en Suisse : broderie, sérigraphie, catalogue professionnel et livraison nationale.',

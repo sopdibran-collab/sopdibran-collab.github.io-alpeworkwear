@@ -97,13 +97,13 @@
       return;
     }
     const phoneTel = cfg.phoneTel || '+41797792159';
-    sticky.setAttribute('aria-label', 'Actions rapides');
+    sticky.setAttribute('aria-label', 'Demander un devis');
     sticky.innerHTML =
       '<div class="sticky-cta__row">' +
       '<a href="tel:' +
       phoneTel +
-      '" class="sticky-cta__btn sticky-cta__btn--call track-phone">Appeler</a>' +
-      '<a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis">Devis gratuit</a>' +
+      '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>' +
+      '<a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Devis entreprise</a>' +
       '</div>';
     sticky.dataset.enhanced = '1';
   }

@@ -95,8 +95,8 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
     </div>
   </footer>`;
 
-const stickyCta = `  <aside class="sticky-cta" aria-label="Demande de devis">
-  <a href="/contact.html" class="sticky-cta__btn">Demander un devis gratuit</a>
+const stickyCta = `  <aside class="sticky-cta" aria-label="Demander un devis">
+  <a href="/contact.html" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
 </aside>`;
 
 const headerRe = /<header id="site-header"[\s\S]*?<\/header>/;

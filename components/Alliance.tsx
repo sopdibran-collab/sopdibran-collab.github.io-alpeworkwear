@@ -27,7 +27,7 @@ export function Alliance() {
             <p className="home-alliance__pole-label">Kosovo</p>
             <h3 className="home-alliance__heading">Le craft du Kosovo</h3>
             <p className="home-alliance__text">
-              Un savoir-faire textile ancestral, des ateliers engagés et des artisans passionnés au service d'une
+              Un savoir-faire textile ancestral et des ateliers engagés au service d'une
               qualité durable et responsable.
             </p>
           </article>

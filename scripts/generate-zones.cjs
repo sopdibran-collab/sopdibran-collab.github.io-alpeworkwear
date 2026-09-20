@@ -199,8 +199,8 @@ function pageHtml(zone, allZones) {
     </div>
   </footer>
 
-  <aside class="sticky-cta" aria-label="Demande de devis">
-  <a href="/contact.html?ville=${encodeURIComponent(zone.name)}" class="sticky-cta__btn">Demander un devis gratuit</a>
+  <aside class="sticky-cta" aria-label="Demander un devis">
+  <a href="/contact.html?ville=${encodeURIComponent(zone.name)}" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
 </aside>
   <script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/layout.js"></script>
