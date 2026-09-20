@@ -28,8 +28,7 @@
       }),
       address: {
         '@type': 'PostalAddress',
-        addressLocality: c.addressLocality || 'Prishtina',
-        addressCountry: c.addressCountry || 'XK',
+        addressCountry: c.addressCountry || 'CH',
       },
       knowsAbout: c.knowsAbout,
       contactPoint: c.phoneTel
