@@ -13,6 +13,7 @@ const INSTAGRAM_HANDLE = '@alpeworkwear';
 const NAV_ITEMS = [
   { href: '/catalogue.html', label: 'Collections', file: 'catalogue.html' },
   { href: '/confection.html', label: 'Confection', file: 'confection.html' },
+  { href: '/confection-sur-mesure.html', label: 'Confection sur mesure', file: 'confection-sur-mesure.html' },
   { href: '/realisations.html', label: 'Réalisations', file: 'realisations.html' },
   { href: '/faq.html', label: 'Expertises', file: 'faq.html' },
   { href: '/contact.html', label: 'Contact', file: 'contact.html', cta: true },
@@ -109,6 +110,7 @@ function renderFooter() {
         <ul class="site-footer__links">
           <li><a href="/catalogue.html">Collections</a></li>
           <li><a href="/confection.html">Confection</a></li>
+          <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
           <li><a href="/realisations.html">Réalisations</a></li>
           <li><a href="/faq.html">Expertises</a></li>
           <li><a href="/contact.html">Contact</a></li>

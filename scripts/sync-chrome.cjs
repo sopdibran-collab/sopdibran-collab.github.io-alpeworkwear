@@ -24,6 +24,11 @@ const pages = [
   'workwear-bale.html',
 ];
 
+// Pages au chrome dédié : ne pas les écraser avec ce gabarit français.
+// - confection-sur-mesure.html : lien English seul (DE/IT masqués), pied sans « Craft certifié »
+// - en/* : navigation anglaise statique
+const PRESERVE_CHROME = new Set(['confection-sur-mesure.html']);
+
 const header = `  <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
@@ -36,6 +41,7 @@ const header = `  <header id="site-header" class="site-header" aria-label="Navig
     <ul class="site-nav" id="site-nav">
       <li><a href="/catalogue.html" data-i18n="nav.collections">Collections</a></li>
       <li><a href="/confection.html" data-i18n="nav.confection">Confection</a></li>
+      <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
       <li><a href="/realisations.html" data-i18n="nav.realisations">Réalisations</a></li>
       <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
       <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
@@ -63,6 +69,7 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
           <ul class="site-footer__chips">
             <li><a href="/catalogue.html">Collections</a></li>
             <li><a href="/confection.html">Confection</a></li>
+            <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
             <li><a href="/realisations.html">Réalisations</a></li>
             <li><a href="/faq.html">Expertises</a></li>
             <li><a href="/contact.html">Contact</a></li>
@@ -128,6 +135,10 @@ function ensureSticky(html, file) {
 }
 
 for (const file of pages) {
+  if (file.startsWith('en/') || PRESERVE_CHROME.has(file)) {
+    console.log('Preserved (dedicated chrome):', file);
+    continue;
+  }
   const filePath = path.join(root, file);
   let html = fs.readFileSync(filePath, 'utf8');
   if (!headerRe.test(html) || !footerRe.test(html)) {
