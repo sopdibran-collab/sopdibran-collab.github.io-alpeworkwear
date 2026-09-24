@@ -4,6 +4,7 @@
 (function () {
   const root = document.getElementById('cas-clients');
   if (!root) return;
+  if (root.querySelector('.case-static')) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

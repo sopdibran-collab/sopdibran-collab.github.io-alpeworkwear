@@ -48,6 +48,33 @@
   line-height: 1.45;
 }
 
+.cases__stack {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.case-static + .case-static {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.case-static__shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 0.4rem;
+  margin-top: 1rem;
+  max-width: 22rem;
+}
+
+.case-static__shots img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
 .cases__layout {
   display: grid;
   gap: 1.25rem;
