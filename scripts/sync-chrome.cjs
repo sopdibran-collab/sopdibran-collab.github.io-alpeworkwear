@@ -22,6 +22,10 @@ const pages = [
   'workwear-zurich.html',
   'workwear-berne.html',
   'workwear-bale.html',
+  'vetements-travail-batiment-artisans.html',
+  'vetements-travail-nettoyage.html',
+  'vetements-travail-paysagiste.html',
+  'vetements-travail-garage-mecanique.html',
 ];
 
 const header = `  <header id="site-header" class="site-header" aria-label="Navigation principale">
@@ -84,6 +88,15 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
             <li><a href="https://www.instagram.com/alpeworkwear/" target="_blank" rel="noopener noreferrer">@alpeworkwear</a></li>
           </ul>
         </div>
+      </div>
+      <div class="site-footer__row site-footer__row--sectors">
+        <p class="site-footer__label">Secteurs</p>
+        <ul class="site-footer__chips">
+          <li><a href="/vetements-travail-batiment-artisans.html">Bâtiment et artisans</a></li>
+          <li><a href="/vetements-travail-nettoyage.html">Nettoyage</a></li>
+          <li><a href="/vetements-travail-paysagiste.html">Paysagisme</a></li>
+          <li><a href="/vetements-travail-garage-mecanique.html">Garages et mécanique</a></li>
+        </ul>
       </div>
       <div class="site-footer__bottom">
         <p class="site-footer__copy">© 2026 Alpë Workwear <span class="site-footer__copy-sub">· Coordination suisse · Craft certifié</span></p>

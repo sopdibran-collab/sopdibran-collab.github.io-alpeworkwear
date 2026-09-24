@@ -421,6 +421,34 @@ body.is-nav-open {
   color: #fff;
 }
 
+.site-footer__row--sectors {
+  margin-top: 0.55rem;
+}
+
+a.product-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.product-card:hover {
+  border-color: var(--color-steel);
+}
+
+.page-hero__contacts {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+}
+
+.page-hero__contacts a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.page-hero__contacts a:hover {
+  color: #fff;
+}
+
 .site-footer__bottom {
   display: flex;
   flex-wrap: wrap;
@@ -1649,7 +1677,7 @@ a.filter-btn {
   font-size: 1.0625rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.65rem;
+  margin: 0 0 0.65rem;
   letter-spacing: -0.01em;
 }
 

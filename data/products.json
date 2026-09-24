@@ -28,7 +28,7 @@
       "name": "Softshell homme",
       "tag": null,
       "description": null,
-      "image": "assets/catalogue/Softshell homme.JPG",
+      "image": "assets/catalogue/softshell-homme.jpg",
       "imageAlt": "Softshell homme — vêtement de travail Alpë Workwear",
       "reference": null,
       "published": true
@@ -39,7 +39,7 @@
       "name": "Softshell capuche homme",
       "tag": null,
       "description": null,
-      "image": "assets/catalogue/Softshell hooded homme.JPG",
+      "image": "assets/catalogue/softshell-hooded-homme.jpg",
       "imageAlt": "Softshell à capuche homme — Alpë Workwear",
       "reference": null,
       "published": true
@@ -50,7 +50,7 @@
       "name": "Softshell capuche femmes",
       "tag": null,
       "description": null,
-      "image": "assets/catalogue/Softshell hooded Femmes.JPG",
+      "image": "assets/catalogue/softshell-hooded-femmes.jpg",
       "imageAlt": "Softshell à capuche femmes — Alpë Workwear",
       "reference": null,
       "published": true
@@ -71,8 +71,8 @@
       "category": "softshell-polaire",
       "name": "Jackette polaire",
       "tag": null,
-      "description": null,
-      "image": "assets/catalogue/Jackette polaire.JPG",
+      "description": "Veste polaire, couche chaude à personnaliser au logo. À porter seule ou sous une softshell.",
+      "image": "assets/catalogue/jackette-polaire.jpg",
       "imageAlt": "Jackette polaire — Alpë Workwear",
       "reference": null,
       "published": true
