@@ -98,37 +98,59 @@ function renderInstagramBand() {
 }
 
 function renderFooter() {
-  const year = new Date().getFullYear();
-  return `<footer id="site-footer" class="site-footer">
-    <div class="container site-footer__grid">
-      <div>
+  return `<footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <div class="site-footer__top">
         <a href="/" class="site-footer__brand" aria-label="${BRAND} — accueil">
-          <img class="site-logo__img site-logo__img--on-dark" src="${LOGO_FOOTER}" width="148" height="44" alt="" decoding="async">
+          <img class="site-logo__img site-logo__img--on-dark" src="${LOGO_FOOTER}" width="120" height="36" alt="" decoding="async">
           <span class="visually-hidden">${BRAND}</span>
         </a>
         <p class="site-footer__tagline">Workwear B2B · Broderie · Sérigraphie · Livraison Suisse</p>
-        <ul class="site-footer__links">
-          <li><a href="/catalogue.html">Collections</a></li>
-          <li><a href="/confection.html">Confection</a></li>
-          <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
-          <li><a href="/realisations.html">Réalisations</a></li>
-          <li><a href="/faq.html">Expertises</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/workwear-geneve.html">Genève</a></li>
-          <li><a href="/workwear-lausanne.html">Lausanne</a></li>
-          <li><a href="/workwear-zurich.html">Zurich</a></li>
-          <li><a href="/confidentialite.html">Confidentialité</a></li>
-          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+      </div>
+      <div class="site-footer__rows">
+        <div class="site-footer__row">
+          <p class="site-footer__label">Navigation</p>
+          <ul class="site-footer__chips">
+            <li><a href="/catalogue.html">Collections</a></li>
+            <li><a href="/confection.html">Confection</a></li>
+            <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
+            <li><a href="/realisations.html">Réalisations</a></li>
+            <li><a href="/faq.html">Expertises</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__row">
+          <p class="site-footer__label">Régions</p>
+          <ul class="site-footer__chips">
+            <li><a href="/workwear-geneve.html">Genève</a></li>
+            <li><a href="/workwear-lausanne.html">Lausanne</a></li>
+            <li><a href="/workwear-zurich.html">Zurich</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__row site-footer__row--contact">
+          <p class="site-footer__label">Contact</p>
+          <ul class="site-footer__contact">
+            <li><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></li>
+            <li><a href="tel:+41797792159">+41 79 779 21 59</a></li>
+            <li><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">${INSTAGRAM_HANDLE}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__row site-footer__row--sectors">
+        <p class="site-footer__label">Secteurs</p>
+        <ul class="site-footer__chips">
+          <li><a href="/vetements-travail-batiment-artisans.html">Bâtiment et artisans</a></li>
+          <li><a href="/vetements-travail-nettoyage.html">Nettoyage</a></li>
+          <li><a href="/vetements-travail-paysagiste.html">Paysagisme</a></li>
+          <li><a href="/vetements-travail-garage-mecanique.html">Garages et mécanique</a></li>
         </ul>
       </div>
-      <div class="site-footer__aside">
-        <p class="site-footer__contact-line"><a href="mailto:info@alpeworkwear.ch">info@alpeworkwear.ch</a></p>
-        <p class="site-footer__contact-line"><a href="tel:+41797792159">+41 79 779 21 59</a></p>
-        <p class="site-footer__contact-line"><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">Instagram · ${INSTAGRAM_HANDLE}</a></p>
-      </div>
-      <div class="site-footer__copy">
-        © ${year} ${BRAND}<br>
-        <span class="site-footer__copy-sub">Coordination suisse · Craft certifié</span>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© ${new Date().getFullYear()} ${BRAND} <span class="site-footer__copy-sub">· Coordination suisse · Craft certifié</span></p>
+        <nav class="site-footer__legal" aria-label="Informations légales">
+          <a href="/confidentialite.html">Confidentialité</a>
+          <a href="/mentions-legales.html">Mentions légales</a>
+        </nav>
       </div>
     </div>
   </footer>`;
@@ -319,13 +341,6 @@ function renderItemListSchema(products, categories) {
         image: p.image ? `${SITE_URL}/${p.image.replace(/^\//, '')}` : undefined,
         category: cat ? cat.name : undefined,
         brand: { '@type': 'Brand', name: BRAND },
-        offers: {
-          '@type': 'Offer',
-          priceCurrency: 'CHF',
-          availability: 'https://schema.org/InStock',
-          url: `${SITE_URL}/contact.html`,
-          description: 'Devis sur demande',
-        },
       },
     };
   });
