@@ -91,6 +91,7 @@ function pageHtml(zone, allZones) {
     <ul class="site-nav" id="site-nav">
       <li><a href="/catalogue.html" data-i18n="nav.collections">Collections</a></li>
       <li><a href="/confection.html" data-i18n="nav.confection">Confection</a></li>
+      <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
       <li><a href="/realisations.html" data-i18n="nav.realisations">Réalisations</a></li>
       <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
       <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
@@ -180,6 +181,7 @@ function pageHtml(zone, allZones) {
         <ul class="site-footer__links">
           <li><a href="/catalogue.html">Collections</a></li>
           <li><a href="/confection.html">Confection</a></li>
+          <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
           <li><a href="/realisations.html">Réalisations</a></li>
           <li><a href="/faq.html">Expertises</a></li>
           <li><a href="/contact.html">Contact</a></li>

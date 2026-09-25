@@ -59,6 +59,14 @@ function injectBeforeCloseHead(html, block, markerId) {
 }
 
 function processPage(filename) {
+  if (filename.startsWith('en/') || filename.startsWith(`en${path.sep}`)) {
+    console.log(`Préservé (page EN, chrome français non appliqué) : ${filename}`);
+    return;
+  }
+  if (filename === 'confection-sur-mesure.html') {
+    console.log(`Préservé (chrome dédié, lien English seul) : ${filename}`);
+    return;
+  }
   const filePath = path.join(ROOT, filename);
   let html = fs.readFileSync(filePath, 'utf8');
   const meta = parsePageMeta(html);

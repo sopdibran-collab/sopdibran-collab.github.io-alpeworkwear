@@ -41,20 +41,37 @@
   }
   if (saved === 'declined') return;
 
+  const isEn = document.documentElement.lang === 'en';
+  const bannerCopy = isEn
+    ? {
+        label: 'Cookie preferences',
+        text: 'This site uses analytics cookies to measure its audience.',
+        more: 'Learn more',
+        decline: 'Decline',
+        accept: 'Accept',
+      }
+    : {
+        label: 'Préférences cookies',
+        text: 'Ce site utilise des cookies analytiques pour mesurer l’audience.',
+        more: 'En savoir plus',
+        decline: 'Refuser',
+        accept: 'Accepter',
+      };
+
   const banner = document.createElement('div');
   banner.id = 'cookie-banner';
   banner.className = 'cookie-banner';
   banner.setAttribute('role', 'dialog');
-  banner.setAttribute('aria-label', 'Préférences cookies');
+  banner.setAttribute('aria-label', bannerCopy.label);
   banner.innerHTML = `
     <div class="cookie-banner__inner container">
       <p class="cookie-banner__text">
-        Ce site utilise des cookies analytiques pour mesurer l’audience.
-        <a href="confidentialite.html" class="text-link">En savoir plus</a>
+        ${bannerCopy.text}
+        <a href="/confidentialite.html" class="text-link">${bannerCopy.more}</a>
       </p>
       <div class="cookie-banner__actions">
-        <button type="button" class="btn btn-outline cookie-banner__btn" data-cookie="declined">Refuser</button>
-        <button type="button" class="btn btn-primary cookie-banner__btn" data-cookie="accepted">Accepter</button>
+        <button type="button" class="btn btn-outline cookie-banner__btn" data-cookie="declined">${bannerCopy.decline}</button>
+        <button type="button" class="btn btn-primary cookie-banner__btn" data-cookie="accepted">${bannerCopy.accept}</button>
       </div>
     </div>`;
 

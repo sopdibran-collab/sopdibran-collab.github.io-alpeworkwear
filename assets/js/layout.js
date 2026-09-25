@@ -7,12 +7,16 @@
   };
 
   const page = window.location.pathname.split('/').pop() || 'index.html';
+  const isEn = document.documentElement.lang === 'en';
+  const menuOpenLabel = isEn ? 'Open menu' : 'Ouvrir le menu';
+  const menuCloseLabel = isEn ? 'Close menu' : 'Fermer le menu';
+  const callLabel = isEn ? 'Call' : 'Appeler';
 
   function setNavOpen(nav, toggle, open) {
     const isOpen = Boolean(open);
     nav.classList.toggle('is-open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    toggle.setAttribute('aria-label', isOpen ? menuCloseLabel : menuOpenLabel);
     document.body.classList.toggle('is-nav-open', isOpen);
   }
 
@@ -51,6 +55,8 @@
       '': null,
       'catalogue.html': '/catalogue.html',
       'confection.html': '/confection.html',
+      'confection-sur-mesure.html': '/confection-sur-mesure.html',
+      'cut-and-sew-manufacturing.html': '/en/cut-and-sew-manufacturing.html',
       'faq.html': '/faq.html',
       'contact.html': '/contact.html',
       'confidentialite.html': '/confidentialite.html',
@@ -78,7 +84,9 @@
     li.innerHTML =
       '<a href="tel:' +
       phoneTel +
-      '" class="nav-phone track-phone" aria-label="Appeler ' +
+      '" class="nav-phone track-phone" aria-label="' +
+      callLabel +
+      ' ' +
       phoneDisplay +
       '">' +
       phoneDisplay +
@@ -92,18 +100,40 @@
   function enhanceStickyCta() {
     const sticky = document.querySelector('.sticky-cta');
     if (!sticky || sticky.dataset.enhanced === '1') return;
-    if (page === 'contact.html' || page === 'merci.html') {
+    if (page === 'contact.html' || page === 'merci.html' || page === 'thank-you.html') {
       sticky.remove();
       return;
     }
     const phoneTel = cfg.phoneTel || '+41797792159';
-    sticky.setAttribute('aria-label', 'Demander un devis');
+    let quoteHref = '/contact.html';
+    let quoteLabel = isEn ? 'Request a quote' : 'Devis entreprise';
+    let quoteAria = isEn ? 'Request a quote' : 'Demander un devis';
+    if (page === 'confection-sur-mesure.html') {
+      quoteHref = '#cotation';
+      quoteLabel = 'Demander une cotation';
+      quoteAria = 'Demander une cotation';
+    } else if (page === 'cut-and-sew-manufacturing.html') {
+      quoteHref = '#quote';
+      quoteLabel = 'Request a quote';
+      quoteAria = 'Request a quote';
+    }
+    sticky.setAttribute('aria-label', quoteAria);
     sticky.innerHTML =
       '<div class="sticky-cta__row">' +
       '<a href="tel:' +
       phoneTel +
-      '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>' +
-      '<a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Devis entreprise</a>' +
+      '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="' +
+      callLabel +
+      '">' +
+      callLabel +
+      '</a>' +
+      '<a href="' +
+      quoteHref +
+      '" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="' +
+      quoteAria +
+      '">' +
+      quoteLabel +
+      '</a>' +
       '</div>';
     sticky.dataset.enhanced = '1';
   }
@@ -120,12 +150,15 @@
       el.setAttribute('content', content);
     }
 
-    setNamedMeta('geo.region', 'CH');
-    setNamedMeta('geo.placename', 'Suisse');
+    if (!isEn) {
+      setNamedMeta('geo.region', 'CH');
+      setNamedMeta('geo.placename', 'Suisse');
+    }
 
     const robots = document.querySelector('meta[name="robots"]');
     if (robots) {
       const current = robots.getAttribute('content') || '';
+      if (/noindex/i.test(current)) return;
       if (!current.includes('max-snippet')) {
         robots.setAttribute(
           'content',
@@ -137,6 +170,7 @@
 
   /** Complete footer city link equity */
   function enhanceFooterCities() {
+    if (isEn) return;
     const footer = document.getElementById('site-footer');
     if (!footer) return;
     const links = footer.querySelector('.site-footer__links');
@@ -196,7 +230,7 @@
   }
 
   const stickyCta = document.querySelector('.sticky-cta');
-  if (stickyCta && page !== 'contact.html' && page !== 'merci.html') {
+  if (stickyCta && page !== 'contact.html' && page !== 'merci.html' && page !== 'thank-you.html') {
     const main = document.getElementById('main');
     if (main) {
       const observer = new IntersectionObserver(

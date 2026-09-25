@@ -16,6 +16,28 @@ const PAGES = [
   { file: 'index.html', loc: '/', priority: '1.0', changefreq: 'monthly' },
   { file: 'catalogue.html', loc: '/catalogue.html', priority: '0.8', changefreq: 'monthly' },
   { file: 'confection.html', loc: '/confection.html', priority: '0.8', changefreq: 'monthly' },
+  {
+    file: 'confection-sur-mesure.html',
+    loc: '/confection-sur-mesure.html',
+    priority: '0.8',
+    changefreq: 'monthly',
+    alternates: [
+      { hreflang: 'fr', href: `${BASE_URL}/confection-sur-mesure.html` },
+      { hreflang: 'en', href: `${BASE_URL}/en/cut-and-sew-manufacturing.html` },
+      { hreflang: 'x-default', href: `${BASE_URL}/confection-sur-mesure.html` },
+    ],
+  },
+  {
+    file: 'en/cut-and-sew-manufacturing.html',
+    loc: '/en/cut-and-sew-manufacturing.html',
+    priority: '0.8',
+    changefreq: 'monthly',
+    alternates: [
+      { hreflang: 'fr', href: `${BASE_URL}/confection-sur-mesure.html` },
+      { hreflang: 'en', href: `${BASE_URL}/en/cut-and-sew-manufacturing.html` },
+      { hreflang: 'x-default', href: `${BASE_URL}/confection-sur-mesure.html` },
+    ],
+  },
   { file: 'realisations.html', loc: '/realisations.html', priority: '0.8', changefreq: 'monthly' },
   { file: 'faq.html', loc: '/faq.html', priority: '0.8', changefreq: 'monthly' },
   { file: 'contact.html', loc: '/contact.html', priority: '0.8', changefreq: 'monthly' },
@@ -87,19 +109,32 @@ function buildSitemap() {
     }
     const lastmod = getLastMod(page.file);
     const loc = `${BASE_URL}${page.loc}`;
+    const alternates = (page.alternates || [])
+      .map(
+        (alt) =>
+          `    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}"/>`
+      )
+      .join('\n');
     return [
       '  <url>',
       `    <loc>${loc}</loc>`,
       `    <lastmod>${lastmod}</lastmod>`,
       `    <changefreq>${page.changefreq}</changefreq>`,
       `    <priority>${page.priority}</priority>`,
+      alternates,
       '  </url>',
-    ].join('\n');
+    ]
+      .filter(Boolean)
+      .join('\n');
   });
+
+  const xmlns = PAGES.some((page) => page.alternates && page.alternates.length)
+    ? '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    : '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    xmlns,
     ...urls,
     '</urlset>',
     '',
