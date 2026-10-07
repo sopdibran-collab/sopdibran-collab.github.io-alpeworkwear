@@ -447,6 +447,11 @@ body.is-nav-open {
   flex: 0 0 auto;
 }
 
+.site-footer__social-icon.site-footer__social-icon--whatsapp {
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+
 .site-footer__row--sectors {
   margin-top: 0.55rem;
 }
@@ -1679,6 +1684,11 @@ a.filter-btn {
 
 a.instagram-band__icon {
   text-decoration: none;
+}
+
+.instagram-band__whatsapp {
+  width: 26px;
+  height: 26px;
 }
 
 .instagram-band__icon:hover,
