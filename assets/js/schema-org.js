@@ -40,7 +40,9 @@
             availableLanguage: ['fr', 'de', 'it', 'en'],
           }
         : undefined,
-      sameAs: c.instagram ? [c.instagram] : undefined,
+      sameAs: (c.instagram || c.linkedin)
+        ? [c.instagram, c.linkedin].filter(Boolean)
+        : undefined,
     },
     {
       '@type': 'WebSite',

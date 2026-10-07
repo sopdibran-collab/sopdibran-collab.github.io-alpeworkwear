@@ -11,6 +11,7 @@ window.ALPE_CONFIG = {
   whatsapp: 'https://wa.me/41797792159',
   instagram: 'https://www.instagram.com/alpeworkwear/',
   instagramHandle: '@alpeworkwear',
+  linkedin: 'https://www.linkedin.com/company/alp%C3%ABworkwear/',
   /** FormSubmit.co — envoi AJAX vers info@alpeworkwear.ch */
   formEndpoint: 'https://formsubmit.co/ajax/info@alpeworkwear.ch',
   gtmId: 'GTM-W7GRK3MK',

@@ -422,6 +422,31 @@ body.is-nav-open {
   color: #fff;
 }
 
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+}
+
+.site-footer__social a:hover {
+  color: #fff;
+}
+
+.site-footer__social-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
 .site-footer__row--sectors {
   margin-top: 0.55rem;
 }
@@ -1633,6 +1658,12 @@ a.filter-btn {
   min-width: 0;
 }
 
+.instagram-band__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .instagram-band__icon {
   display: flex;
   align-items: center;
@@ -1643,6 +1674,17 @@ a.filter-btn {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   color: var(--color-steel);
+  flex-shrink: 0;
+}
+
+a.instagram-band__icon {
+  text-decoration: none;
+}
+
+.instagram-band__icon:hover,
+a.instagram-band__icon:hover {
+  color: var(--color-steel-dark);
+  border-color: var(--color-steel);
 }
 
 .instagram-band__content {
@@ -1673,7 +1715,7 @@ a.filter-btn {
     text-align: center;
   }
 
-  .instagram-band__icon {
+  .instagram-band__icons {
     margin-inline: auto;
   }
 
