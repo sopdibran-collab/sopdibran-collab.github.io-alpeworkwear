@@ -452,7 +452,11 @@
             ouvrables avec un devis partenaire sans engagement.
           </p>
         </div>
-        <form id="home-equip-form" class="home-equip__form" novalidate>
+        <form id="home-equip-form" class="home-equip__form" action="https://formsubmit.co/info@alpeworkwear.ch" method="post" enctype="multipart/form-data" accept-charset="UTF-8" novalidate>
+          <input type="hidden" name="_next" value="https://www.alpeworkwear.ch/merci.html">
+          <input type="hidden" name="_subject" value="Demande accueil — Alpë Workwear">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
           <div>
             <label for="home-question" data-i18n="equip.question">Votre question</label>
@@ -478,6 +482,11 @@
                 data-i18n-placeholder="equip.email.placeholder"
                 placeholder="vous@entreprise.ch">
             </div>
+          </div>
+          <div>
+            <label for="home-logo" data-i18n="equip.logo">Charger votre logo</label>
+            <input type="file" id="home-logo" name="attachment" accept=".png,.jpg,.jpeg,.svg,.pdf,image/png,image/jpeg,image/svg+xml,application/pdf" data-max-bytes="10485760" aria-describedby="home-logo-hint">
+            <p id="home-logo-hint" class="form-hint" data-i18n="equip.logo.hint">PNG, JPG, SVG ou PDF. 10 Mo maximum. Facultatif.</p>
           </div>
           <button type="submit" class="btn btn-primary" data-i18n="equip.submit">Demander un devis partenaire</button>
           <p class="home-equip__full-form" data-i18n="equip.fullform" data-i18n-html="true">Projet détaillé&nbsp;? <a href="/contact.html">Formulaire complet</a></p>

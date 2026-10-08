@@ -217,7 +217,11 @@
             <li>Délai souhaité et ville de livraison en Suisse</li>
           </ul>
           <p>Projet de confection pour votre marque ? <a href="/confection-sur-mesure.html#cotation">Demander une cotation de confection sur mesure</a>.</p>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://formsubmit.co/info@alpeworkwear.ch" method="post" enctype="multipart/form-data" accept-charset="UTF-8" novalidate>
+            <input type="hidden" name="_next" value="https://www.alpeworkwear.ch/merci.html">
+            <input type="hidden" name="_subject" value="Demande Alpë Workwear">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <div class="visually-hidden" aria-hidden="true">
               <label for="_honey">Ne pas remplir</label>
               <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off">
@@ -282,6 +286,11 @@
               <label for="message">Message *</label>
               <textarea id="message" name="message" required
                 placeholder="Logo, emplacements (poitrine / dos / manche), contraintes métier…"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="logo">Charger votre logo</label>
+              <input type="file" id="logo" name="attachment" accept=".png,.jpg,.jpeg,.svg,.pdf,image/png,image/jpeg,image/svg+xml,application/pdf" data-max-bytes="10485760" aria-describedby="logo-hint">
+              <p id="logo-hint" class="form-hint">PNG, JPG, SVG ou PDF. 10 Mo maximum. Facultatif.</p>
             </div>
             <p class="form-hint">Les champs marqués * sont obligatoires. Votre demande est transmise par email ; nous vous
               recontactons pour cadrer le projet.</p>

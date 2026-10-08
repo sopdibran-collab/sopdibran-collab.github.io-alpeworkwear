@@ -25,6 +25,9 @@
   }
 
   const submitBtn = form.querySelector('[type="submit"]');
+  const logoInput = form.querySelector('input[type="file"][name="attachment"]');
+  const LOGO_EXTENSIONS = ['png', 'jpg', 'jpeg', 'svg', 'pdf'];
+  const LOGO_MAX_BYTES = Number(logoInput?.dataset.maxBytes) || 10 * 1024 * 1024;
 
   function setStatus(message, type) {
     statusEl.textContent = message;
@@ -33,6 +36,26 @@
 
   function clearFieldErrors() {
     form.querySelectorAll('.form-field--error').forEach((el) => el.classList.remove('form-field--error'));
+  }
+
+  function syncLogoValidity() {
+    if (!logoInput) return '';
+    const file = logoInput.files && logoInput.files[0];
+    if (!file) {
+      logoInput.setCustomValidity('');
+      logoInput.classList.remove('form-field--error');
+      return '';
+    }
+    const ext = (file.name || '').split('.').pop().toLowerCase();
+    let message = '';
+    if (!LOGO_EXTENSIONS.includes(ext)) {
+      message = 'Format non accepté. Utilisez un PNG, JPG, SVG ou PDF.';
+    } else if (file.size > LOGO_MAX_BYTES) {
+      message = 'Ce fichier dépasse la limite de 10 Mo.';
+    }
+    logoInput.setCustomValidity(message);
+    logoInput.classList.toggle('form-field--error', Boolean(message));
+    return message;
   }
 
   function markInvalidFields() {
@@ -130,24 +153,50 @@
     return data;
   }
 
+  if (logoInput) {
+    logoInput.addEventListener('change', () => {
+      const message = syncLogoValidity();
+      if (message) setStatus(message, 'error');
+      else if (statusEl.classList.contains('form-status--error')) setStatus('', '');
+    });
+  }
+
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
     clearFieldErrors();
     setStatus('', '');
 
     const honey = form.querySelector('[name="_honey"]');
-    if (honey && honey.value) return;
+    if (honey && honey.value) {
+      e.preventDefault();
+      return;
+    }
 
+    const logoMessage = syncLogoValidity();
     if (!form.checkValidity()) {
+      e.preventDefault();
       const first = markInvalidFields();
       form.reportValidity();
-      setStatus('Veuillez corriger les champs indiqués.', 'error');
+      setStatus(
+        logoMessage && first === logoInput ? logoMessage : 'Veuillez corriger les champs indiqués.',
+        'error'
+      );
       first?.focus();
       return;
     }
 
     const formData = new FormData(form);
     const payload = getPayload(formData);
+    const file = logoInput && logoInput.files && logoInput.files[0];
+
+    // FormSubmit n’attache pas les fichiers au JSON AJAX : envoi multipart natif.
+    if (file) {
+      const subject = form.querySelector('input[name="_subject"]');
+      if (subject) subject.value = `Demande Alpë Workwear — ${payload.entreprise}`;
+      if (submitBtn) submitBtn.setAttribute('aria-busy', 'true');
+      return;
+    }
+
+    e.preventDefault();
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -182,6 +231,7 @@
 
   form.addEventListener('input', (e) => {
     const field = e.target;
+    if (field === logoInput) return;
     if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
       if (field.checkValidity()) field.classList.remove('form-field--error');
     }
