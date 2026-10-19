@@ -104,15 +104,8 @@ function revealElement(
 }
 
 function initSectionReveals() {
-  const hero = document.querySelector<HTMLElement>('.home-hero');
-  if (hero) {
-    revealElement(hero, { immediate: true, y: 28, duration: 1.35, blur: 4, delay: 0.08 });
-
-    const heroContent = hero.querySelector<HTMLElement>('.home-hero__content');
-    if (heroContent) {
-      revealElement(heroContent, { immediate: true, y: 20, duration: 1.2, blur: 3, delay: 0.22 });
-    }
-  }
+  // Le hero n'est plus animé : il contient l'image LCP et les boutons devis / téléphone,
+  // qui doivent s'afficher sans attendre le JavaScript.
 
   document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((section, index) => {
     if (section.classList.contains('home-hero')) return;

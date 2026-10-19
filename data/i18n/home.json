@@ -63,7 +63,10 @@
     "equip.fullform": "Projet détaillé ? <a href=\"/contact.html\">Formulaire complet</a>",
     "hero.trust.ch": "Livraison Suisse",
     "hero.trust.response": "Réponse sous 1–2 jours",
-    "hero.trust.phone": "+41 79 779 21 59"
+    "hero.trust.phone": "+41 79 779 21 59",
+    "hero.cta.call": "Appeler +41 79 779 21 59",
+    "nav.devis": "Devis",
+    "carousel.slide": "Diapositive {n} sur {N}"
   },
   "de": {
     "meta.title": "Personalisierte Workwear B2B Schweiz | Alpë Workwear",
@@ -129,7 +132,10 @@
     "equip.fullform": "Detailliertes Projekt? <a href=\"/contact.html\">Vollständiges Formular</a>",
     "hero.trust.ch": "Lieferung Schweiz",
     "hero.trust.response": "Antwort in 1–2 Tagen",
-    "hero.trust.phone": "+41 79 779 21 59"
+    "hero.trust.phone": "+41 79 779 21 59",
+    "hero.cta.call": "Anrufen +41 79 779 21 59",
+    "nav.devis": "Offerte",
+    "carousel.slide": "Folie {n} von {N}"
   },
   "it": {
     "meta.title": "Tessile personalizzato & workwear B2B Svizzera | Alpë Workwear",
@@ -195,7 +201,10 @@
     "equip.fullform": "Progetto dettagliato? <a href=\"/contact.html\">Modulo completo</a>",
     "hero.trust.ch": "Consegna Svizzera",
     "hero.trust.response": "Risposta in 1–2 giorni",
-    "hero.trust.phone": "+41 79 779 21 59"
+    "hero.trust.phone": "+41 79 779 21 59",
+    "hero.cta.call": "Chiama +41 79 779 21 59",
+    "nav.devis": "Preventivo",
+    "carousel.slide": "Diapositiva {n} di {N}"
   },
   "en": {
     "meta.title": "Custom textile & B2B workwear Switzerland | Alpë Workwear",
@@ -261,6 +270,9 @@
     "equip.fullform": "Detailed project? <a href=\"/contact.html\">Full form</a>",
     "hero.trust.ch": "Delivery Switzerland",
     "hero.trust.response": "Reply within 1–2 days",
-    "hero.trust.phone": "+41 79 779 21 59"
+    "hero.trust.phone": "+41 79 779 21 59",
+    "hero.cta.call": "Call +41 79 779 21 59",
+    "nav.devis": "Quote",
+    "carousel.slide": "Slide {n} of {N}"
   }
 }
