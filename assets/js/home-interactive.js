@@ -4,6 +4,29 @@
 (function () {
   if (!document.body.classList.contains('page-home')) return;
 
+  const SLIDE_LABEL = {
+    fr: 'Diapositive {n} sur {N}',
+    de: 'Folie {n} von {N}',
+    it: 'Diapositiva {n} di {N}',
+    en: 'Slide {n} of {N}',
+  };
+
+  function slideLabel(n, total) {
+    const lang = (document.documentElement.lang || 'fr').slice(0, 2).toLowerCase();
+    return (SLIDE_LABEL[lang] || SLIDE_LABEL.fr).replace('{n}', n).replace('{N}', total);
+  }
+
+  function labelDots(dots) {
+    dots.forEach((dot, i) => dot.setAttribute('aria-label', slideLabel(i + 1, dots.length)));
+  }
+
+  function setCurrentDot(dots, index) {
+    dots.forEach((dot, di) => {
+      if (di === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+
   function initCarousel(root) {
     const track = root.querySelector('.home-carousel__track');
     const slides = [...root.querySelectorAll('.home-carousel__slide')];
@@ -28,11 +51,16 @@
       index = Math.max(0, Math.min(i, slides.length - 1));
       const slide = slides[index];
       track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-      dots.forEach((dot, di) => dot.setAttribute('aria-current', di === index ? 'true' : 'false'));
+      setCurrentDot(dots, index);
       if (prev) prev.disabled = index === 0;
       if (next) next.disabled = index === slides.length - 1;
     }
 
+    labelDots(dots);
+    new MutationObserver(() => labelDots(dots)).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['lang'],
+    });
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
     prev?.addEventListener('click', () => goTo(index - 1));
     next?.addEventListener('click', () => goTo(index + 1));
@@ -46,7 +74,7 @@
           const slideCenter = slide.offsetLeft - track.offsetLeft + slide.offsetWidth / 2;
           if (Math.abs(slideCenter - center) < slide.offsetWidth / 2) index = i;
         });
-        dots.forEach((dot, di) => dot.setAttribute('aria-current', di === index ? 'true' : 'false'));
+        setCurrentDot(dots, index);
         if (prev) prev.disabled = index === 0;
         if (next) next.disabled = index === slides.length - 1;
       }, 80);
@@ -66,7 +94,7 @@
     function activate(i) {
       steps.forEach((step, si) => step.setAttribute('aria-selected', si === i ? 'true' : 'false'));
       visuals.forEach((img, vi) => img.classList.toggle('is-active', vi === i));
-      thumbs.forEach((thumb, ti) => thumb.setAttribute('aria-selected', ti === i ? 'true' : 'false'));
+      thumbs.forEach((thumb, ti) => thumb.setAttribute('aria-pressed', ti === i ? 'true' : 'false'));
     }
 
     steps.forEach((step, i) => step.addEventListener('click', () => activate(i)));
@@ -99,7 +127,7 @@
       dotsWrap.innerHTML = items
         .map(
           (_, i) =>
-            `<button type="button" class="home-carousel__dot" aria-label="Réalisation ${i + 1}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`,
+            `<button type="button" class="home-carousel__dot" aria-label="${slideLabel(i + 1, items.length)}"${i === 0 ? ' aria-current="true"' : ''}></button>`,
         )
         .join('');
     } catch {

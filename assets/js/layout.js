@@ -75,6 +75,8 @@
 
   /** Phone in header — pattern Gzimmo / Sopjani Tech */
   function injectHeaderPhone(header) {
+    // Accueil : le téléphone est déjà dans le hero, le header garde seulement « Devis ».
+    if (document.body.classList.contains('page-home')) return;
     const nav = header.querySelector('.site-nav');
     if (!nav || nav.querySelector('.nav-phone')) return;
     const phoneTel = cfg.phoneTel || '+41797792159';
@@ -100,7 +102,12 @@
   function enhanceStickyCta() {
     const sticky = document.querySelector('.sticky-cta');
     if (!sticky || sticky.dataset.enhanced === '1') return;
-    if (page === 'contact.html' || page === 'merci.html' || page === 'thank-you.html') {
+    if (
+      document.body.classList.contains('page-home') ||
+      page === 'contact.html' ||
+      page === 'merci.html' ||
+      page === 'thank-you.html'
+    ) {
       sticky.remove();
       return;
     }

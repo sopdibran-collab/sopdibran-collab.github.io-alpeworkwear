@@ -1175,3 +1175,124 @@ a.home-certs__logo:focus-visible {
     filter: none !important;
   }
 }
+
+/* ── Audit /jury : CTA devis + téléphone dans le hero ── */
+.home-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 24px;
+}
+
+.home-hero__ctas .home-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.home-hero__btn--call {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.home-hero__btn--call:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+.home-hero__btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (min-width: 900px) {
+  .home-hero,
+  .home-hero__frame.container {
+    min-height: min(calc(100svh - var(--nav-height)), 85svh);
+  }
+
+  .home-hero {
+    max-height: 85svh;
+  }
+}
+
+@media (max-width: 719px) {
+  .home-hero__ctas {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .home-hero__ctas .home-hero__btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.85rem 0.5rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+  }
+
+  .home-hero__actions {
+    flex-direction: row;
+  }
+}
+
+/* ── Audit /jury : points du carrousel (cible 44×44, point 10 px) ── */
+.home-carousel__dots {
+  gap: 0;
+}
+
+.home-carousel__dot {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.home-carousel__dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #9ca3af;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.home-carousel__dot[aria-current='true'] {
+  background: transparent;
+}
+
+.home-carousel__dot[aria-current='true']::before {
+  width: 24px;
+  background: #c41e6e;
+}
+
+.home-carousel__dot:focus-visible {
+  outline: 2px solid #c41e6e;
+  outline-offset: -4px;
+  border-radius: 6px;
+}
+
+.home-carousel__track:focus-visible {
+  outline: 2px solid #c41e6e;
+  outline-offset: 2px;
+}
+
+/* Audit /jury : pas de barre fixe sur l’accueil, les deux CTA sont dans le hero */
+.page-home .sticky-cta {
+  display: none !important;
+}
+
+.page-home:has(.sticky-cta.is-visible) {
+  padding-bottom: 0;
+}
