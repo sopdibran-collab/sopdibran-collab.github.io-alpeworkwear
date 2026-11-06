@@ -50,8 +50,12 @@ jobs:
           rm -rf _site
           mkdir -p _site
           # Allow-list only public paths (no repo meta, agent notes, or build tooling).
-          cp -a .nojekyll CNAME robots.txt sitemap.xml _site/
+          cp -a .nojekyll CNAME sitemap.xml _site/
           cp -a *.html _site/
+          # Root *.txt: robots.txt, IndexNow / verification keys at site root, etc.
+          shopt -s nullglob
+          root_txt=( *.txt )
+          if (( ${#root_txt[@]} )); then cp -a "${root_txt[@]}" _site/; fi
           cp -a assets data _site/
           # Guardrails: these must never ship even if renamed/reintroduced.
           rm -rf \
