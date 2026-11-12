@@ -2317,7 +2317,8 @@ a.instagram-band__icon:hover {
   }
 }
 
-body.has-sticky-cta #cotation .container {
+body.has-sticky-cta #cotation .container,
+body.has-sticky-cta #quote .container {
   padding-bottom: calc(var(--sticky-cta-height) + 1.5rem + env(safe-area-inset-bottom, 0px));
 }
 

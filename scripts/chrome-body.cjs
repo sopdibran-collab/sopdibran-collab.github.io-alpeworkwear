@@ -24,7 +24,7 @@ const stickyCtaCutSew = `  <aside class="sticky-cta" aria-label="Appeler ou dema
 
 const stickyCtaEnCutSew = `  <aside class="sticky-cta" aria-label="Call or request a quote">
   <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Call">Call</a>
-  <a href="#cotation" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Request a quote">Request a quote</a>
+  <a href="#quote" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Request a quote">Request a quote</a>
 </aside>`;
 
 function layoutSrc(file) {
