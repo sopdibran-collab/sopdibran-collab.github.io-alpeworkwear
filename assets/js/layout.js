@@ -141,7 +141,7 @@
     const isCallOnly = sticky.classList.contains('sticky-cta--call-only') || page === 'contact.html';
 
     let quoteHref = '/contact.html';
-    if (page === 'confection-sur-mesure.html') quoteHref = '#cotation';
+    if (page === 'confection-sur-mesure.html' || page === 'cut-and-sew-manufacturing.html') quoteHref = '#cotation';
 
     sticky.setAttribute('aria-label', isCallOnly ? callLabel : quoteLabel + ' — ' + callLabel);
 

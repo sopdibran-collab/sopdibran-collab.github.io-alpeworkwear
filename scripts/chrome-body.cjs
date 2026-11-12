@@ -22,6 +22,11 @@ const stickyCtaCutSew = `  <aside class="sticky-cta" aria-label="Appeler ou dema
   <a href="#cotation" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
 </aside>`;
 
+const stickyCtaEnCutSew = `  <aside class="sticky-cta" aria-label="Call or request a quote">
+  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Call">Call</a>
+  <a href="#cotation" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Request a quote">Request a quote</a>
+</aside>`;
+
 function layoutSrc(file) {
   return file === 'confection-sur-mesure.html' || file.startsWith('en/') ? '/assets/js/layout.js' : 'assets/js/layout.js';
 }
@@ -30,6 +35,7 @@ function stickyBlockFor(file) {
   if (NO_STICKY.has(file)) return '';
   if (file === 'contact.html') return `${stickyCtaContact}\n`;
   if (file === 'confection-sur-mesure.html') return `${stickyCtaCutSew}\n`;
+  if (file === 'en/cut-and-sew-manufacturing.html') return `${stickyCtaEnCutSew}\n`;
   if (file.startsWith('en/')) return '';
   return `${stickyCta}\n`;
 }

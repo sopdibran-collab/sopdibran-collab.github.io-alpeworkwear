@@ -166,9 +166,9 @@
   box-sizing: border-box;
   text-align: center;
   text-transform: uppercase;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   padding: 0.95rem 1.35rem;
   text-decoration: none;
   border-radius: var(--radius);
@@ -204,7 +204,7 @@
 }
 
 .home-hero__trust li {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -233,7 +233,7 @@
   }
 
   .home-hero__brand {
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     margin-bottom: 0.55rem;
   }
 
@@ -311,9 +311,9 @@
 
 .home-alliance__pole-label {
   margin: 0 0 0.75rem;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-steel);
 }
@@ -478,7 +478,7 @@
 
 .home-collections__card-head p {
   margin-top: 0.35rem;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.82);
   max-width: 12rem;
@@ -697,9 +697,9 @@
 }
 
 .home-carousel__label {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-cta);
 }
@@ -1139,7 +1139,7 @@ a.home-certs__logo:focus-visible {
   justify-self: start;
   margin-top: 0.35rem;
   text-transform: uppercase;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
 }
 
@@ -1235,8 +1235,8 @@ a.home-certs__logo:focus-visible {
     flex: 1 1 0;
     min-width: 0;
     padding: 0.85rem 0.5rem;
-    font-size: 0.625rem;
-    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
   }
 
   .home-hero__actions {
@@ -1326,7 +1326,31 @@ a.home-certs__logo:focus-visible {
   .home-timeline__label {
     font-size: 0.75rem;
     line-height: 1.25;
-    word-break: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+}
+
+@media (max-width: 399px) {
+  .home-timeline__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .home-timeline__step {
+    position: relative;
+  }
+
+  .home-timeline__num {
+    font-size: 0.75rem;
   }
 }
 
