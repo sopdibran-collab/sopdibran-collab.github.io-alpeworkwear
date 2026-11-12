@@ -238,7 +238,7 @@
 </head>
 
 <body>
-                  <header id="site-header" class="site-header" aria-label="Navigation principale">
+                    <header id="site-header" class="site-header" aria-label="Navigation principale">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Alpë Workwear — accueil">
         <img class="site-logo__img" src="/assets/brand/logo-responsive.svg" width="168" height="50" alt="" decoding="async">
@@ -248,12 +248,12 @@
         data-i18n-aria-label="nav.menu" aria-label="Ouvrir le menu">Menu</button>
     </div>
     <ul class="site-nav" id="site-nav">
-      <li><a href="/catalogue.html" data-i18n="nav.collections">Collections</a></li>
-      <li><a href="/confection.html" data-i18n="nav.confection">Confection</a></li>
+      <li><a href="/catalogue.html">Collections</a></li>
+      <li><a href="/confection.html">Confection</a></li>
       <li><a href="/confection-sur-mesure.html">Confection sur mesure</a></li>
-      <li><a href="/realisations.html" data-i18n="nav.realisations">Réalisations</a></li>
-      <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
-      <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="/realisations.html">Réalisations</a></li>
+      <li><a href="/faq.html" aria-current="page">Expertises</a></li>
+      <li><a href="/contact.html" class="nav-cta">Contact</a></li>
       <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
         <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
       </li>
@@ -275,7 +275,7 @@
         </p>
         <div class="page-hero__actions">
           <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
-          <a href="/catalogue.html" class="btn btn-secondary">Voir les collections</a>
+          <a href="tel:+41797792159" class="btn btn-secondary track-phone">Appeler</a>
         </div>
       </div>
     </section>
@@ -477,7 +477,7 @@
         <p>Décrivez votre besoin — nous répondons sous 1 à 2 jours ouvrables avec un devis partenaire.</p>
         <div class="cta-band__actions">
           <a href="/contact.html" class="btn btn-primary">Demander un devis</a>
-          <a href="/catalogue.html" class="btn btn-secondary">Voir les collections</a>
+          <a href="tel:+41797792159" class="btn btn-secondary track-phone">Appeler</a>
         </div>
       </div>
     </section>
@@ -517,7 +517,7 @@
   </div>
 </section>
 
-                  <footer id="site-footer" class="site-footer" role="contentinfo">
+                    <footer id="site-footer" class="site-footer" role="contentinfo">
     <div class="container site-footer__inner">
       <div class="site-footer__top">
         <a href="/" class="site-footer__brand" aria-label="Alpë Workwear — accueil">
@@ -577,8 +577,12 @@
     </div>
   </footer>
 
-  <script src="assets/js/cookie-consent.js"></script>
-  <script src="assets/js/layout.js"></script>
+  <aside class="sticky-cta" aria-label="Appeler ou demander un devis">
+  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
+  <a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
+</aside>
+  <script src="assets/js/layout.js" defer></script>
+<script src="assets/js/cookie-consent.js"></script>
   <script src="assets/js/schema-org.js"></script>
   <script src="assets/js/faq-schema.js"></script>
   <script>
@@ -586,10 +590,6 @@
       const key = el.getAttribute('data-config');
       if (window.ALPE_CONFIG && window.ALPE_CONFIG[key]) el.textContent = window.ALPE_CONFIG[key];
     });
-  </script><script src="assets/js/lang-switch.js"></script>    <aside class="sticky-cta" aria-label="Appeler ou demander un devis">
-  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
-  <a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
-</aside>
-</body>
+  </script><script src="assets/js/lang-switch.js"></script>    </body>
 
 </html>

@@ -512,7 +512,7 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.55rem 1rem;
-  font-size: 0.5625rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -808,7 +808,7 @@
 
 .home-timeline__num {
   display: block;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -1095,7 +1095,7 @@ a.home-certs__logo:focus-visible {
 .home-equip__form label {
   display: block;
   margin-bottom: 0.35rem;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1306,25 +1306,45 @@ a.home-certs__logo:focus-visible {
     display: none;
   }
 
-  .home-timeline {
-    position: relative;
-    padding-right: 1.5rem;
+  .home-timeline-shell::after {
+    display: none;
   }
 
-  .home-timeline::after {
-    content: '';
-    position: sticky;
-    right: 0;
-    top: 0;
-    width: 1.5rem;
-    height: 100%;
-    margin-left: -1.5rem;
-    background: linear-gradient(90deg, transparent, var(--color-bg));
-    pointer-events: none;
+  .home-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    overflow-x: visible;
+    padding-right: 0;
+    gap: 0;
   }
 
   .home-timeline__step {
-    min-width: 4.75rem;
+    min-width: 0;
+    padding: 0 0.2rem 1rem;
+  }
+
+  .home-timeline__label {
+    font-size: 0.75rem;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+}
+
+.home-timeline-shell {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 901px) {
+  .home-timeline-shell::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    background: linear-gradient(90deg, transparent, var(--color-bg) 85%);
+    pointer-events: none;
   }
 }
 

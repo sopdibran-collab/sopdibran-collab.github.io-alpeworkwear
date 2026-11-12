@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { normalizeStickyAndLayout } = require('./chrome-body.cjs');
 
 const root = path.join(__dirname, '..');
 const pages = [
@@ -28,6 +29,8 @@ const pages = [
   'vetements-travail-paysagiste.html',
   'vetements-travail-garage-mecanique.html',
 ];
+
+const scriptOrderPages = ['confection-sur-mesure.html', 'en/cut-and-sew-manufacturing.html', 'en/thank-you.html'];
 
 const PRESERVE_CHROME = new Set(['confection-sur-mesure.html']);
 
@@ -113,18 +116,8 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
     </div>
   </footer>`;
 
-const stickyCta = `  <aside class="sticky-cta" aria-label="Appeler ou demander un devis">
-  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
-  <a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
-</aside>`;
-
-const stickyCtaContact = `  <aside class="sticky-cta sticky-cta--call-only" aria-label="Appeler">
-  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
-</aside>`;
-
 const headerRe = /<header id="site-header"[\s\S]*?<\/header>/;
 const footerRe = /<footer id="site-footer"[\s\S]*?<\/footer>/;
-const stickyRe = /<aside class="sticky-cta"[\s\S]*?<\/aside>/;
 
 function ensureScript(html, src) {
   if (html.includes(`src="${src}"`) || html.includes(`src='${src}'`)) return html;
@@ -134,30 +127,36 @@ function ensureScript(html, src) {
   return html;
 }
 
-function ensureSticky(html, file) {
-  const noSticky = new Set(['merci.html', 'confidentialite.html', 'mentions-legales.html']);
-  if (noSticky.has(file)) {
-    return html.replace(stickyRe, '');
+function processFile(file, { chromeOnly = false } = {}) {
+  const filePath = path.join(root, file);
+  if (!fs.existsSync(filePath)) {
+    console.error('Missing:', file);
+    return;
   }
-  const block = file === 'contact.html' ? stickyCtaContact : stickyCta;
-  html = html.replace(/<aside class="sticky-cta"[\s\S]*?<\/aside>\s*/gi, '');
-  return html.replace('</body>', `${block}\n</body>`);
+  let html = fs.readFileSync(filePath, 'utf8');
+
+  if (!chromeOnly) {
+    if (!headerRe.test(html) || !footerRe.test(html)) {
+      console.error('Skip (pattern):', file);
+      return;
+    }
+    html = html.replace(headerRe, header).replace(footerRe, footer);
+    html = ensureScript(html, 'assets/js/lang-switch.js');
+  }
+
+  html = normalizeStickyAndLayout(html, file);
+  fs.writeFileSync(filePath, html);
+  console.log('Updated', file);
 }
 
 for (const file of pages) {
   if (file.startsWith('en/') || PRESERVE_CHROME.has(file)) {
-    console.log('Preserved (dedicated chrome):', file);
+    console.log('Preserved header/footer:', file);
     continue;
   }
-  const filePath = path.join(root, file);
-  let html = fs.readFileSync(filePath, 'utf8');
-  if (!headerRe.test(html) || !footerRe.test(html)) {
-    console.error('Skip (pattern):', file);
-    continue;
-  }
-  html = html.replace(headerRe, header).replace(footerRe, footer);
-  html = ensureSticky(html, file);
-  html = ensureScript(html, 'assets/js/lang-switch.js');
-  fs.writeFileSync(filePath, html);
-  console.log('Updated', file);
+  processFile(file);
+}
+
+for (const file of scriptOrderPages) {
+  processFile(file, { chromeOnly: true });
 }
