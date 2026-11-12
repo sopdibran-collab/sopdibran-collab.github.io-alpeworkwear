@@ -38,7 +38,8 @@ function normalizeStickyAndLayout(html, file) {
   const stickyBlock = stickyBlockFor(file);
   const layoutTag = `  <script src="${layoutSrc(file)}" defer></script>\n`;
 
-  html = html.replace(/<aside class="sticky-cta"[\s\S]*?<\/aside>\s*/gi, '');
+  const stickyAsideRe = /<aside\b[^>]*\bclass="[^"]*\bsticky-cta\b[^"]*"[\s\S]*?<\/aside>\s*/gi;
+  html = html.replace(stickyAsideRe, '');
   html = html.replace(/<script src="(?:\/)?assets\/js\/layout\.js"[^>]*>\s*<\/script>\s*/gi, '');
 
   const footerIdx = html.lastIndexOf('</footer>');
