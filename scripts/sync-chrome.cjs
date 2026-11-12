@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { normalizeStickyAndLayout } = require('./chrome-body.cjs');
 
 const root = path.join(__dirname, '..');
 const pages = [
@@ -22,15 +23,15 @@ const pages = [
   'workwear-zurich.html',
   'workwear-berne.html',
   'workwear-bale.html',
+  'workwear-valais.html',
   'vetements-travail-batiment-artisans.html',
   'vetements-travail-nettoyage.html',
   'vetements-travail-paysagiste.html',
   'vetements-travail-garage-mecanique.html',
 ];
 
-// Pages au chrome dédié : ne pas les écraser avec ce gabarit français.
-// - confection-sur-mesure.html : lien English seul (DE/IT masqués), pied sans « Craft certifié »
-// - en/* : navigation anglaise statique
+const scriptOrderPages = ['confection-sur-mesure.html', 'en/cut-and-sew-manufacturing.html', 'en/thank-you.html'];
+
 const PRESERVE_CHROME = new Set(['confection-sur-mesure.html']);
 
 const header = `  <header id="site-header" class="site-header" aria-label="Navigation principale">
@@ -50,10 +51,7 @@ const header = `  <header id="site-header" class="site-header" aria-label="Navig
       <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
       <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
       <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
-        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
         <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
-        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
-        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
       </li>
     </ul>
   </header>`;
@@ -85,6 +83,9 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
             <li><a href="/workwear-geneve.html">Genève</a></li>
             <li><a href="/workwear-lausanne.html">Lausanne</a></li>
             <li><a href="/workwear-zurich.html">Zurich</a></li>
+            <li><a href="/workwear-berne.html">Berne</a></li>
+            <li><a href="/workwear-bale.html">Bâle</a></li>
+            <li><a href="/workwear-valais.html">Valais</a></li>
           </ul>
         </div>
         <div class="site-footer__row site-footer__row--contact">
@@ -115,13 +116,8 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
     </div>
   </footer>`;
 
-const stickyCta = `  <aside class="sticky-cta" aria-label="Demander un devis">
-  <a href="/contact.html" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
-</aside>`;
-
 const headerRe = /<header id="site-header"[\s\S]*?<\/header>/;
 const footerRe = /<footer id="site-footer"[\s\S]*?<\/footer>/;
-const stickyRe = /<aside class="sticky-cta"[\s\S]*?<\/aside>/;
 
 function ensureScript(html, src) {
   if (html.includes(`src="${src}"`) || html.includes(`src='${src}'`)) return html;
@@ -131,36 +127,36 @@ function ensureScript(html, src) {
   return html;
 }
 
-function ensureSticky(html, file) {
-  const noSticky = new Set([
-    'contact.html',
-    'merci.html',
-    'confidentialite.html',
-    'mentions-legales.html',
-  ]);
-  if (noSticky.has(file)) {
-    return html.replace(stickyRe, '');
+function processFile(file, { chromeOnly = false } = {}) {
+  const filePath = path.join(root, file);
+  if (!fs.existsSync(filePath)) {
+    console.error('Missing:', file);
+    return;
   }
-  if (stickyRe.test(html)) {
-    return html.replace(stickyRe, stickyCta);
+  let html = fs.readFileSync(filePath, 'utf8');
+
+  if (!chromeOnly) {
+    if (!headerRe.test(html) || !footerRe.test(html)) {
+      console.error('Skip (pattern):', file);
+      return;
+    }
+    html = html.replace(headerRe, header).replace(footerRe, footer);
+    html = ensureScript(html, 'assets/js/lang-switch.js');
   }
-  return html.replace('</body>', `${stickyCta}\n</body>`);
+
+  html = normalizeStickyAndLayout(html, file);
+  fs.writeFileSync(filePath, html);
+  console.log('Updated', file);
 }
 
 for (const file of pages) {
   if (file.startsWith('en/') || PRESERVE_CHROME.has(file)) {
-    console.log('Preserved (dedicated chrome):', file);
+    console.log('Preserved header/footer:', file);
     continue;
   }
-  const filePath = path.join(root, file);
-  let html = fs.readFileSync(filePath, 'utf8');
-  if (!headerRe.test(html) || !footerRe.test(html)) {
-    console.error('Skip (pattern):', file);
-    continue;
-  }
-  html = html.replace(headerRe, header).replace(footerRe, footer);
-  html = ensureSticky(html, file);
-  html = ensureScript(html, 'assets/js/lang-switch.js');
-  fs.writeFileSync(filePath, html);
-  console.log('Updated', file);
+  processFile(file);
+}
+
+for (const file of scriptOrderPages) {
+  processFile(file, { chromeOnly: true });
 }

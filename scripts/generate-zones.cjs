@@ -115,7 +115,7 @@ function pageHtml(zone, allZones) {
         <h1 id="page-h1">${zone.h1}</h1>
         <p class="page-hero__lead">${zone.lead}</p>
         <div class="page-hero__actions">
-          <a href="/contact.html?ville=${encodeURIComponent(zone.name)}" class="btn btn-primary">Demander un devis — ${zone.name}</a>
+          <a href="/contact.html?ville=${encodeURIComponent(zone.name)}" class="btn btn-primary track-devis">Demander un devis</a>
           <a href="/catalogue.html" class="btn btn-secondary">Voir les collections</a>
         </div>
       </div>

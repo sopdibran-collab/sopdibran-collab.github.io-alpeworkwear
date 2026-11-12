@@ -23,7 +23,7 @@ const LOGO_HEADER = '/assets/brand/logo-responsive.svg';
 const LOGO_FOOTER = '/assets/brand/logo-responsive.svg';
 
 const LEGAL_PAGES = new Set(['confidentialite.html', 'mentions-legales.html']);
-const NO_STICKY_CTA = new Set(['contact.html', 'merci.html', 'confidentialite.html', 'mentions-legales.html']);
+const NO_STICKY_CTA = new Set(['merci.html', 'confidentialite.html', 'mentions-legales.html', 'en/thank-you.html']);
 
 function escapeHtml(str) {
   if (str == null) return '';
@@ -63,10 +63,7 @@ function renderHeader(currentFile) {
     <ul class="site-nav" id="site-nav">
       ${navHtml}
       <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
-        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
         <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
-        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
-        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
       </li>
     </ul>
   </header>`;
@@ -125,6 +122,9 @@ function renderFooter() {
             <li><a href="/workwear-geneve.html">Genève</a></li>
             <li><a href="/workwear-lausanne.html">Lausanne</a></li>
             <li><a href="/workwear-zurich.html">Zurich</a></li>
+            <li><a href="/workwear-berne.html">Berne</a></li>
+            <li><a href="/workwear-bale.html">Bâle</a></li>
+            <li><a href="/workwear-valais.html">Valais</a></li>
           </ul>
         </div>
         <div class="site-footer__row site-footer__row--contact">
@@ -157,8 +157,9 @@ function renderFooter() {
 }
 
 function renderStickyCta() {
-  return `<aside class="sticky-cta" aria-label="Demander un devis">
-  <a href="/contact.html" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
+  return `<aside class="sticky-cta" aria-label="Appeler ou demander un devis">
+  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
+  <a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
 </aside>`;
 }
 
@@ -175,6 +176,7 @@ function renderProductCard(product, categories) {
     ? `<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.imageAlt || product.name)}" loading="lazy" width="400" height="400">`
     : `<div class="product-card__placeholder" role="img" aria-label="Photo à venir">Photo à venir</div>`;
 
+  const devisHref = `/contact.html?article=${encodeURIComponent(product.name)}`;
   return `          <article class="product-card" data-category="${escapeAttr(product.category)}" id="produit-${escapeAttr(product.id)}">
             <div class="product-card__media">${media}</div>
             <div class="product-card__body">
@@ -183,15 +185,18 @@ function renderProductCard(product, categories) {
               <h2 class="product-card__title">${escapeHtml(product.name)}</h2>
               ${descBlock}
               ${ref}
+              <p class="product-card__actions"><a href="${devisHref}" class="product-card__devis track-devis">Demander un devis</a></p>
             </div>
           </article>`;
 }
 
-function renderCatalogueFilters(categories, activeFilter) {
+function renderCatalogueFilters(categories, products, activeFilter) {
+  const usedIds = new Set((products || []).map((p) => p.category));
+  const visibleCategories = (categories || []).filter((c) => usedIds.has(c.id));
   const allPressed = !activeFilter || activeFilter === 'all' ? 'true' : 'false';
   const allCurrent = allPressed === 'true' ? ' aria-current="true"' : '';
   let html = `          <a href="/catalogue.html" class="filter-btn" data-filter="all" aria-pressed="${allPressed}"${allCurrent}>Toutes les gammes</a>\n`;
-  categories.forEach((cat) => {
+  visibleCategories.forEach((cat) => {
     const pressed = activeFilter === cat.id ? 'true' : 'false';
     const current = pressed === 'true' ? ' aria-current="true"' : '';
     html += `          <a href="/catalogue.html?categorie=${escapeAttr(cat.id)}" class="filter-btn" data-filter="${escapeAttr(cat.id)}" aria-pressed="${pressed}"${current}>${escapeHtml(cat.name)}</a>\n`;

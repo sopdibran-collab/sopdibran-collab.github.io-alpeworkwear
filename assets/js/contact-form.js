@@ -15,7 +15,7 @@
   const params = new URLSearchParams(window.location.search);
   const produitField = form.querySelector('[name="produit"]');
   const villeField = form.querySelector('[name="ville"]');
-  const produitParam = params.get('produit');
+  const produitParam = params.get('produit') || params.get('article');
   const villeParam = params.get('ville');
   if (produitParam && produitField && !produitField.value) {
     produitField.value = produitParam;

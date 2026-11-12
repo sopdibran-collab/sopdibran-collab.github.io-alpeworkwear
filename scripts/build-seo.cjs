@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { normalizeStickyAndLayout } = require('./chrome-body.cjs');
 const {
   LEGAL_PAGES,
   NO_STICKY_CTA,
@@ -92,8 +93,8 @@ function processPage(filename) {
 
   if (!NO_STICKY_CTA.has(filename)) {
     html = removeBlock(html, /\s*<aside class="sticky-cta"[\s\S]*?<\/aside>\s*/i);
-    html = html.replace('</body>', `  ${renderStickyCta()}\n</body>`);
   }
+  html = normalizeStickyAndLayout(html, filename);
 
   html = removeBlock(html, /\s*<link rel="icon"[\s\S]*?<meta name="twitter:image"[^>]*>\s*/i);
   html = html.replace(
@@ -128,7 +129,7 @@ function processPage(filename) {
     );
     html = html.replace(
       /<div class="catalogue-toolbar" id="catalogue-filters"[^>]*>[\s\S]*?<\/div>/i,
-      `<div class="catalogue-toolbar" id="catalogue-filters" role="toolbar" aria-label="Filtrer par gamme">\n${renderCatalogueFilters(categories)}\n        </div>`
+      `<div class="catalogue-toolbar" id="catalogue-filters" role="toolbar" aria-label="Filtrer par gamme">\n${renderCatalogueFilters(categories, products)}\n        </div>`
     );
     const itemList = renderItemListSchema(products, categories);
     html = injectBeforeCloseHead(html, itemList, 'alpe-schema-itemlist');

@@ -7,16 +7,20 @@
   };
 
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  const isEn = document.documentElement.lang === 'en';
+  const isEn = document.documentElement.lang === 'en' || document.documentElement.lang.startsWith('en');
   const menuOpenLabel = isEn ? 'Open menu' : 'Ouvrir le menu';
   const menuCloseLabel = isEn ? 'Close menu' : 'Fermer le menu';
+  const menuOpenText = isEn ? 'Menu' : 'Menu';
+  const menuCloseText = isEn ? 'Close' : 'Fermer';
   const callLabel = isEn ? 'Call' : 'Appeler';
+  const quoteLabel = isEn ? 'Request a quote' : 'Demander un devis';
 
   function setNavOpen(nav, toggle, open) {
     const isOpen = Boolean(open);
     nav.classList.toggle('is-open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     toggle.setAttribute('aria-label', isOpen ? menuCloseLabel : menuOpenLabel);
+    toggle.textContent = isOpen ? menuCloseText : menuOpenText;
     document.body.classList.toggle('is-nav-open', isOpen);
   }
 
@@ -73,10 +77,7 @@
     });
   }
 
-  /** Phone in header — pattern Gzimmo / Sopjani Tech */
   function injectHeaderPhone(header) {
-    // Accueil : le téléphone est déjà dans le hero, le header garde seulement « Devis ».
-    if (document.body.classList.contains('page-home')) return;
     const nav = header.querySelector('.site-nav');
     if (!nav || nav.querySelector('.nav-phone')) return;
     const phoneTel = cfg.phoneTel || '+41797792159';
@@ -98,54 +99,86 @@
     else nav.appendChild(li);
   }
 
-  /** Dual sticky mobile CTA: Appeler + Devis */
+  function enhanceLangSwitch() {
+    const enPages = {
+      'confection-sur-mesure.html': '/en/cut-and-sew-manufacturing.html',
+    };
+    const enHref = enPages[page];
+    document.querySelectorAll('.lang-switch').forEach((group) => {
+      group.querySelectorAll('[data-lang="de"], [data-lang="it"]').forEach((el) => {
+        el.remove();
+      });
+      const enBtn = group.querySelector('[data-lang="en"]');
+      if (!enHref) {
+        if (enBtn) enBtn.remove();
+        return;
+      }
+      if (enBtn && enBtn.tagName === 'BUTTON') {
+        const link = document.createElement('a');
+        link.href = enHref;
+        link.className = 'lang-switch__item';
+        link.setAttribute('hreflang', 'en');
+        link.lang = 'en';
+        link.textContent = 'EN';
+        enBtn.replaceWith(link);
+      }
+    });
+  }
+
   function enhanceStickyCta() {
     const sticky = document.querySelector('.sticky-cta');
-    if (!sticky || sticky.dataset.enhanced === '1') return;
-    if (
-      document.body.classList.contains('page-home') ||
-      page === 'contact.html' ||
-      page === 'merci.html' ||
-      page === 'thank-you.html'
-    ) {
+    if (!sticky) return;
+
+    const noSticky = new Set(['merci.html', 'thank-you.html', 'confidentialite.html', 'mentions-legales.html']);
+    if (noSticky.has(page)) {
       sticky.remove();
       return;
     }
+
+    if (sticky.dataset.enhanced === '1') return;
+
     const phoneTel = cfg.phoneTel || '+41797792159';
+    const isCallOnly = sticky.classList.contains('sticky-cta--call-only') || page === 'contact.html';
+
     let quoteHref = '/contact.html';
-    let quoteLabel = isEn ? 'Request a quote' : 'Devis entreprise';
-    let quoteAria = isEn ? 'Request a quote' : 'Demander un devis';
-    if (page === 'confection-sur-mesure.html') {
-      quoteHref = '#cotation';
-      quoteLabel = 'Demander une cotation';
-      quoteAria = 'Demander une cotation';
-    } else if (page === 'cut-and-sew-manufacturing.html') {
-      quoteHref = '#quote';
-      quoteLabel = 'Request a quote';
-      quoteAria = 'Request a quote';
+    if (page === 'confection-sur-mesure.html') quoteHref = '#cotation';
+    if (page === 'cut-and-sew-manufacturing.html') quoteHref = '#quote';
+
+    sticky.setAttribute('aria-label', isCallOnly ? callLabel : quoteLabel + ' — ' + callLabel);
+
+    if (isCallOnly) {
+      sticky.classList.add('sticky-cta--call-only');
+      sticky.innerHTML =
+        '<div class="sticky-cta__row sticky-cta__row--single">' +
+        '<a href="tel:' +
+        phoneTel +
+        '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="' +
+        callLabel +
+        '">' +
+        callLabel +
+        '</a></div>';
+    } else {
+      sticky.innerHTML =
+        '<div class="sticky-cta__row">' +
+        '<a href="tel:' +
+        phoneTel +
+        '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="' +
+        callLabel +
+        '">' +
+        callLabel +
+        '</a>' +
+        '<a href="' +
+        quoteHref +
+        '" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="' +
+        quoteLabel +
+        '">' +
+        quoteLabel +
+        '</a>' +
+        '</div>';
     }
-    sticky.setAttribute('aria-label', quoteAria);
-    sticky.innerHTML =
-      '<div class="sticky-cta__row">' +
-      '<a href="tel:' +
-      phoneTel +
-      '" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="' +
-      callLabel +
-      '">' +
-      callLabel +
-      '</a>' +
-      '<a href="' +
-      quoteHref +
-      '" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="' +
-      quoteAria +
-      '">' +
-      quoteLabel +
-      '</a>' +
-      '</div>';
     sticky.dataset.enhanced = '1';
   }
 
-  /** Geo + robots preview directives (sitewide) */
   function enhanceSeoMeta() {
     function setNamedMeta(name, content) {
       let el = document.querySelector('meta[name="' + name + '"]');
@@ -175,48 +208,9 @@
     }
   }
 
-  /** Complete footer city link equity */
-  function enhanceFooterCities() {
-    if (isEn) return;
-    const footer = document.getElementById('site-footer');
-    if (!footer) return;
-    const links = footer.querySelector('.site-footer__links');
-    if (!links) return;
-    const cities = [
-      { href: '/workwear-berne.html', label: 'Berne' },
-      { href: '/workwear-bale.html', label: 'Bâle' },
-      { href: '/workwear-valais.html', label: 'Valais' },
-    ];
-    const missing = cities.filter(function (city) {
-      return !links.querySelector('a[href="' + city.href + '"]');
-    });
-    if (!missing.length) return;
-
-    let anchor = links.querySelector('a[href="/workwear-zurich.html"]');
-    if (!anchor) anchor = links.querySelector('a[href="/workwear-lausanne.html"]');
-    let insertAfter = anchor ? anchor.parentElement : null;
-    const conf = links.querySelector('a[href="/confidentialite.html"]');
-
-    missing.forEach(function (city) {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = city.href;
-      a.textContent = city.label;
-      li.appendChild(a);
-      if (insertAfter) {
-        insertAfter.after(li);
-        insertAfter = li;
-      } else if (conf && conf.parentElement) {
-        conf.parentElement.before(li);
-      } else {
-        links.appendChild(li);
-      }
-    });
-  }
-
   enhanceSeoMeta();
+  enhanceLangSwitch();
   enhanceStickyCta();
-  enhanceFooterCities();
 
   const header = document.getElementById('site-header');
   if (header) {
@@ -237,7 +231,8 @@
   }
 
   const stickyCta = document.querySelector('.sticky-cta');
-  if (stickyCta && page !== 'contact.html' && page !== 'merci.html' && page !== 'thank-you.html') {
+  if (stickyCta && !['merci.html', 'thank-you.html', 'confidentialite.html', 'mentions-legales.html'].includes(page)) {
+    document.body.classList.add('has-sticky-cta');
     const main = document.getElementById('main');
     if (main) {
       const observer = new IntersectionObserver(
@@ -249,6 +244,8 @@
       const hero = main.querySelector('.home-hero, .home-hero-v3, .page-hero, .cta-band');
       if (hero) observer.observe(hero);
       else stickyCta.classList.add('is-visible');
+    } else {
+      stickyCta.classList.add('is-visible');
     }
   }
 })();
