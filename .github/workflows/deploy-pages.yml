@@ -52,6 +52,7 @@ jobs:
           # Allow-list only public paths (no repo meta, agent notes, or build tooling).
           cp -a .nojekyll CNAME sitemap.xml _site/
           cp -a *.html _site/
+          if [ -d en ]; then cp -a en _site/; fi
           # Root *.txt: robots.txt, IndexNow / verification keys at site root, etc.
           shopt -s nullglob
           root_txt=( *.txt )

@@ -22,15 +22,13 @@ const pages = [
   'workwear-zurich.html',
   'workwear-berne.html',
   'workwear-bale.html',
+  'workwear-valais.html',
   'vetements-travail-batiment-artisans.html',
   'vetements-travail-nettoyage.html',
   'vetements-travail-paysagiste.html',
   'vetements-travail-garage-mecanique.html',
 ];
 
-// Pages au chrome dédié : ne pas les écraser avec ce gabarit français.
-// - confection-sur-mesure.html : lien English seul (DE/IT masqués), pied sans « Craft certifié »
-// - en/* : navigation anglaise statique
 const PRESERVE_CHROME = new Set(['confection-sur-mesure.html']);
 
 const header = `  <header id="site-header" class="site-header" aria-label="Navigation principale">
@@ -50,10 +48,7 @@ const header = `  <header id="site-header" class="site-header" aria-label="Navig
       <li><a href="/faq.html" data-i18n="nav.expertises">Expertises</a></li>
       <li><a href="/contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
       <li class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
-        <button type="button" class="lang-switch__item" data-lang="de" lang="de" aria-pressed="false">DE</button>
         <button type="button" class="lang-switch__item lang-switch__item--active" data-lang="fr" lang="fr" aria-pressed="true" aria-current="true">FR</button>
-        <button type="button" class="lang-switch__item" data-lang="it" lang="it" aria-pressed="false">IT</button>
-        <button type="button" class="lang-switch__item" data-lang="en" lang="en" aria-pressed="false">EN</button>
       </li>
     </ul>
   </header>`;
@@ -85,6 +80,9 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
             <li><a href="/workwear-geneve.html">Genève</a></li>
             <li><a href="/workwear-lausanne.html">Lausanne</a></li>
             <li><a href="/workwear-zurich.html">Zurich</a></li>
+            <li><a href="/workwear-berne.html">Berne</a></li>
+            <li><a href="/workwear-bale.html">Bâle</a></li>
+            <li><a href="/workwear-valais.html">Valais</a></li>
           </ul>
         </div>
         <div class="site-footer__row site-footer__row--contact">
@@ -115,8 +113,13 @@ const footer = `  <footer id="site-footer" class="site-footer" role="contentinfo
     </div>
   </footer>`;
 
-const stickyCta = `  <aside class="sticky-cta" aria-label="Demander un devis">
-  <a href="/contact.html" class="sticky-cta__btn" aria-label="Demander un devis">Demander un devis</a>
+const stickyCta = `  <aside class="sticky-cta" aria-label="Appeler ou demander un devis">
+  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
+  <a href="/contact.html" class="sticky-cta__btn sticky-cta__btn--devis track-devis" aria-label="Demander un devis">Demander un devis</a>
+</aside>`;
+
+const stickyCtaContact = `  <aside class="sticky-cta sticky-cta--call-only" aria-label="Appeler">
+  <a href="tel:+41797792159" class="sticky-cta__btn sticky-cta__btn--call track-phone" aria-label="Appeler">Appeler</a>
 </aside>`;
 
 const headerRe = /<header id="site-header"[\s\S]*?<\/header>/;
@@ -132,19 +135,13 @@ function ensureScript(html, src) {
 }
 
 function ensureSticky(html, file) {
-  const noSticky = new Set([
-    'contact.html',
-    'merci.html',
-    'confidentialite.html',
-    'mentions-legales.html',
-  ]);
+  const noSticky = new Set(['merci.html', 'confidentialite.html', 'mentions-legales.html']);
   if (noSticky.has(file)) {
     return html.replace(stickyRe, '');
   }
-  if (stickyRe.test(html)) {
-    return html.replace(stickyRe, stickyCta);
-  }
-  return html.replace('</body>', `${stickyCta}\n</body>`);
+  const block = file === 'contact.html' ? stickyCtaContact : stickyCta;
+  html = html.replace(/<aside class="sticky-cta"[\s\S]*?<\/aside>\s*/gi, '');
+  return html.replace('</body>', `${block}\n</body>`);
 }
 
 for (const file of pages) {

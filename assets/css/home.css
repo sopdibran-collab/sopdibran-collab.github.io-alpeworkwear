@@ -798,7 +798,7 @@
   font-family: inherit;
   cursor: pointer;
   text-align: center;
-  color: var(--color-silver);
+  color: var(--color-steel-muted);
 }
 
 .home-timeline__step[aria-selected='true'] {
@@ -814,11 +814,16 @@
 
 .home-timeline__label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0.25rem;
+  color: var(--color-steel-muted);
+}
+
+.home-timeline__step[aria-selected='true'] .home-timeline__label {
+  color: var(--color-cta);
 }
 
 .home-timeline__visual {
@@ -1288,11 +1293,43 @@ a.home-certs__logo:focus-visible {
   outline-offset: 2px;
 }
 
-/* Audit /jury : pas de barre fixe sur l’accueil, les deux CTA sont dans le hero */
-.page-home .sticky-cta {
-  display: none !important;
+@media (max-width: 900px) {
+  .home-hero__actions {
+    display: none;
+  }
+
+  .home-hero__trust a.track-phone {
+    display: none;
+  }
+
+  .home-hero__trust li:has(a.track-phone) {
+    display: none;
+  }
+
+  .home-timeline {
+    position: relative;
+    padding-right: 1.5rem;
+  }
+
+  .home-timeline::after {
+    content: '';
+    position: sticky;
+    right: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 100%;
+    margin-left: -1.5rem;
+    background: linear-gradient(90deg, transparent, var(--color-bg));
+    pointer-events: none;
+  }
+
+  .home-timeline__step {
+    min-width: 4.75rem;
+  }
 }
 
-.page-home:has(.sticky-cta.is-visible) {
-  padding-bottom: 0;
+@media (max-width: 480px) {
+  .home-timeline__label {
+    font-size: 0.75rem;
+  }
 }

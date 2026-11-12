@@ -128,7 +128,7 @@ function processPage(filename) {
     );
     html = html.replace(
       /<div class="catalogue-toolbar" id="catalogue-filters"[^>]*>[\s\S]*?<\/div>/i,
-      `<div class="catalogue-toolbar" id="catalogue-filters" role="toolbar" aria-label="Filtrer par gamme">\n${renderCatalogueFilters(categories)}\n        </div>`
+      `<div class="catalogue-toolbar" id="catalogue-filters" role="toolbar" aria-label="Filtrer par gamme">\n${renderCatalogueFilters(categories, products)}\n        </div>`
     );
     const itemList = renderItemListSchema(products, categories);
     html = injectBeforeCloseHead(html, itemList, 'alpe-schema-itemlist');
